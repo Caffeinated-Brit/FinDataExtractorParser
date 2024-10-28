@@ -1,3 +1,6 @@
+# FIRST INSTALL DEPENDENCIES:
+#   pip install PyPDF2
+
 # Extracts text from text based pdf's
 
 from PyPDF2 import PdfReader

@@ -9,7 +9,7 @@ from pdf2image import convert_from_path
 
 # Be carefull of this file path
     # Use forward slashes as backslashes are used for escape characters
-FILE_PATH = "Research and Development/Python PDF Parse/examplePDFs/scannedExample.pdf"
+FILE_PATH = "Research and Development/Python PDF Parse/examplePDFs/f1040.pdf"
 
 images = convert_from_path(FILE_PATH)
 text = ""
