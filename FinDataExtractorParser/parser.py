@@ -1,3 +1,5 @@
+import uuid
+
 from flask import Flask, request, jsonify
 import os
 import tabula
@@ -14,16 +16,23 @@ def parse_PDF():
     if file.filename == '':
         return jsonify({"error": "No selected file"}), 400
 
-    # Define a directory to save the uploaded file
+
+    file_name, file_extension = os.path.splitext(file.filename)
+
+    unique_id = str(uuid.uuid4())
+
+    unique_file_name = str(file_name + "(" + unique_id + ")" +file_extension)
+
+
     upload_folder = 'uploads'
     os.makedirs(upload_folder, exist_ok=True)  # Create the directory if it doesn't exist
-    file_path = os.path.join(upload_folder, file.filename)
+    file_path = os.path.join(upload_folder, unique_file_name)
 
     # Save the uploaded file to the specified path
     file.save(file_path)
 
-    file_path = "./uploads/" + file.filename
-    output_path = "./uploads/" + file.filename + "Output"
+    file_path = "./uploads/" + unique_file_name
+    output_path = "./uploads/" + "Output" + "-" + unique_file_name
 
     tabula.convert_into(file_path, output_path, output_format="json", pages="all")
 
@@ -32,7 +41,7 @@ def parse_PDF():
     with open(output_path, 'r') as output_file:
         output_data = json.load(output_file)  # Load the JSON data
 
-    return jsonify({"message": f"File {file.filename} uploaded successfully!", "data": output_data}), 200
+    return jsonify({"message": f"File {unique_file_name} uploaded successfully!", "data": output_data}), 200
 
 @app.route('/sample', methods=['POST'])
 def print_json():
