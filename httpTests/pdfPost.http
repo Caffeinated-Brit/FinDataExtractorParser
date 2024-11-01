@@ -1,0 +1,9 @@
+POST http://localhost:5000/parse
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="f1040.pdf"
+Content-Type: application/pdf
+
+< ../FinDataExtractorParser/examplePDFs/f1040.pdf
+--boundary--
