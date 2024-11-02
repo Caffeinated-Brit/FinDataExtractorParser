@@ -32,6 +32,7 @@ def parse_PDF():
     file.save(file_path)
 
     file_path = "./uploads/" + unique_file_name
+    #TODO: The json file is made as a .pdf and should be a .json
     output_path = "./uploads/" + "Output" + "-" + unique_file_name
 
     tabula.convert_into(file_path, output_path, output_format="json", pages="all")
