@@ -1,3 +1,6 @@
+# Running the project
+- Run the parser.py file to run the api
+
 # Research and Development
 This is for testing PDF text extraction methods.
 
