@@ -1,0 +1,5 @@
+docker-compose.yaml
+.env
+.git
+.gitignore
+httpTests
