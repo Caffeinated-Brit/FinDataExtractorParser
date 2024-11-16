@@ -19,31 +19,18 @@ def parse_PDF():
     if file.filename == '':
         return jsonify({"error": "No selected file"}), 400
 
-    file_name, file_extension = os.path.splitext(file.filename)
-    unique_id = str(uuid.uuid4())
-    unique_file_name = f"{file_name}({unique_id}){file_extension}"
-
-    upload_folder = 'uploads'
-    os.makedirs(upload_folder, exist_ok=True)
-    file_path = os.path.join(upload_folder, unique_file_name)
-    file.save(file_path)
-
-    output_path = os.path.join(upload_folder, f"Output-{unique_id}.json")
-
-    output_data = ["bees"]
-    with pdfplumber.open(file_path) as pdf:
+    output_data = []
+    with pdfplumber.open(file) as pdf:
         for page in pdf.pages:
             text = page.extract_text()
             if text:
                 output_data.append({"page_number": page.page_number, "text": text})
 
-    with open(output_path, 'w') as f:
-        json.dump(output_data, f)
+    # Print extracted data (optional)
+    print(f"Data extracted from PDF: {output_data}")
 
-    print(f"Data extracted to {output_path} in JSON format.")
-
-    # Return success message with data
-    return jsonify({"message": f"File {unique_file_name} uploaded successfully!", "data": output_data}), 200
+    # Return the extracted data in JSON format as the response
+    return jsonify({"message": "File uploaded and data extracted successfully!", "data": output_data}), 200
 
 @app.route('/sample', methods=['POST'])
 def print_json():
