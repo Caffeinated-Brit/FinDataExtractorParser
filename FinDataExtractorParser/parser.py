@@ -30,7 +30,7 @@ def parse_PDF():
     print(f"Data extracted from PDF: {output_data}")
 
     # Return the extracted data in JSON format as the response
-    return jsonify({"message": "File uploaded and data extracted successfully!", "data": output_data}), 200
+    return jsonify({"message": "Data extracted to json successfully!", "data": output_data}), 200
 
 @app.route('/sample', methods=['POST'])
 def print_json():
