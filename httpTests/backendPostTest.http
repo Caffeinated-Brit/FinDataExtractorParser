@@ -1,4 +1,4 @@
-POST http://localhost:5135/api/upload
+POST http://localhost:5135/api/Upload/UploadS3
 Content-Type: multipart/form-data; boundary=boundary
 
 --boundary
