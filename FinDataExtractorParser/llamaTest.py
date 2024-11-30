@@ -1,13 +1,10 @@
-# pip install llama-cpp-python
-# make sure you download the LLM to FinDataExtractorParser/LLMs/finance-llm.Q4_K_M.gguf
+# pip install llama-cpp-python (added to requirements.txt so just run pip intall -r requirements.txt)
+# make sure to run the download-llm.py file and ensure that it installs finance-llm.Q4_K_M.gguf in the FinDataExtractorParser/LLMs/ directory
 
 import pdfplumber
 from llama_cpp import Llama
 
-# Path to your Finance LLM GGUF model
 LLAMA_MODEL_PATH = "LLMs/finance-llm.Q4_K_M.gguf"
-
-# Path to the PDF file for testing
 PDF_FILE_PATH = "examplePDFs/Simple Mock Data.pdf"  # Replace with your local PDF file path
 
 # Initialize the Llama model
@@ -20,9 +17,7 @@ llm = Llama(
 
 
 def extract_text_from_pdf(file_path):
-    """
-    Extract text from the specified PDF file.
-    """
+    # Extract text from the specified PDF file.
     extracted_data = []
     with pdfplumber.open(file_path) as pdf:
         for page in pdf.pages:
@@ -33,10 +28,8 @@ def extract_text_from_pdf(file_path):
 
 
 def process_text_with_llm(extracted_text):
-    """
-    Process the extracted text using the Llama model to extract financial data.
-    """
-    # for testing, prompt can be changed depending on which document is being used
+    # Process the extracted text using the Llama model to extract financial data.
+    # For testing, prompt can be changed depending on which document is being used
     prompt = (
         f"You are an expert in financial document analysis. "
         f"Extract the following key information from the provided text:\n"
@@ -48,7 +41,7 @@ def process_text_with_llm(extracted_text):
         f"Text:\n{extracted_text}"
     )
 
-    # Query the Llama model
+    # Query the LLM
     response = llm(prompt, max_tokens=1024)  # Adjust max_tokens as needed
     return response["choices"][0]["text"].strip()
 
