@@ -107,5 +107,5 @@ default_data_points = """{
 
 
 # maybe put in main function, needs cleaned up :)
-text = extract_content_from_url("FinDataExtractorParser/examplePDFs/Simple Mock Data.pdf")
+text = extract_content_from_url("examplePDFs/Simple Mock Data.pdf")
 print(extract_structured_data(text, default_data_points))
