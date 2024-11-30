@@ -3,11 +3,12 @@ import requests
 from tqdm import tqdm
 
 BASE_DIR = "FinDataExtractorParser/LLMs"
-MODEL_URL = "https://huggingface.co/TheBloke/finance-llm-gguf/resolve/main/finance-llm.Q4_K_M.gguf"
-MODEL_FILE = "finance-llm.Q4_K_M.gguf"
+# MODEL_URL = "https://huggingface.co/TheBloke/finance-llm-gguf/resolve/main/finance-llm.Q4_K_M.gguf"
+MODEL_URL = "https://huggingface.co/QuantFactory/Meta-Llama-3-8B-Instruct-GGUF/resolve/main/Meta-Llama-3-8B-Instruct.Q5_0.gguf"
+MODEL_FILE = "Meta-Llama-3-8B-Instruct.Q5_K_S.gguf"
 
 
-def create_directory(path): # If it doesn't already exist
+def create_directory(path):  # If it doesn't already exist
     if not os.path.exists(path):
         os.makedirs(path)
         print(f"Created directory: {path}")
@@ -15,7 +16,7 @@ def create_directory(path): # If it doesn't already exist
         print(f"Directory already exists: {path}")
 
 
-def download_file(url, output_path): # Uses a pretty progress bar lol
+def download_file(url, output_path):  # Uses a pretty progress bar lol
     response = requests.get(url, stream=True)
     if response.status_code == 200:
         total_size = int(response.headers.get('content-length', 0))

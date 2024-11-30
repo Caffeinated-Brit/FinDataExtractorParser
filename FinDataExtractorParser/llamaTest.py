@@ -1,10 +1,11 @@
-# pip install llama-cpp-python (added to requirements.txt so just run pip intall -r requirements.txt)
-# make sure to run the download-llm.py file and ensure that it installs finance-llm.Q4_K_M.gguf in the FinDataExtractorParser/LLMs/ directory
+# pip install llama-cpp-python (added to requirements.txt so just run pip install -r requirements.txt)
+# Have to run the download-llm.py file and ensure that it installs finance-llm.Q4_K_M.gguf in FinDataExtractor/LLMs/
 
 import pdfplumber
 from llama_cpp import Llama
 
-LLAMA_MODEL_PATH = "LLMs/finance-llm.Q4_K_M.gguf"
+# LLAMA_MODEL_PATH = "LLMs/finance-llm.Q4_K_M.gguf"
+LLAMA_MODEL_PATH = "LLMs/Meta-Llama-3-8B-Instruct.Q5_K_S.gguf"
 PDF_FILE_PATH = "examplePDFs/Simple Mock Data.pdf"  # Replace with your local PDF file path
 
 # Initialize the Llama model
@@ -32,12 +33,13 @@ def process_text_with_llm(extracted_text):
     # For testing, prompt can be changed depending on which document is being used
     prompt = (
         f"You are an expert in financial document analysis. "
-        f"Extract the following key information from the provided text:\n"
-        f"1. Name\n"
-        f"2. Date\n"
-        f"3. Address\n"
-        f"4. Spouse's name\n"
-        f"5. Any other relevant data"
+        f"Parse the given text and respond with categorized JSON data."
+        f"Do NOT make up any information."
+        f"Return ONLY the JSON. Here is an example of JSON:\n"
+        "{"
+        f" \"Name\": \"[name]\", \"Date\":\"date\", \"Address\":\"address\" "
+        "}"
+        f"In the given example, the only information given was Name, Date, and Address."
         f"Text:\n{extracted_text}"
     )
 
