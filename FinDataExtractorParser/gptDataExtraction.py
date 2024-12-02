@@ -3,6 +3,7 @@
 # pip install langchain_community
 # pip install openai 
 # pip install python-dotenv
+# pip install pypdfium2
 
 from langchain_community.chat_models import ChatOpenAI
 # from langchain.chat_models import ChatOpenAI

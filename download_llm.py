@@ -3,9 +3,18 @@ import requests
 from tqdm import tqdm
 
 BASE_DIR = "FinDataExtractorParser/LLMs"
+
 # MODEL_URL = "https://huggingface.co/TheBloke/finance-llm-gguf/resolve/main/finance-llm.Q4_K_M.gguf"
-MODEL_URL = "https://huggingface.co/QuantFactory/Meta-Llama-3-8B-Instruct-GGUF/resolve/main/Meta-Llama-3-8B-Instruct.Q5_0.gguf"
-MODEL_FILE = "Meta-Llama-3-8B-Instruct.Q5_K_S.gguf"
+
+# MODEL_URL = "https://huggingface.co/QuantFactory/Meta-Llama-3-8B-Instruct-GGUF/resolve/main/Meta-Llama-3-8B-Instruct.Q5_0.gguf"
+
+# MODEL_URL = "https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q8_0.gguf"
+
+#MODEL_URL = "https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q5_K_L.gguf"
+# first test of mistral. seems to be useless
+MODEL_URL = "https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/mistral-7b-instruct-v0.2.Q6_K.gguf"
+
+MODEL_FILE = "mistral-7b-instruct-v0.2.Q6_K.gguf"
 
 
 def create_directory(path):  # If it doesn't already exist

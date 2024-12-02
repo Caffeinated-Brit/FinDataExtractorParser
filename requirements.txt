@@ -4,6 +4,3 @@ Werkzeug==2.0.2
 gunicorn==20.0.0
 pdfplumber
 flask-cors
-llama-cpp-python
-tqdm
-requests
