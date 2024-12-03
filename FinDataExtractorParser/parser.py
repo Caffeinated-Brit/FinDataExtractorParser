@@ -2,11 +2,18 @@ import uuid
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
-import pdfplumber
-import json
+
+# NOTE
+# comment/uncomment these to save bootup time
+# import llamaTest  
+import gptDataExtraction
 
 app = Flask(__name__)
 CORS(app)
+
+# Temporary folder for uploaded files, possibly the database in the future
+UPLOAD_FOLDER = "uploads"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route('/parse', methods=['POST'])
 def parse_PDF():
@@ -19,18 +26,26 @@ def parse_PDF():
     if file.filename == '':
         return jsonify({"error": "No selected file"}), 400
 
-    output_data = []
-    with pdfplumber.open(file) as pdf:
-        for page in pdf.pages:
-            text = page.extract_text()
-            if text:
-                output_data.append({"page_number": page.page_number, "text": text})
+    # generate a unique filename and save file to temperarily (the llama functionality uses a filepath as of now)
+    temp_filename = f"{uuid.uuid4()}.pdf"
+    temp_filepath = os.path.join(UPLOAD_FOLDER, temp_filename)
+    file.save(temp_filepath)
 
-    # Print extracted data (optional)
-    print(f"Data extracted from PDF: {output_data}")
+    try:
+        # call main from llamaTest with the file path as the argument
+        # NOTE 
+        # Change the following 2 lines depending on what parser you are needing/testing
+        structured_data = gptDataExtraction.main(temp_filepath)
+            # NOTE THIS DOES COST a small amount of MONEY!!! DO NOT RUN IN A LOOP OR LIKE A MANIAC!!! THANKS! -lukas
+        # structured_data = llamaTest.main(temp_filepath)
 
-    # Return the extracted data in JSON format as the response
-    return jsonify({"message": "File uploaded and data extracted successfully!", "data": output_data}), 200
+        return jsonify({"message": "File uploaded and processed successfully!", "data": structured_data}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    finally:
+        # delete temporary file
+        if os.path.exists(temp_filepath):
+            os.remove(temp_filepath)
 
 @app.route('/sample', methods=['POST'])
 def print_json():

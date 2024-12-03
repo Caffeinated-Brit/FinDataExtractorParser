@@ -9,8 +9,8 @@ import time
 # Constants
 # LLAMA_MODEL_PATH = "LLMs/Meta-Llama-3.1-8B-Instruct-Q5_K_L.gguf"
 # LLAMA_MODEL_PATH = "LLMs/Meta-Llama-3.1-8B-Instruct-Q8_0.gguf"
-LLAMA_MODEL_PATH = "LLMs/mistral-7b-instruct-v0.2.Q6_K.gguf"
-PDF_FILE_PATH = "examplePDFs/Simple Mock Data.pdf"
+LLAMA_MODEL_PATH = "FinDataExtractorParser/LLMs/mistral-7b-instruct-v0.2.Q6_K.gguf"
+TEST_PDF_FILE_PATH = "FinDataExtractorParser/examplePDFs/Simple Mock Data.pdf"
 
 # Initialize the Llama model
 llm = Llama(
@@ -76,9 +76,9 @@ def process_text_with_llm(extracted_text):
 
     return response["choices"][0]["text"].strip()
 
-def main():
+def main(pdfFilePath):
     # Extract text from the PDF
-    extracted_data = extract_text_from_pdf(PDF_FILE_PATH)
+    extracted_data = extract_text_from_pdf(pdfFilePath)
     if not extracted_data:
         print("No text found in the PDF.")
         return
@@ -92,5 +92,7 @@ def main():
     print("\n--- Structured Financial Data ---")
     print(structured_data)
 
+    return structured_data
+
 if __name__ == "__main__":
-    main()
+    main(TEST_PDF_FILE_PATH)
