@@ -17,12 +17,12 @@ import ollama
 import pdfplumber
 import re
 
-PDF_FILE_PATH = "examplePDFs/Simple Mock Data.pdf"
+#PDF_FILE_PATH = "E:\Downloads\Student Travel Participant Form rev 121713 Filled.pdf"
 #PDF_FILE_PATH = "examplePDFs/testpdf.pdf"
 #LLM_MODEL="llama3.1:8b"
-#LLM_MODEL="qwen2.5:14b"
-LLM_MODEL="qwen2.5-coder:3b"
-
+LLM_MODEL="qwen2.5:14b"
+#LLM_MODEL="qwen2.5-coder:3b"
+#LLM_MODEL="mistral:7b"
 
 def extract_json_fragment(response_text):
     try:
@@ -31,7 +31,8 @@ def extract_json_fragment(response_text):
         json_end = response_text.rfind("]")
         if json_start != -1 and json_end != -1:
             json_data = response_text[json_start:json_end + 1]
-            return json.dumps(json.loads(json_data))
+            #return json.dumps(json.loads(json_data))
+            return json_data
     except json.JSONDecodeError as e:
         print(f"Error parsing JSON: {e}")
     print("Error: No valid JSON found in the response.")
@@ -75,31 +76,34 @@ def process_text_with_llm(extracted_text):
     response = ollama.chat(
         model=LLM_MODEL,
         messages=[{"role": "user", "content": prompt}],
-        options={"seed": 1, "temperature":0}
+        options={"seed": 1, "temperature":0.1}
     )
 
     return response
 
-# List available models
-#models = ollama.list()
-#print("Available models:", models.models)
-
-start_time = time.time()
-
-extracted_data = extract_text_from_pdf(PDF_FILE_PATH)
-print("Extracted Data")
-print(extracted_data)
-structured_data = process_text_with_llm(extracted_data)
-
-print("Structured Data")
-print(structured_data.message.content)
-
-end_time = time.time()
-elapsed_time = end_time - start_time
-
-print(f"LLM processing time: {elapsed_time:.2f} seconds")
-
-print("Output Json")
-print(extract_json_fragment(structured_data.message.content))
 
 
+
+def main(temp_filepath):
+    # List available models
+    # models = ollama.list()
+    # print("Available models:", models.models)
+
+    start_time = time.time()
+
+    extracted_data = extract_text_from_pdf(temp_filepath)
+    print("Extracted Data")
+    print(extracted_data)
+    structured_data = process_text_with_llm(extracted_data)
+
+    print("Structured Data")
+    print(structured_data.message.content)
+
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+
+    print(f"LLM processing time: {elapsed_time:.2f} seconds")
+
+    print("Output Json")
+    print(extract_json_fragment(structured_data.message.content))
+    return extract_json_fragment(structured_data.message.content)
