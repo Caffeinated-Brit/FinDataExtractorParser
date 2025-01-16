@@ -6,7 +6,7 @@ import json
 import time
 # import other folders 
 from AI import gpt, llama
-from PDFparsers import pytesseract, pdfplumber
+from PDFparsers import pyTesseract, pdfPlumber
 
 FILE_PATH = "FinDataExtractorParser/examplePDFs/Simple Mock Data.pdf"
 
@@ -28,14 +28,14 @@ def parse_PDF():
     if file.filename == '':
         return jsonify({"error": "No selected file"}), 400
 
-    # generate a unique filename and save file to temperarily (the llama functionality uses a filepath as of now)
+    # generate a unique filename and save file to temp directory (the llama functionality uses a filepath as of now)
     temp_filename = f"{uuid.uuid4()}.pdf"
     temp_filepath = os.path.join(UPLOAD_FOLDER, temp_filename)
     file.save(temp_filepath)
 
     try:
-        extracted_text = pdfplumber.extract_text_from_pdf(FILE_PATH) # WORKS
-        # extracted_text = pytesseract.extract_content(FILE_PATH) # WORKS
+        extracted_text = pdfPlumber.extract_text_from_pdf(FILE_PATH) # WORKS
+        # extracted_text = pyTesseract.extract_content(FILE_PATH) # WORKS
 
         prompt = (
             f"Follow the listed steps to analyze the following text and extract information. \n"
@@ -49,9 +49,9 @@ def parse_PDF():
 
         # prompt = "give me 3 space facts"
 
-        # structured_data = Gpt.extract_structured_data(prompt) # WORKS
+        # structured_data = gpt.extract_structured_data(prompt) # WORKS
         structured_data = llama.process_text_with_llm(prompt) # WORKS, needs jsonify
-        # structured_data = Ollama.process_text_with_llm(prompt)
+        # structured_data = ollama.process_text_with_llm(prompt)
 
         return jsonify({"message": "File uploaded and processed successfully!", "data": structured_data}), 200
     except Exception as e:
