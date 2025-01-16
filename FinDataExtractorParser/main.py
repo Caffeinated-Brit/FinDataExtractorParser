@@ -5,8 +5,8 @@ import os
 import json
 import time
 # import other folders 
-from AI import Gpt, llama
-from PdfParsers import pytesseract, pdfplumber
+from AI import gpt, llama
+from PDFparsers import pytesseract, pdfplumber
 
 FILE_PATH = "FinDataExtractorParser/examplePDFs/Simple Mock Data.pdf"
 
