@@ -1,4 +1,4 @@
-from pyTesseract import image_to_string
+from pytesseract import image_to_string
 from io import BytesIO
 import pypdfium2 as pdfium
 from PIL import Image
