@@ -17,9 +17,11 @@ import ollama
 LLM_MODEL="qwen2.5-coder:3b"
 
 def process_text_with_llm(prompt):
+    print("Starting Ollama Extraction")
     response = ollama.chat(
         model=LLM_MODEL,
         messages=[{"role": "user", "content": prompt}],
         options={"seed": 1, "temperature":0}
     )
-    return response
+    #This returns just the message from the LLM nothing else
+    return response.message.content
