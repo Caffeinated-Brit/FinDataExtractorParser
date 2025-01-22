@@ -5,10 +5,9 @@ import os
 import json
 import time
 # import other folders 
-from AI import Gpt, llama
-from PdfParsers import pytesseract, pdfplumber
+from AI import gpt, llama, Ollama
+from PdfParsers import pyTesseract, pdfPlumber
 
-FILE_PATH = "FinDataExtractorParser/examplePDFs/Simple Mock Data.pdf"
 
 app = Flask(__name__)
 CORS(app)
@@ -28,14 +27,15 @@ def parse_PDF():
     if file.filename == '':
         return jsonify({"error": "No selected file"}), 400
 
-    # generate a unique filename and save file to temperarily (the llama functionality uses a filepath as of now)
+    # generate a unique filename and save file to temp directory (the llama functionality uses a filepath as of now)
     temp_filename = f"{uuid.uuid4()}.pdf"
     temp_filepath = os.path.join(UPLOAD_FOLDER, temp_filename)
     file.save(temp_filepath)
 
     try:
-        extracted_text = pdfplumber.extract_text_from_pdf(FILE_PATH) # WORKS
-        # extracted_text = pytesseract.extract_content(FILE_PATH) # WORKS
+        extracted_text = pdfPlumber.extract_text_from_pdf(temp_filepath) # WORKS
+        # extracted_text = pyTesseract.extract_content(temp_filepath) # WORKS
+        print(extracted_text)
 
         prompt = (
             f"Follow the listed steps to analyze the following text and extract information. \n"
@@ -49,9 +49,11 @@ def parse_PDF():
 
         # prompt = "give me 3 space facts"
 
-        # structured_data = Gpt.extract_structured_data(prompt) # WORKS
-        structured_data = llama.process_text_with_llm(prompt) # WORKS, needs jsonify
-        # structured_data = Ollama.process_text_with_llm(prompt)
+        # structured_data = gpt.extract_structured_data(prompt) # WORKS
+        # structured_data = llama.process_text_with_llm(prompt) # WORKS, needs jsonify
+        structured_data = Ollama.process_text_with_llm(prompt)
+        print(structured_data)
+
 
         return jsonify({"message": "File uploaded and processed successfully!", "data": structured_data}), 200
     except Exception as e:
@@ -59,7 +61,7 @@ def parse_PDF():
     finally:
         # delete temporary file
         if os.path.exists(temp_filepath):
-            os.remove(temp_filepath)
+           os.remove(temp_filepath)
 
 @app.route('/sample', methods=['POST'])
 def print_json():
@@ -81,18 +83,18 @@ if __name__ == '__main__':
 
 
 # NOTE removes not json text from output VVVVVVV
-# def extract_json_fragment(response_text):
-#     try:
-#         # Strip leading/trailing non-JSON text
-#         json_start = response_text.find("[")
-#         json_end = response_text.rfind("]")
-#         if json_start != -1 and json_end != -1:
-#             json_data = response_text[json_start:json_end + 1]
-#             return json.dumps(json.loads(json_data))
-#     except json.JSONDecodeError as e:
-#         print(f"Error parsing JSON: {e}")
-#     print("Error: No valid JSON found in the response.")
-#     return None
+def extract_json_fragment(response_text):
+     try:
+         # Strip leading/trailing non-JSON text
+         json_start = response_text.find("[")
+         json_end = response_text.rfind("]")
+         if json_start != -1 and json_end != -1:
+             json_data = response_text[json_start:json_end + 1]
+             return json.dumps(json.loads(json_data))
+     except json.JSONDecodeError as e:
+         print(f"Error parsing JSON: {e}")
+     print("Error: No valid JSON found in the response.")
+     return None
 
 
 # start_time = time.time()

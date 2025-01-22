@@ -1,5 +1,17 @@
 # Running the project
-- Run the parser.py file to run the api
+- Run main.py to run the API.
+
+
+# Directories
+* AI 
+  * Used to store different methods of analyzing extracted text.
+* examplePDFs
+  * Used to store sample PDFs for testing.
+* PDFparsers
+  * Used to store different methods of parsing PDFs.
+* httpTests
+  * Used to store API tests.
+
 
 # Research and Development
 This is for testing PDF text extraction methods.
