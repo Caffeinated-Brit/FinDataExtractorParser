@@ -5,7 +5,7 @@ import os
 import json
 import time
 # import other folders 
-from AI import gpt #, llama, Ollama
+from AI import gpt #, llama, ollama
 # from PDFparsers import pyTesseract, pdfPlumber
 from PDFparsers import pdfPlumber
 
