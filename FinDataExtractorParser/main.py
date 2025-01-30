@@ -5,8 +5,11 @@ import os
 import json
 import time
 # import other folders 
-from AI import gpt, llama, Ollama
-from PdfParsers import pyTesseract, pdfPlumber
+# from AI import gpt
+from AI import llama
+# from AI import Ollama
+# from PDFparsers import pyTesseract
+from PDFparsers import pdfPlumber
 
 
 app = Flask(__name__)
@@ -38,20 +41,20 @@ def parse_PDF():
         print(extracted_text)
 
         prompt = (
-            f"Follow the listed steps to analyze the following text and extract information. \n"
-            f"Step 1: identify the key pieces of information in the text. "
-            f"Do not print any text for this step. \n"
-            f"Step 2: extract the information for each key. "
-            f"Do not print any text for this step. \n"
-            f"Step 3: format the extracted information into a JSON array. \n"
+            # f"Follow the listed steps to analyze the following text and extract information. \n"
+            # f"Step 1: identify the key pieces of information in the text. "
+            # f"Do not print any text for this step. \n"
+            # f"Step 2: extract the information for each key. "
+            # f"Do not print any text for this step. \n"
+            f"Format the extracted information into a JSON array. \n"
             f"Text for you to analyze:\n{extracted_text} \n"
             f"Return only your final answer in a JSON array.\n")
 
         # prompt = "give me 3 space facts"
 
         # structured_data = gpt.extract_structured_data(prompt) # WORKS
-        # structured_data = llama.process_text_with_llm(prompt) # WORKS, needs jsonify
-        structured_data = Ollama.process_text_with_llm(prompt)
+        structured_data = llama.process_text_with_llm(prompt) # WORKS, needs jsonify
+        # structured_data = Ollama.process_text_with_llm(prompt)
         print(structured_data)
 
 

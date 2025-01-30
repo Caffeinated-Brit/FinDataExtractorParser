@@ -3,9 +3,11 @@ from io import BytesIO
 import pypdfium2 as pdfium
 from PIL import Image
 
+# NOTE got rid of print outs for the the time being
+
 # Convert PDF file into images with pypdfium2
 def convert_pdf_to_images(file_path, scale=300/72):
-    print("converting pdf to images")
+    # print("converting pdf to images")
     pdf_file = pdfium.PdfDocument(file_path)
     page_indices = [i for i in range(len(pdf_file))]
     renderer = pdf_file.render(
@@ -25,7 +27,7 @@ def convert_pdf_to_images(file_path, scale=300/72):
 
 # Extract text from images with pytesseract
 def extract_text_from_img(list_dict_final_images):
-    print("Extracting text from images")
+    # print("Extracting text from images")
     image_list = [list(data.values())[0] for data in list_dict_final_images]
     image_content = []
 
