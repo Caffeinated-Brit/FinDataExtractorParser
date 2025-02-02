@@ -5,7 +5,7 @@ import os
 import json
 import time
 
-from FinDataExtractorParser.parse import fullParse
+from parse import fullParse
 
 app = Flask(__name__)
 CORS(app)
@@ -29,6 +29,8 @@ def parse_PDF():
     temp_filename = f"{uuid.uuid4()}.pdf"
     temp_filepath = os.path.join(UPLOAD_FOLDER, temp_filename)
     file.save(temp_filepath)
+
+    print("saved temp file")
 
     try:
         # moved parsing to parse.py for easier local testing

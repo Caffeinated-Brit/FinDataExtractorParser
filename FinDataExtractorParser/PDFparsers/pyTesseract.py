@@ -40,6 +40,7 @@ def extract_text_from_img(list_dict_final_images):
 
 # calls other functions to extract all text, given the file path
 def extract_content(file_path):
+    print("starting pytesseract process...")
     images_list = convert_pdf_to_images(file_path)
     extracted_data = extract_text_from_img(images_list)
 
