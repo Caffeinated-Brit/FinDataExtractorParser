@@ -10,11 +10,11 @@
 #llama3.2:3b sucks
 #qwen2.5-coder:3b great amazing, as far as tested as good as qwen2.5:14b though I dont expect it to keep up with more advanced pdfs
 
-import ollama
+import Ollama
 
 #LLM_MODEL="llama3.1:8b"
 #LLM_MODEL="qwen2.5:14b"
-LLM_MODEL="qwen2.5-coder:3b"
+LLM_MODEL="qwen2.5-coder:7b"
 
 def process_text_with_llm(prompt):
     print("Starting Ollama Extraction")
