@@ -1,5 +1,5 @@
 # pip install llama-cpp-python
-# use the download_llm.py file to download the LLM that is listed in LLAMA_MODEL_PATH
+# use the downloadLLM.py file to download the LLM that is listed in LLAMA_MODEL_PATH
 
 from llama_cpp import Llama
 

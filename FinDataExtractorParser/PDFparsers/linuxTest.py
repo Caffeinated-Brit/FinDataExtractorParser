@@ -1,3 +1,6 @@
+# Ensure that you have a Linux environment setup in WSL
+# apt install poppler-utils (run this in WSL)
+
 import subprocess
 
 def linuxParse(input_pdf):

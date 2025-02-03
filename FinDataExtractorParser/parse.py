@@ -3,7 +3,8 @@ import chardet  # pip install chardet | GNU Lesser General Public License
 import configparser
 
 import extractJSON
-from AI import Ollama, llama, gpt
+from AI import Ollama, gpt
+# from AI import llama # Phasing out llama bc it's too slow and lowkey trash
 from PDFparsers import pdfPlumber, pyTesseract, linuxTest
 
 # Load configuration
@@ -61,7 +62,7 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
     # Pick AI method based on config
     ai_methods = {
         "Ollama": Ollama.process_text_with_llm,
-        "llama": llama.process_text_with_llm,
+        # "llama": llama.process_text_with_llm,
         "gpt": gpt.extract_structured_data
     }
 
