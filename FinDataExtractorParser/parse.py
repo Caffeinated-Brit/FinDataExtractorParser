@@ -1,57 +1,75 @@
 import json
-import chardet # pip install chardet | GNU Lesser General Public License
-# from AI import llama
+import chardet  # pip install chardet | GNU Lesser General Public License
+import configparser
+
 import extractJSON
-from AI import Ollama
-# from PDFparsers import pyTesseract
-from PDFparsers import pdfPlumber
-# from PDFparsers.linux import linuxTest
+from AI import Ollama, llama, gpt
+from PDFparsers import pdfPlumber, pyTesseract, linuxTest
 
+# Load configuration
+config = configparser.ConfigParser()
+config.read("config.ini")
+selected_parser = config.get("Parser", "method", fallback="pdfPlumber")
+selected_ai = config.get("AI", "method", fallback="Ollama")
 
-def fullParse(inputfilepath):
-    extracted_text = pdfPlumber.extract_text_from_pdf(inputfilepath) # WORKS
-    # extracted_text = pyTesseract.extract_content(inputfilepath) # WORKS
+def fullParse(input_filepath):  # New parsing method allowing for easier local testing
+    # Pick parsing method based on config
+    parser_methods = {
+        "pdfPlumber": pdfPlumber.extract_text_from_pdf,
+        "pyTesseract": pyTesseract.extract_content,
+        "linuxTest": linuxTest.linuxParse
+    }
 
-    finalFilePath = inputfilepath.replace(".pdf", ".txt")
-    print("filepath: ", finalFilePath)
+    # Check that parsing method is valid
+    if selected_parser in parser_methods:
+        extracted_text = parser_methods[selected_parser](input_filepath)
+    else:
+        raise ValueError(f"Unknown parser method: {selected_parser}")
 
-    # extracted_text = linuxTest.linuxParse(inputfilepath)
+    final_file_path = input_filepath.replace(".pdf", ".txt")
 
-    # NOTE if not using linux write to file manually here vvv
-    with open(finalFilePath, "w") as file:
-        file.write(extracted_text)
+    if selected_parser != "linuxTest":  # Writes to file manually for non-linux parsing methods
+        with open(final_file_path, "w") as file:
+            file.write(extracted_text)
 
     print("\nDetecting file encoding...")
 
     # Detect encoding
-    with open(finalFilePath, "rb") as file:
+    with open(final_file_path, "rb") as file:
         raw_data = file.read()
         detected_encoding = chardet.detect(raw_data)['encoding']
 
     print(f"Detected Encoding: {detected_encoding}")
 
-    # read file using the detected encoding (for input text files containting ASCII, UTF-8, or other encodings)
-    with open(finalFilePath, "r", encoding=detected_encoding, errors="replace") as file:
+    # Read file using the detected encoding (for input text files containing ASCII, UTF-8, or other encodings)
+    with open(final_file_path, "r", encoding=detected_encoding, errors="replace") as file:
         extracted_text = file.read()
 
     print("\nExtracted text:", "\n", extracted_text)
 
     prompt = (
-        f"The following text was extracted from a PDF.\n"
-        f"Ignore any terms and conditions, and only extract valuable financial data.\n"
-        f"Categorize the extracted data into valid JSON format.\n"
-        f"Ensure the JSON is fully valid and does not contain errors.\n"
-        f"Return only the JSON array, with no extra text before or after.\n"
-        # f"Make this text into a JSON. "
+        "The following text was extracted from a PDF.\n"
+        "Ignore any terms and conditions, and only extract valuable financial data.\n"
+        "Categorize the extracted data into valid JSON format.\n"
+        "Ensure the JSON is fully valid and does not contain errors.\n"
+        "Return only the JSON array, with no extra text before or after.\n"
         f"Text:\n{extracted_text}\n"
     )
 
     print("\nPrompting AI...")
 
-    # structured_data = gpt.extract_structured_data(prompt) # WORKS
-    # structured_data = llama.process_text_with_llm(prompt) # WORKS, needs jsonify
+    # Pick AI method based on config
+    ai_methods = {
+        "Ollama": Ollama.process_text_with_llm,
+        "llama": llama.process_text_with_llm,
+        "gpt": gpt.extract_structured_data
+    }
 
-    structured_data = Ollama.process_text_with_llm(prompt)  # USE THIS 1000000% OF THE TIME
+    # Check that AI method is valid
+    if selected_ai in ai_methods:
+        structured_data = ai_methods[selected_ai](prompt)
+    else:
+        raise ValueError(f"Unknown AI method: {selected_ai}")
 
     print("\nAI output:", "\n", structured_data)
 
@@ -61,16 +79,18 @@ def fullParse(inputfilepath):
         print("Error parsing JSON:", e)
         return None
 
-        # Save JSON output
     print("\nCreating JSON...")
-    with open(inputfilepath.replace(".pdf", ".json"), "w", encoding="utf-8") as file:
+
+    output_file_path = input_filepath.replace(".pdf", ".json")
+    with open(output_file_path, "w", encoding="utf-8") as file:
         json.dump(structured_data, file, indent=4)
         print("Created output.json")
 
     return structured_data
 
+if __name__ == "__main__":
+    fullParse("examplePDFs/fromCameron/2021_2_Statement_removed.pdf")
 
-fullParse("examplePDFs/loan_statementCheckText.pdf")
 # parses well
 # 2021_2_Statement_removed
 
