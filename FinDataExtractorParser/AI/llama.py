@@ -1,5 +1,5 @@
 # pip install llama-cpp-python
-# use the download_llm.py file to download the LLM that is listed in LLAMA_MODEL_PATH
+# use the downloadLLM.py file to download the LLM that is listed in LLAMA_MODEL_PATH
 
 from llama_cpp import Llama
 
@@ -7,6 +7,7 @@ from llama_cpp import Llama
 # LLAMA_MODEL_PATH = "LLMs/Meta-Llama-3.1-8B-Instruct-Q5_K_L.gguf"
 # LLAMA_MODEL_PATH = "LLMs/Meta-Llama-3.1-8B-Instruct-Q8_0.gguf"
 LLAMA_MODEL_PATH = "LLMs/mistral-7b-instruct-v0.2.Q6_K.gguf"
+# "FinDataExtractorParser\LLMs\mistral-7b-instruct-v0.2.Q6_K.gguf"
 
 # Initialize the Llama model
 llm = Llama(
@@ -18,6 +19,7 @@ llm = Llama(
 
 def process_text_with_llm(prompt):
     # Add temperature and top_p for controlled, non-hallucinatory output
+    print("Starting llama extraction")
     response = llm(
         prompt,
         max_tokens=1024,  # More tokens = longer outputs capability
