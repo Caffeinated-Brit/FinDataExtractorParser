@@ -1,10 +1,9 @@
 import pdfplumber
 import os
 
-# NOTE got rid of print outs for the the time being
-
 def extract_text_from_pdf(file_path):
     # Extract text from PDF file using pdfplumber.
+    print("Starting pdfPlumber process...")
     extracted_data = ""
     if not os.path.exists(file_path):
         print(f"PDF file not found: {file_path}")

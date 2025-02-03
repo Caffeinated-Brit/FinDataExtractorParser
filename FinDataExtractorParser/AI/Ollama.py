@@ -18,7 +18,7 @@ LLM_MODEL="qwen2.5-coder:3b" # for lukas' backpack brick
 # LLM_MODEL="qwen2.5-coder:7b" # for spencers spacestation
 
 def process_text_with_llm(prompt):
-    print("Starting Ollama Extraction")
+    print("Starting Ollama extraction")
     response = ollama.chat(
         model=LLM_MODEL,
         messages=[{"role": "user", "content": prompt}],
