@@ -1,16 +1,22 @@
 import json
 import chardet # pip install chardet | GNU Lesser General Public License
 # from AI import llama
+import os
+import sys
 import extractJSON
 from AI import Ollama
-# from PDFparsers import pyTesseract
-from PDFparsers import pdfPlumber
+from PDFparsers import pyTesseract
+# from PDFparsers import pdfPlumber
 # from PDFparsers.linux import linuxTest
 
 
 def fullParse(inputfilepath):
-    extracted_text = pdfPlumber.extract_text_from_pdf(inputfilepath) # WORKS
-    # extracted_text = pyTesseract.extract_content(inputfilepath) # WORKS
+    if not os.path.exists(inputfilepath):
+        print(f"Error: File not found: {inputfilepath}")
+        sys.exit(1)
+
+    # extracted_text = pdfPlumber.extract_text_from_pdf(inputfilepath) # WORKS
+    extracted_text = pyTesseract.extract_content(inputfilepath) # WORKS
 
     finalFilePath = inputfilepath.replace(".pdf", ".txt")
     print("filepath: ", finalFilePath)
@@ -38,11 +44,10 @@ def fullParse(inputfilepath):
 
     prompt = (
         f"The following text was extracted from a PDF.\n"
-        f"Ignore any terms and conditions, and only extract valuable financial data.\n"
+        # f"Ignore any terms and conditions, and only extract valuable financial data.\n"
         f"Categorize the extracted data into valid JSON format.\n"
         f"Ensure the JSON is fully valid and does not contain errors.\n"
         f"Return only the JSON array, with no extra text before or after.\n"
-        # f"Make this text into a JSON. "
         f"Text:\n{extracted_text}\n"
     )
 
@@ -70,7 +75,7 @@ def fullParse(inputfilepath):
     return structured_data
 
 
-fullParse("examplePDFs/loan_statementCheckText.pdf")
+# fullParse("examplePDFs/loan_statementCheckText.pdf")
 # parses well
 # 2021_2_Statement_removed
 

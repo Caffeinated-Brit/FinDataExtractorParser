@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Temporary folder for uploaded files, possibly the database in the future
-UPLOAD_FOLDER = "uploads"
+UPLOAD_FOLDER = "uploads/"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route('/parse', methods=['POST'])
@@ -26,15 +26,14 @@ def parse_PDF():
         return jsonify({"error": "No selected file"}), 400
 
     # generate a unique filename and save file to temp directory (the llama functionality uses a filepath as of now)
-    temp_filename = f"{uuid.uuid4()}.pdf"
-    temp_filepath = os.path.join(UPLOAD_FOLDER, temp_filename)
+    temp_filepath = f"{UPLOAD_FOLDER}{uuid.uuid4()}.pdf"
     file.save(temp_filepath)
 
     print("saved temp file")
 
     try:
         # moved parsing to parse.py for easier local testing
-        structured_data = fullParse(temp_filename)
+        structured_data = fullParse(temp_filepath)
 
         return jsonify({"message": "File uploaded and processed successfully!", "data": structured_data}), 200
     except Exception as e:
