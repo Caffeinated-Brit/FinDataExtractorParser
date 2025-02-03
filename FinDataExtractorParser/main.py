@@ -12,6 +12,21 @@ CORS(app)
 UPLOAD_FOLDER = "uploads/" # Temporary folder for uploaded files, possibly the database in the future
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
+def extract_json_fragment(response_object):
+    try:
+        # Extract the content if it exists
+        content_text = getattr(response_object, 'content', None)
+        if content_text:
+            # Extract JSON array from content
+            json_start = content_text.find("[")
+            json_end = content_text.rfind("]")
+            if json_start != -1 and json_end != -1:
+                return json.dumps(json.loads(content_text[json_start:json_end + 1]))  # Validate and return JSON
+    except json.JSONDecodeError as e:
+        print(f"Error parsing JSON: {e}")
+    # print("Error: No valid JSON found in the response.")
+    return None
+
 @app.route('/parse', methods=['POST'])
 def parse_pdf():
     if 'file' not in request.files:
@@ -32,6 +47,7 @@ def parse_pdf():
         structured_data = fullParse(temp_filepath)
         return jsonify({"message": "File uploaded and processed successfully!", "data": structured_data}), 200
     except Exception as e:
+        # print(f"ERROR: Exception occurred: {e}")
         return jsonify({"error": str(e)}), 500
     # finally:
         # if os.path.exists(temp_filepath):
@@ -44,8 +60,10 @@ def print_json():
     return jsonify({"status": "success", "message": "Data printed to console"}), 200
 
 @app.route('/sample', methods=['GET'])
+
 def get_json():
     return jsonify({"status": "success", "message": "GET request received"}), 200
 
 if __name__ == '__main__':
+    # print("DEBUG: Starting Flask server on host 0.0.0.0 and port 5000")
     app.run(host='0.0.0.0', port=5000)
