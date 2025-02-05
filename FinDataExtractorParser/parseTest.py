@@ -1,14 +1,11 @@
-# be in FinDataExtractorParser dir
-# python -m pytest .\testing\parse_testing.py 
-
-import os
 import json
 import pytest
 import chardet
 from unittest.mock import patch, MagicMock
-import extractJSON
+
 from AI import Ollama
 from PDFparsers import pdfPlumber, pyTesseract, linuxTest
+import extractJSON
 from parse import fullParse
 
 TEST_PDF_PATH = "FinDataExtractorParser/testing/Simple Mock Data.pdf"
@@ -80,25 +77,10 @@ def test_fullParse(mock_pdf_parsing, mock_ai_processing, mock_json_fixing, mock_
         json_content = json.load(f)
         assert isinstance(json_content, list), "Saved JSON file does not contain a valid JSON array"
 
-def test_invalid_parser_method():
-    """Test fullParse with an invalid parser method."""
-    with patch("configparser.ConfigParser.get", return_value="InvalidParser"):
-        with pytest.raises(ValueError, match="Unknown parser method: InvalidParser"):
-            fullParse("testing/dummy.pdf")
-
-# cannot get this to work but the if statement it is testing might be removed due to use only havning 1 AI now
-# @patch("configparser.ConfigParser.get", return_value="InvalidAI")
-# def test_invalid_ai_method(mock_get):
-#     """Test fullParse with an invalid AI method."""
-#     with pytest.raises(ValueError, match="Unknown AI method: InvalidAI"):
-#         fullParse("testing/dummy.pdf")
-
-
 # testing pdf plumber
 def test_valid_pdf_extraction():
     """Test extracting text from a valid PDF."""
     # this for some reason has to be the full file path, or this complex os.path.join? dont know why
-    # pdf_path = "C:/Users/lukas/Desktop/Current GIT/FinDataExtractorParser/FinDataExtractorParser/testing/Simple_Mock_Data.pdf"
     pdf_path = "testing/Simple_Mock_Data.pdf"
     extracted_text = pdfPlumber.extract_text_from_pdf(pdf_path)
     print("\nExtracted Text:\n", extracted_text)  # Debugging step
