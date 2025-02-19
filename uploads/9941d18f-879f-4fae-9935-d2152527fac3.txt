@@ -1,0 +1,75 @@
+Statement Reporting Period:
+02/01/21 - 02/28/21
+Statement for Account # 234-467410
+800-669-3900
+TD AMERITRADE CAMERON DOWLESS
+1815 W JACKSON ST
+DIVISION OF TD AMERITRADE INC
+MUNCIE, IN 47303-4853
+PO BOX 2209
+OMAHA, NE 68103-2209
+TD Ameritrade Clearing, Inc., Member SIPC
+TD AMERITRADE
+Portfolio Summary
+Current Prior Period % Estimated Estimated
+Investment Value Value Change Change Income Yield Portfolio Allocation
+Cash $284.81 $ - $284.81 - $ - -
+Insrd Dep Acct (IDA) - - - - - -
+Money Market - - - - - -
+Short Balance - - - - - -
+Stocks
+Stocks 125.52 - 125.52 - - - 30.6%
+Short Stocks - - - - - -
+Fixed Income - - - - - -
+Options - - - - - -
+Short Options - - - - - -
+Mutual Funds - - - - - - Cash
+Other - - - - - - 69.4%
+Total $410.33 $ 0.00 $410.33 - $ 0.00 0.0%
+Cash Activity Summary Income & Expense Summary Performance Summary
+Non
+Current YTD Reportable YTD
+Reportable
+Opening Balance $ 0.00 $ - Income Cost Basis As Of - 02/28/21** $174.78
+Securities Purchased (527.08) (527.08) Dividends $ - $ - $ - Unrealized Gains -
+Securities Sold 341.89 341.89 Interest - - - Unrealized Losses (49.26)
+Funds Deposited 470.00 470.00 Other - - - Funds Deposited/(Disbursed)YTD 470.00
+Funds Disbursed - - Expense Income/(Expense)YTD -
+Income - - Interest - - - Securities Received/(Delivered)YTD 0.00
+Expense - - Fees - - - **To view realized gains and losses for your account, login at
+Other - - Other - - - www.tdameritrade.com and visit My Account > Cost Basis.
+Closing Balance $284.81 $284.81 Net $0.00 $0.00 $0.00
+page 1 of 3Statement for Account # 234-467410
+02/01/21 - 02/28/21
+Online Cash Services Summary
+Description Current Year To Date
+CREDITS
+Electronic Transfer $ 470.00 $ 470.00
+Subtotal 470.00 470.00
+TOTAL 470.00 470.00
+Account Positions
+Symbol/ Current Market Purchase Cost Average Unrealized Estimated
+Investment Description CUSIP Quantity Price Value Date Basis Cost Gain(Loss) Income Yield
+Stocks - Cash
+PALANTIR TECH INC PLTR 4 $ 23.90 $95.60 02/05/21 $ 134.84 $ 33.71 $ (39.24) $ - -
+COM CL A
+ZOMEDICA CORP ZOM 16 1.87 29.92 02/08/21 39.94 2.50 (10.02) - -
+COM
+$125.52 $174.78 $(49.26) $0.00 0.0%
+Total Stocks
+Total Cash Account $125.52 $174.78 $(49.26) $0.00 0.0%
+Online Cash Services Transaction Detail
+Category Transaction Date Description Amount
+CREDITS
+Electronic Transfer 02/03/2021 ELECTRONIC FUNDING $ 50.00
+02/05/2021 ACH IN 20.00
+02/08/2021 ACH IN 400.00
+Subtotal 470.00
+DEBITS
+Electronic Transfer 02/19/2021 ACH OUT $ (284.81)
+02/19/2021 ACH OUT - CANCELLED 284.81
+02/22/2021 ACH OUT (284.81)
+02/22/2021 ACH OUT - CANCELLED 284.81
+Subtotal 0.00
+TOTAL 470.00
+page 2 of 3
