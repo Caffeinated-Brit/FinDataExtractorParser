@@ -9,12 +9,17 @@ from openai import OpenAI
 import openai
 import requests
 import json
+import threading
 
-
+from FinDataExtractorParser.AI.LmDeployServer import start_lmdeploy_server
 
 torch.cuda.empty_cache()
 torch.cuda.memory_summary()
-#pipe = pipeline('Qwen/Qwen2.5-Coder-3B-Instruct', device='cpu')
+
+
+llm_server_thread = threading.Thread(target=start_lmdeploy_server)
+llm_server_thread.start()
+time.sleep(10)
 
 #lmdeploy serve api_server Qwen/Qwen2.5-Coder-3B-Instruct --server-port 23333 --tp 2 --cache-max-entry-count 0.2
 
@@ -73,13 +78,13 @@ def process_text_with_llm(prompt, server_url="http://localhost:23333/v1/chat/com
     start_time = time.time()
     response = requests.post(
         server_url,
-        json={"model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+        json={"model": LLM_MODEL,
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": 10000,  # Increase for longer output
             #"min_tokens": 900,
-            "top_k": 40,
-            "temperature": 0.9,  # Adjust for randomness
-            "top_p": 0.9,
+            "top_k": 20,
+            "temperature": 0.1,  # Adjust for randomness
+            "top_p": 0.1,
             "n": 1,
             "stop": ["User:", "\n\n"]
             }
@@ -93,14 +98,15 @@ def process_text_with_llm(prompt, server_url="http://localhost:23333/v1/chat/com
     tokens_per_second = generated_tokens / elapsed_time
     print(f"Generated tokens per second: {tokens_per_second}")
 
-    content = response.json()["choices"][0]["message"]["content"]
-    #print(response.json())
+    content = response.json()['choices'][0]['message']['content']
+    #print(content)
     return content
 
 
-for i in range(1):
+start_time = time.time()
+for i in range(10):
     print(f"Run {i+1}:")
     print(process_text_with_llm("Give me a recipe for cake."))
-    print("-" * 50)  # Separator for readability
-
-#print(process_text_with_llm("Give me a cake recipe"))
+    print("-" * 50)
+end_time = time.time()
+print((end_time - start_time))
