@@ -14,6 +14,7 @@ config.read("config.ini")
 selected_parser = config.get("Parser", "method", fallback="pdfPlumber")
 selected_ai = config.get("AI", "method", fallback="Ollama")
 
+
 def fullParse(input_filepath):  # New parsing method allowing for easier local testing
     # Pick parsing method based on config
     parser_methods = {
