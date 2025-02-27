@@ -73,7 +73,7 @@ def process_text_with_llm(prompt, server_url="http://localhost:23333/v1/chat/com
     start_time = time.time()
     response = requests.post(
         server_url,
-        json={"model": "Qwen/Qwen2.5-Coder-3B-Instruct",
+        json={"model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": 10000,  # Increase for longer output
             #"min_tokens": 900,
