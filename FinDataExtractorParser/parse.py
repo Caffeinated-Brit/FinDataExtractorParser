@@ -1,5 +1,5 @@
 import json
-import chardet  # pip install chardet | GNU Lesser General Public License
+import chardet  # pip install chardet
 import configparser
 
 import extractJSON

@@ -1,2 +1,3 @@
 .env
 /FinDataExtractorParser/LLMs/
+/FinDataExtractorParser/__pycache__/

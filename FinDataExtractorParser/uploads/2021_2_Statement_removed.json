@@ -1,0 +1,109 @@
+[
+    {
+        "Statement Reporting Period": "02/01/21 - 02/28/21",
+        "Account Number": "234-467410",
+        "Investment Value": 410.33,
+        "Change in Value": 0.0,
+        "Income": 0.0,
+        "Yield": 0.0,
+        "Portfolio Allocation": {
+            "Cash": 284.81,
+            "Insrd Dep Acct (IDA)": 0.0,
+            "Money Market": 0.0,
+            "Short Balance": 0.0,
+            "Stocks": 125.52,
+            "Fixed Income": 0.0,
+            "Options": 0.0,
+            "Short Options": 0.0,
+            "Mutual Funds": 0.0,
+            "Other": 69.4
+        },
+        "Cash Activity Summary": {
+            "Opening Balance": 0.0,
+            "Securities Purchased": -527.08,
+            "Dividends": 0.0,
+            "Unrealized Gains": 0.0,
+            "Unrealized Losses": -49.26,
+            "Funds Deposited": 470.0,
+            "Funds Disbursed": 0.0,
+            "Income": 0.0,
+            "Expense": 0.0,
+            "Other": 0.0
+        },
+        "Closing Balance": 284.81,
+        "Net": 0.0,
+        "Online Cash Services Summary": {
+            "Total": 470.0
+        },
+        "Account Positions": [
+            {
+                "Symbol/Description": "PALANTIR TECH INC PLTR",
+                "CUSIP": "4",
+                "Quantity": 4,
+                "Price": 23.9,
+                "Value": 95.6,
+                "Date": "02/05/21",
+                "Cost Basis": 134.84,
+                "Unrealized Gain(Loss)": -39.24,
+                "Income": 0.0,
+                "Yield": 0.0
+            },
+            {
+                "Symbol/Description": "ZOMEDICA CORP ZOM",
+                "CUSIP": "16",
+                "Quantity": 16,
+                "Price": 1.87,
+                "Value": 29.92,
+                "Date": "02/08/21",
+                "Cost Basis": 39.94,
+                "Unrealized Gain(Loss)": -10.02,
+                "Income": 0.0,
+                "Yield": 0.0
+            }
+        ],
+        "Online Cash Services Transaction Detail": [
+            {
+                "Category": "CREDITS",
+                "Transaction Date": "02/03/2021",
+                "Description": "ELECTRONIC FUNDING",
+                "Amount": 50.0
+            },
+            {
+                "Category": "CREDITS",
+                "Transaction Date": "02/05/2021",
+                "Description": "ACH IN",
+                "Amount": 20.0
+            },
+            {
+                "Category": "CREDITS",
+                "Transaction Date": "02/08/2021",
+                "Description": "ACH IN",
+                "Amount": 400.0
+            },
+            {
+                "Category": "DEBITS",
+                "Transaction Date": "02/19/2021",
+                "Description": "ACH OUT",
+                "Amount": -284.81
+            },
+            {
+                "Category": "DEBITS",
+                "Transaction Date": "02/19/2021",
+                "Description": "ACH OUT - CANCELLED",
+                "Amount": 284.81
+            },
+            {
+                "Category": "DEBITS",
+                "Transaction Date": "02/22/2021",
+                "Description": "ACH OUT",
+                "Amount": -284.81
+            },
+            {
+                "Category": "DEBITS",
+                "Transaction Date": "02/22/2021",
+                "Description": "ACH OUT - CANCELLED",
+                "Amount": 284.81
+            }
+        ]
+    }
+]
