@@ -13,6 +13,8 @@ from llama_cloud_services import LlamaParse
 
 parser = LlamaParse(
     # api_key='LLAMA_CLOUD_API_KEY',  # can also be set in your env as LLAMA_CLOUD_API_KEY
+        # NOTE
+        # llamaParse service uses credits, you get 10000 free a month. Takes about 1 credit a page parsed.
     result_type="text",  # "markdown" and "text" are available
     num_workers=4,  # if multiple files passed, split in `num_workers` API calls
     verbose=True,

@@ -22,7 +22,9 @@ def process_text_with_llm(prompt):
     response = ollama.chat(
         model=LLM_MODEL,
         messages=[{"role": "user", "content": prompt}],
-        options={"seed": 1, "temperature":0}
+        options={"seed": 1, "temperature":0},
+        # auto formats output into json, going to keep messing with this and other parameters
+        format="json"
     )
     #This returns just the message from the LLM nothing else
     return response.message.content
