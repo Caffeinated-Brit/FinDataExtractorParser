@@ -25,16 +25,17 @@ def start_vllm_server():
             '--tensor_parallel_size=' + str(num_gpus),
             '--enforce_eager',
             '--max_num_seqs=80',
-            '--max_model_len=10000',
+            '--max_model_len=11000',
         ]
 
         command3 = [
-            'nohup', 'vllm', 'serve', 'deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B',
+            'nohup', 'vllm', 'serve', 'Qwen/Qwen2.5-7B-Instruct-1M',
             '--gpu_memory_utilization=0.9',
             '--tensor_parallel_size=' + str(num_gpus),
             '--enforce_eager',
             '--max_num_seqs=80',
-            '--max_model_len=10000',
+            '--max_model_len=100',
+            '--quantization=fp4',
         ]
 
         print("Starting vLLM server...")
@@ -65,4 +66,4 @@ def start_vllm_server():
         print(f"Error starting vLLM server: {e}")
         return None
 
-start_vllm_server()
+#start_vllm_server()
