@@ -1,0 +1,186 @@
+Schwab One® Account of
+AccountNumber StatementPeriod
+CAMERONDOWLESS 4298-3317 November1-30,2023
+1of6
+SSELWODNOREMAC
+TSNOSKCAJ
+W5181
+3584-30374
+NIEICNUM
+Account Summary
+EndingAccountValue
+asof11/30
+$5,991.28
+ThisStatement
+BeginningValue $0.00
+Deposits 828.26
+Withdrawals 0.00
+DividendsandInterest 0.02
+TransferofSecurities(In/Out) 4,909.96
+MarketValueChange 253.04
+Fees 0.00
+ManageYourAccount
+EndingValue $5,991.28
+CustomerServiceandTrading:
+CallyourSchwabRepresentative
+1-800-435-4000
+24/7CustomerService Gain or (Loss) Summary
+Forthemostcurrentrecordsonyouraccount Short-Term(ST) Long-Term(LT)
+visit schwab.com/login. Statementsare
+archivedupto10yearsonline. Gain (Loss) Net Gain (Loss) Net
+CommitmenttoTransparency ThisPeriod 0.00 0.00 0.00 0.00 0.00 0.00
+ClientRelationshipSummariesandBestInterest YTD 0.00 0.00 0.00 0.00 0.00 0.00
+disclosuresareatschwab.com/transparency.
+CharlesSchwab&Co.,Inc.MemberSIPC. Unrealized $175.65,
+Valuesmaynotreflectallofyourgains/losses;Schwabhasprovidedaccurategainandlossinformation
+OnlineAssistance whereverpossibleformostinvestments.Costbasismaybeincompleteorunavailableforsomeofyour
+holdingsandmaychangeorbeadjustedincertaincases.PleaselogintoyouraccountatSchwab.comfor
+Visitusonlineat schwab.com
+real-timegain/lossinformation.Statementinformationshouldnotbeusedfortaxpreparation,insteadrefer
+Visit schwab.com/stmt toexplorethefeatures toofficialtaxdocuments.ForadditionalinformationrefertoTermsandConditions.
+andbenefitsofthisstatement.
+11/30-00000-ID2151607-111920Schwab One® Account of
+StatementPeriod
+CAMERONDOWLESS November1-30,2023
+i i
+Asset Allocation Income Summary
+ThisPeriod CurrentAllocation ThisPeriod YTD
+CashandCashInvestments 10.26 <1% FederalTaxStatus Tax-Exempt Taxable Tax-Exempt Taxable
+SchwabOne® 0.00 0.02 0.00 0.02
+ExchangeTradedFunds 5,981.02 100%
+Interest
+Total $5,991.28 100%
+TotalIncome $0.00 $0.02 $0.00 $0.02
+i
+Top Account Holdings This Period
+SYMBOL Market %of
+CUSIP Description Value Accounts
+VOO VANGUARDS&P500ETF 5,871.60 98%
+JEPI JPMORGANEQUITYPREMIUM 109.42 2%
+Cash 10.26 <1%
+A Message About Your Account
+Welcome
+YournewSchwabstatementwasdesignedtohelpyoufindyouraccountandinvestmentinformationquickly.Pleasevisitschwab.com/statementtoviewourHow-toGuide,whichwillwalk
+youthroughthefeaturesonyournewstatement.(1023-3UCK)
+Positions - Summary
+Beginning Transferof Dividends Changein EndingValue Unrealized
++ + + + =
+Valueasof Securities(In/Out) Reinvested CashActivity MarketValue asof11/30 CostBasis Gain/(Loss)
+$0.00 $4,909.96 $0.00 $828.28 $253.04 $5,991.28 $5,805.37 $175.65
+Valuesmaynotreflectallofyourgains/losses;Schwabhasprovidedaccurategainandlossinformationwhereverpossibleformostinvestments.Costbasismaybeincompleteorunavailableforsomeofyourholdings
+andmaychangeorbeadjustedincertaincases.Statementinformationshouldnotbeusedfortaxpreparation,insteadrefertoofficialtaxdocuments.ForadditionalinformationrefertoTermsandConditions.
+2of6Schwab One® Account of
+StatementPeriod
+CAMERONDOWLESS November1-30,2023
+Cash and Cash Investments
+Beginning Ending ChangeinPeriod Pending/Unsettled Interest/ %of
+Type Symbol Description Quantity Price($) Balance($) Balance($) Balance($) Cash($) YieldRate Acct
+Cash 0.00 10.26 10.26 0.00 <1%
+,
+TotalCashandCashInvestments $0.00 $10.26 $10.26 <1%
+Positions - Exchange Traded Funds
+Unrealized Est.Annual %of
+Symbol Description Quantity Price($) Market Value($) CostBasis($) Gain/(Loss)($) Est.Yield Income($) Acct
+JEPI JPMORGANEQUITYPREMIUM, 2.0000 54.71000 109.42 104.69 4.73 7.86% 8.61 2%
+VOO VANGUARDS&P500ETF, 14.0000 419.40000 5,871.60 5,700.68 170.92 1.42% 83.58 98%
+TotalExchangeTradedFunds $5,981.02 $5,805.37 $175.65 $92.19 100%
+EstimatedAnnualIncome("EAI")andEstimatedYield("EY")calculationsareforinformationalpurposesonly.Theactualincomeandyieldmightbelowerorhigherthantheestimatedamounts.EYisbaseduponEAIand
+thecurrentpriceofthesecurityandwillfluctuate.Forcertaintypesofsecurities,thecalculationscouldincludeareturnofprincipalorcapitalgainsinwhichcaseEAIandEYwouldbeoverstated.EYandEAIarenot
+promptlyupdatedtoreflectwhenanissuerhasmissedaregularpaymentorannouncedchangestofuturepayments,inwhichcaseEAIandEYwillcontinuetodisplayatapriorrate.
+Transactions - Summary
+BeginningCash*asof11/01 + Deposits + Withdrawals + Purchases + Sales/Redemptions + Dividends/Interest + Fees = EndingCash*asof11/30
+$0.00 $828.26 $0.00 ($818.02) $0.00 $0.02 $0.00 $10.26
+OtherActivity $4,909.96 Otheractivityincludestransactionswhichdon'taffectthecashbalancesuchasstocktransfers,splits,etc.
+*Cash(includesanycashdebitbalance)heldinyouraccountplusthevalueofanycashinvestedinasweepmoneyfund.
+Transaction Details
+Symbol/ Price/Rate Charges/ Realized
+Date Category Action CUSIP Description Quantity perShare($) Interest($) Amount($) Gain/(Loss)($)
+11/06 Deposit AccountTransfer TDATOCS&COTRANSFER 18.26
+Other AccountTransfer JEPI JPMORGANEQUITYPREMIUM 2.0000 53.7200 107.44
+Activity INCOMEETF
+Other AccountTransfer VOO VANGUARDS&P500ETF 12.0000 400.2100 4,802.52
+Activity
+3of6Schwab One® Account of
+StatementPeriod
+CAMERONDOWLESS November1-30,2023
+Transaction Details
+(continued)
+Symbol/ Price/Rate Charges/ Realized
+Date Category Action CUSIP Description Quantity perShare($) Interest($) Amount($) Gain/(Loss)($)
+11/13 Deposit MoneyLinkTxn TfrELEMENTSFINANCIAL,CAMERON 400.00
+DOWLESS
+11/14 Purchase VOO VANGUARDS&P500ETF 1.0000 400.0700 (400.07)
+11/27 Deposit MoneyLinkTxn TfrELEMENTSFINANCIAL,CAMERON 410.00
+DOWLESS
+11/28 Purchase VOO VANGUARDS&P500ETF 1.0000 417.9497 (417.95)
+11/29 Interest CreditInterest SCHWAB1INT10/30-11/28 0.02
+TotalTransactions $4,920.22 $0.00
+DatecolumnrepresentstheSettlement/Processdateforeachtransaction.
+10/30through11/28:$0.02basedon.450%averageSchwabOne®interestratepaidon2daysinwhichyouraccounthadanaveragedailybalanceof$423.23.
+Terms and Conditions
+GENERAL INFORMATION AND KEY TERMS: This Account statement is furnished solelyby Charles Loss):UnrealizedGainor(Loss)andRealizedGainor(Loss)sections("Gain/LossSection(s)")containa
+Schwab&Co.,Inc.("Schwab")foryourAccountatSchwab("Account").Unlessotherwisedefinedherein, gain or a loss summary of your Account. This information has been provided on this statement at the
+capitalized terms have the same meanings as in your Account Agreement. If you receive any other request of your Advisor, if applicable.This informationisnot asolicitationor arecommendationtobuyor
+communication fromanysourceother thanSchwab whichpurportstorepresentyour holdingsat Schwab sell. Schwab does not provide tax advice and encourages you to consult with your tax
+(including balances held at a Depository Institution) you should verify its content with this statement. professional.Please viewtheCostBasisDisclosureStatementforadditional informationonhow
+Accrued Income: Accrued Incomeis thesum of the total accrued interest and/or accrued dividends on gain (or loss) is calculated and howSchwab reports adjusted cost basis information to the IRS.
+positionsheldinyourAccount,buttheinterestand/ordividendshavenotbeenreceivedintoyourAccount. Interest:FortheSchwabOneInterest,BankSweep,andBankSweepforBenefitPlansfeatures,interestis
+Schwabmakesnorepresentationthattheamountsshown(oranyotheramount)willbereceived.Accrued paidforaperiodthatmaydifferfromtheStatementPeriod.Balancesincludeinterestpaidasindicatedon
+amounts arenotcovered bySIPC accountprotection until actuallyreceivedand heldin theAccount. AIP yourstatementbySchwaboroneormoreofitsProgramBanks.Thesebalancesdonotincludeinterestthat
+(Automatic Investment Plan) Customers: Schwab receives remuneration in connection with certain mayhaveaccruedduringtheStatementPeriodafterinterestispaid.Theinterestpaidmayincludeinterest
+transactions effected through Schwab. If you participate in a systematic investment program through thataccruedinthepriorStatementPeriod.FortheSchwabOneInterestfeature,interestaccruesdailyfrom
+Schwab,theadditionalinformationnormallydetailedonatradeconfirmationwillbeprovideduponrequest. thesecond-to-lastbusinessdayofthepriormonthandispostedonthesecond-to-lastbusinessdayofthe
+AverageDailyBalance:Averagedailycompositeofallcashbalancesthatearninterestandallloansfrom currentmonth.FortheBankSweepandBankSweepforBenefitPlansfeatures,interestaccruesdailyfrom
+Schwabthatarechargedinterest.BankSweep andBankSweepforBenefit PlansFeatures:Schwab the16thdayofthepriormonthandiscredited/postedonthefirstbusinessdayafterthe15thofthecurrent
+actsas youragent andcustodianin establishingandmaintaining yourDeposit Account(s)asafeatureof month.If,onanygivenday,theinterestthatSchwabcalculatesfortheFreeCreditBalancesintheSchwab
+your brokerage Account(s). Deposit accounts held through these bank sweep features constitute direct OneInterestfeatureinyourbrokerageAccountislessthan$.005,youwillnotaccrueanyinterestonthat
+obligations of one or more FDIC insured banks ("Program Banks") that are not obligations of Schwab. day. For balances held at banks affiliated with Schwab in the Bank Sweep and Bank Sweep for Benefit
+FundsswepttoProgramBanksareeligiblefordepositinsurancefromtheFDICuptotheapplicablelimits Plans features, interest will accrueevenif theamount is less than $.005. Margin Account Customers:
+foreachbankforfundsheldinthesameinsurablecapacity.ThebalanceintheDepositAccountscanbe Thisisacombinedstatementofyourmarginaccountandspecialmemorandumaccountmaintainedforyou
+withdrawnonyourorderandtheproceedsreturnedtoyourbrokerageAccountorremittedtoyouasprovided underSection220.5ofRegulationTissuedbytheBoardofGovernorsoftheFederalReserveSystem.The
+in your Account Agreement. For information on FDIC insuranceand its limits, as well as other important permanent record of the separate account as required by Regulation T is available for your inspection.
+disclosures about the bank sweep feature(s) in your Account(s), please refer to the Cash Features Securities purchased on margin are Schwab's collateral for the loan to you. It is important that you fully
+Disclosure Statement available onlineor from a Schwab representative. Cash: Any Free Credit Balance understand the risks involved in trading securities on margin. Theserisks include: 1) You can losemore
+owed byus to you payable upon demand which, although accounted for on our books of record, is not fundsthanyoudepositinthemarginaccount;2)Schwabcanforcethesaleofsecuritiesorotherassetsin
+segregatedandmaybeusedintheconductofthisfirm'sbusiness.DividendReinvestmentCustomers: anyofyouraccount(s)tomaintaintherequiredaccountequitywithoutcontactingyou;3)Youarenotentitled
+Dividend reinvestment transactions were effected by Schwab acting as a principal for its own account, to choose which assets are liquidated nor are you entitled to an extension of time on a margin call; 4)
+except for the reinvestment of Schwab dividends, for which an independent broker-dealer acted as the Schwab can increase its "house" maintenance margin requirements at anytime without advance written
+buying agent. Further information on thesetransactions will befurnished upon written request. Gain (or noticetoyou.MarketPrice:ThemostrecentpriceevaluationavailabletoSchwabonthelastbusinessday
+4of6Schwab One® Account of
+StatementPeriod
+CAMERONDOWLESS November1-30,2023
+Terms and Conditions
+(continued)
+ofthereportperiod,normallythelasttradepriceorbidasof marketclose.Unpricedsecuritiesdenotethat lower. Securities Products and Services: Securities products and services are offered by Charles
+no market evaluation update is currently available. Price evaluations are obtained from outside parties. Schwab & Co., Inc., Member SIPC. Securities products and services, including unswept intraday
+Schwabshallhavenoresponsibilityfortheaccuracyortimelinessofanysuchvaluations.AssetsNotHeld fundsandnetcreditbalancesheldinbrokerageaccountsarenotdepositsorotherobligationsof,
+atSchwabarenotheldinyourAccountorcoveredbytheAccount'sSIPCaccountprotectionandarenot orguaranteedby,anybank,arenotFDICinsured,andaresubjecttoinvestmentriskandmaylose
+otherwiseinSchwab'scustodyandarebeingprovidedasacourtesytoyou.InformationonAssetsNotHeld value.SIPCdoesnotcoverbalancesheldatProgramBanksintheBankSweepandBankSweep
+at Schwab, including but not limited to valuations, is reported solelybased on informationyou provide to forBenefitPlansfeatures.PleaseseeyourCashFeatureDisclosureStatementformoreinformationon
+Schwab. Schwab can neither validate nor certify the existence of Assets Not Held at Schwab or the insurancecoverage.YieldtoMaturity:Thisistheactualaverageannualreturnonanoteifheldtomaturity.
+accuracy, completeness or timeliness of the information about Assets Not Held at Schwab, whether INCASE OF ERRORS OR DISCREPANCIES: If you find an error or discrepancy relating to your
+providedbyyouorotherwise.DescriptionsofAssetsNotHeldatSchwabmaybeabbreviatedortruncated. brokerage activity (other than an electronic fund transfer) you must notify us promptly, but no
+Somesecurities,especiallythinlytradedequitiesintheOTCmarketorforeignmarkets,maynotreportthe laterthan10daysafterthisstatementissentormadeavailabletoyou.Ifthisstatementshowsthat
+most current price and are indicated as Stale Priced. Certain Limited Partnerships (direct participation we have mailed or delivered security certificate(s) that you have not received, notify Schwab
+programs)andunlistedRealEstateInvestmentTrust(REIT)securities,forwhichyoumayseeavalueon immediately.Youmaycallusat800-435-4000.(OutsidetheU.S.,call+1-415-667-8400.)Ifyou'rea
+your monthlyAccount statement that reflects the issuer's appraised estimated value, are not listed on a client of an independent investment advisor, call us at 800-515-2157. Any oral communications
+nationalsecuritiesexchange,andaregenerallyilliquid.Evenifyouareabletosellsuchsecurities,theprice should be re-confirmed in writing to further protect your rights, including rights under the
+received may be less than the per share appraised estimated value provided in the account statement. SecuritiesInvestorProtectionAct(SIPA).Ifyoudonotsonotifyus,youagreethatthestatement
+Market Value:TheMarketValueiscomputed bymultiplyingtheMarketPricebytheQuantityof Shares. activity and Account balance are correct for all purposes with respect to those brokerage
+This is the dollar valueof your present holdings in your specified Schwab Account or a summaryof the transactions. IN CASE OF COMPLAINTS: If you have a complaint regarding your Schwab statement,
+MarketValuesummedovermultipleaccounts.Non-PubliclyTradedSecurities:Allassetsshownonthis products or services, pleasewrite to Client Service & Support at Charles Schwab & Co., Inc., P.O. Box
+statement,otherthancertaindirectinvestmentswhichmaybeheldbyathirdparty,areheldinyourAccount. 982603 El Paso, TX 79998-2603, or call customer service at 800-435-4000. (Outside the U.S., call
+ValuesofcertainNon-PubliclyTradedSecuritiesmaybefurnishedbyathirdpartyasprovidedbySchwab's +1-415-667-8400.) If you're a client of an independent investment advisor, call us at 800-515-2157.
+AccountAgreement.Schwabshallhavenoresponsibilityfortheaccuracyortimelinessofsuchvaluations. AddressChanges:IfyoufailtonotifySchwabinwritingof anychangeofaddressorphonenumber,you
+The Securities Investor Protection Corporation (SIPC) does not cover manylimited partnership interests. maynotreceiveimportantnotificationsaboutyourAccount,andtradingorotherrestrictionsmightbeplaced
+SchwabSweepMoneyFunds:IncludestheprimarymoneymarketfundsintowhichFreeCreditBalances onyourAccount.AdditionalInformation:WearerequiredbylawtoreporttotheInternalRevenueService
+maybeautomaticallyinvestedpursuanttoyourAccountAgreement.Schwaboranaffiliateactsandreceives adjustedcostbasisinformation(if applicable),certainpaymentstoyouandcreditstoyourAccountduring
+compensationastheInvestmentAdvisor,ShareholderServiceAgentandDistributorfortheSchwabSweep thecalendaryear.Retainthisstatementforincometaxpurposes.Afinancialstatementforyourinspectionis
+MoneyFunds.Theamountof suchcompensationisdisclosedintheprospectus.Theyieldinformationfor availableatSchwab'sofficesoracopywillbemailedtoyouuponwrittenrequest.Anythird-partytrademarks
+Schwab SweepMoneyFunds is thecurrent 7-dayyield asof thestatementperiod. Yields vary. If on any appearinghereinarethepropertyoftheirrespectiveowners.CharlesSchwab&Co.,Inc.,CharlesSchwab
+givenday,theaccrueddailydividendforyourselectedsweepmoneyfundascalculatedforyouraccountis Bank, Charles Schwab Premier Bank, and Charles Schwab Trust Bank are separate but affiliated
+lessthan½of 1cent($0.005),youraccountwillnotearnadividendforthatday.Inaddition,ifyoudonot companies and subsidiaries of the Charles Schwab Corporation. © 2023 Charles Schwab & Co., Inc.
+accrueatleast1dailydividendof$0.01duringapayperiod,youwillnotreceiveamoneymarketdividendfor ("Schwab").Allrightsreserved.MemberSIPC.(O1CUSTNC)(0822-20UL)
+thatperiod.SchwabandtheSchwabSweepMoneyFundsinvestmentadvisormaybevoluntarilyreducinga
+portion of a Schwab Sweep Money Fund's expenses. Without these reductions, yields would have been
+5of6Thispageintentionallyleftblank.

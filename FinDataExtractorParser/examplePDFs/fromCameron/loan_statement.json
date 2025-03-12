@@ -1,0 +1,49 @@
+{
+    "DocuSign Envelope ID": "FA9BA6C0-D3CB-450F-9285-CCF18EC5E8DA",
+    "Loan Details": {
+        "Date of Loan": "2/14/2022",
+        "Loan Maturity Date": "2/15/2029",
+        "Borrower's Name and Address": "Cameron V. Dowless, 104 E Falcon Run, Pendleton, IN:46064",
+        "Borrower's Account Number": "541004007690",
+        "Loan Number": "System",
+        "Loan Officer": "System",
+        "Co-Borrower's Name and Address": "1245037",
+        "Co-Borrower's Date of Birth": "6/26/2000",
+        "Annual Percentage Rate": "2.99%",
+        "Finance Charge": "$3,493.17",
+        "Total Amount Financed": "$31,628.55",
+        "Total Sale Price": "$35,920.29",
+        "Payment Schedule": {
+            "Number of Payments": 83,
+            "Amount of Payments": "$427.63",
+            "When Payments Are Due": "3/15/2022"
+        },
+        "Balloon Loan": true,
+        "Balloon Payment Amount": "$3,493.17",
+        "Security Information": {
+            "Serial Number or VIN": "19XFL2H87NE005136",
+            "Motor Vehicles": [
+                {
+                    "Year": 2022,
+                    "Make": "Honda",
+                    "Model": "Civic",
+                    "Body Type": "Sedan"
+                }
+            ],
+            "Account Number": "$",
+            "Amount": "$",
+            "Shares Pledged": "$",
+            "Other Collateral": "$"
+        },
+        "Late Charges": "$28.00",
+        "Required Deposit Balance": "$",
+        "Property Insurance Fee": "$",
+        "Filing Fee": "$",
+        "Vehicle Registration Fee": "$",
+        "Prepayment Refunds and Interest": {
+            "Interest Rate": "2.99%",
+            "Penalty for Early Payment": false
+        },
+        "Returned Payment Fee": "$30.00"
+    }
+}

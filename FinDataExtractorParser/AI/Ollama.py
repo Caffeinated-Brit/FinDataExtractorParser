@@ -14,11 +14,11 @@ import ollama
 
 #LLM_MODEL="llama3.1:8b"
 #LLM_MODEL="qwen2.5:14b"
-# LLM_MODEL="qwen2.5-coder:3b" # for lukas' backpack brick
-LLM_MODEL="qwen2.5-coder:7b" # for spencers spacestation
+LLM_MODEL="qwen2.5-coder:3b" # for lukas' backpack brick
+# LLM_MODEL="qwen2.5-coder:7b" # for spencers spacestation
 
 def process_text_with_llm(prompt):
-    print("Starting Ollama extraction")
+    print("Starting Ollama extraction...")
     response = ollama.chat(
         model=LLM_MODEL,
         messages=[{"role": "user", "content": prompt}],
@@ -30,4 +30,14 @@ def process_text_with_llm(prompt):
     return response.message.content
 
 if __name__ == "__main__":
-    print(process_text_with_llm("give me 3 space facts"))
+    prompt = (
+        f"The following text was extracted from a PDF.\n"
+        "Extract and categorize the data from the text. Return as JSON.\n"
+        # "Ignore any terms and conditions, and only extract valuable financial data.\n"
+        # "Categorize the extracted data into valid JSON format.\n"
+        # "Ensure the JSON is fully valid and does not contain errors.\n"
+        # "Return only the JSON array, with no extra text before or after.\n"
+        f"Text:\n"
+    )
+    print(prompt)
+    print(process_text_with_llm(prompt +""" test text here """))

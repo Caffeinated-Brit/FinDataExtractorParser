@@ -1,0 +1,161 @@
+{
+    "StatementReportingPeriod": "7D Ameritrade 02/01/21 - 02/28/21",
+    "AccountNumber": "234-467410",
+    "PortfolioSummary": {
+        "Cash": {
+            "Value": 284.81,
+            "Change": 0
+        },
+        "InsrdDepAcct": {
+            "Value": 0,
+            "Change": 0
+        },
+        "MoneyMarket": {
+            "Value": 0,
+            "Change": 0
+        },
+        "ShortBalance": {
+            "Value": 0,
+            "Change": 0
+        },
+        "Stocks": {
+            "Value": 125.52,
+            "Change": -49.26,
+            "IncomeYield": 30.6,
+            "Allocation": 30.6
+        },
+        "ShortStocks": {
+            "Value": 0,
+            "Change": 0,
+            "IncomeYield": 0,
+            "Allocation": 0
+        },
+        "FixedIncome": {
+            "Value": 0,
+            "Change": 0,
+            "IncomeYield": 0,
+            "Allocation": 0
+        },
+        "Options": {
+            "Value": 0,
+            "Change": 0,
+            "IncomeYield": 0,
+            "Allocation": 0
+        },
+        "ShortOptions": {
+            "Value": 0,
+            "Change": 0,
+            "IncomeYield": 0,
+            "Allocation": 0
+        },
+        "MutualFunds": {
+            "Value": 0,
+            "Change": 0,
+            "IncomeYield": 0,
+            "Allocation": 0
+        },
+        "Other": {
+            "Value": 69.4,
+            "Change": 0,
+            "IncomeYield": 0,
+            "Allocation": 69.4
+        },
+        "Total": {
+            "Value": 410.33,
+            "Change": 0,
+            "IncomeYield": 0,
+            "Allocation": 0
+        }
+    },
+    "CashActivitySummary": {
+        "IncomeExpenseSummary": {
+            "Income": 0,
+            "CostBasisAsOf": "02/28/21",
+            "SecuritiesPurchased": -527.08,
+            "SecuritiesSold": 341.89,
+            "Interest": 0,
+            "UnrealizedGains": 0,
+            "FundsDeposited": 470.0,
+            "FundsDisbursed": 0,
+            "IncomeExpense": 0
+        },
+        "PerformanceSummary": {
+            "NonReportableYTD": 0,
+            "CurrentYTDReportable": 0,
+            "SecuritiesPurchased": -527.08,
+            "SecuritiesSold": 341.89,
+            "Interest": 0,
+            "UnrealizedGains": 0,
+            "FundsDeposited": 470.0,
+            "FundsDisbursed": 0
+        }
+    },
+    "OnlineCashServicesSummary": {
+        "CREDITS": {
+            "CurrentYearToDate": 470.0
+        },
+        "Subtotal": 470.0,
+        "TOTAL": 470.0
+    },
+    "AccountPositions": {
+        "Symbol/CurrentMarketPurchaseCostAverageUnrealizedEstimated": [
+            {
+                "InvestmentDescription": "Cash",
+                "CUSIP": "",
+                "Quantity": 125.52,
+                "Change": -49.26,
+                "IncomeYield": 30.6,
+                "Allocation": 30.6
+            },
+            {
+                "InvestmentDescription": "Stocks",
+                "CUSIP": "",
+                "Quantity": 125.52,
+                "Change": -49.26,
+                "IncomeYield": 30.6,
+                "Allocation": 30.6
+            }
+        ]
+    },
+    "OnlineCashServicesTransactions": {
+        "CREDITS": [
+            {
+                "Date": "02/03/2021",
+                "TransactionType": "ELECTRONIC FUNDING",
+                "Amount": 50.0
+            },
+            {
+                "Date": "02/05/2021",
+                "TransactionType": "ACH IN",
+                "Amount": 20.0
+            },
+            {
+                "Date": "02/08/2021",
+                "TransactionType": "ACH IN",
+                "Amount": 400.0
+            }
+        ],
+        "DEBITS": [
+            {
+                "Date": "02/19/2021",
+                "TransactionType": "ACH OUT",
+                "Amount": -284.81
+            },
+            {
+                "Date": "02/19/2021",
+                "TransactionType": "ACH OUT",
+                "Amount": -284.81
+            },
+            {
+                "Date": "02/22/2021",
+                "TransactionType": "ACH OUT",
+                "Amount": -284.81
+            },
+            {
+                "Date": "02/22/2021",
+                "TransactionType": "ACH OUT",
+                "Amount": -284.81
+            }
+        ]
+    }
+}

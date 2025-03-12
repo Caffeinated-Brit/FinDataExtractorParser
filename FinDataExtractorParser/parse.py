@@ -25,6 +25,15 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
     # Check that parsing method is valid
     if selected_parser in parser_methods:
         extracted_text = parser_methods[selected_parser](input_filepath)
+        # check if pdf is image based, could implement more complex way of checking with
+        if extracted_text == "":
+            print("No text found in pdf using \"" + selected_parser + "\" method. Attempting OCR workaround.")
+            extracted_text = parser_methods["pyTesseract"](input_filepath)
+            if extracted_text == "":
+                print("No text found in pdf using OCR workaround. Exiting.")
+                return None
+
+            print("Applied OCR workaround, continuing...")
     else:
         raise ValueError(f"Unknown parser method: {selected_parser}")
 
@@ -50,15 +59,14 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
     print("\nExtracted text:", "\n", extracted_text)
 
     prompt = (
-        "The following text was extracted from a PDF.\n"
-        "Ignore any terms and conditions, and only extract valuable financial data.\n"
-        "Categorize the extracted data into valid JSON format.\n"
-        "Ensure the JSON is fully valid and does not contain errors.\n"
-        "Return only the JSON array, with no extra text before or after.\n"
-        f"Text:\n{extracted_text}\n"
+        f"The following text was extracted from a PDF named \"{input_filepath}\".\n"
+        "Extract and categorize the data from the text. Return as JSON.\n"
+        # "Ignore any terms and conditions, and only extract valuable financial data.\n"
+        # "Categorize the extracted data into valid JSON format.\n"
+        # "Ensure the JSON is fully valid and does not contain errors.\n"
+        # "Return only the JSON array, with no extra text before or after.\n"
+        f"Text:\n{extracted_text}"
     )
-
-    print("\nPrompting AI...")
 
     # Pick AI method based on config
     ai_methods = {
@@ -91,7 +99,7 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
     return structured_data
 
 if __name__ == "__main__":
-    fullParse("examplePDFs/fromCameron/2021_2_Statement_removed.pdf")
+    fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/schwab.pdf")
 
 # parses well
 # 2021_2_Statement_removed
