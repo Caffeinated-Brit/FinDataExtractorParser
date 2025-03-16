@@ -1,3 +1,4 @@
+import sys
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
@@ -5,14 +6,11 @@ import requests
 from vllm import LLM, SamplingParams
 import os
 import torch
+from FinDataExtractorParser.AI.VllmServer import start_vllm_server
 os.environ ['VLLM_USE_V1'] ='1'
 
-
-from FinDataExtractorParser.AI.VllmServer import start_vllm_server
-
-llm_server_thread = threading.Thread(target=start_vllm_server)
-llm_server_thread.start()
-time.sleep(60)
+shutdown_event = threading.Event()
+llm_server_thread = threading.Thread(target=start_vllm_server, args=(shutdown_event,))
 
 
 def process_text_with_llm(prompt, server_url="http://localhost:8000/v1/chat/completions"):
@@ -25,7 +23,7 @@ def process_text_with_llm(prompt, server_url="http://localhost:8000/v1/chat/comp
             "max_tokens": 5000,  # Increase for longer output
             #"min_tokens": 900,
             #"top_k": 20,
-            "temperature": 0.1,  # Adjust for randomness
+            "temperature": 0.1,
             "top_p": 0.1,
             #"n": 1,
             #"stop": ["User:", "\n\n"]
@@ -37,36 +35,46 @@ def process_text_with_llm(prompt, server_url="http://localhost:8000/v1/chat/comp
 
     generated_tokens = response.json().get("usage", {}).get("completion_tokens", 0)
 
-    tokens_per_second = generated_tokens / elapsed_time
 
-    print(f"Generated tokens per second: {tokens_per_second}")
-    #return "bees"
+    #print(f"Generated tokens per second: {tokens_per_second}")
+    #print(response.json())
     content = response.json()['choices'][0]['message']['content']
-    #content = response.json()["choices"][0]["message"]
-    #print(content)
-    return content
+    return content, elapsed_time, generated_tokens
 
 
-def run_parallel_requests(num_requests):
+def run_parallel_requests(num_requests, prompt):
+    results = []
     with ThreadPoolExecutor(max_workers=num_requests) as executor:
         futures = []
         for i in range(num_requests):
-            futures.append(
-                executor.submit(process_text_with_llm, "Give me an essay about bees with at least 10 talking points."))
+            futures.append(executor.submit(process_text_with_llm, prompt))
 
-        # Wait for all futures to complete
         for future in futures:
             print(future.result())
             print("-" * 50)
+            results.append(future.result())
+
+    return results
 
 
-def run_benchmarking(num_requests):
+def run_benchmarking(num_requests, prompt):
     start_time = time.time()
     print(f"Running {num_requests} parallel requests:")
-    run_parallel_requests(num_requests)
+    results = run_parallel_requests(num_requests, prompt)
     end_time = time.time()
+    total_time = end_time - start_time
     print(f"Total time for {num_requests} requests: {end_time - start_time} seconds")
+    stop_llm_server()
+    return results, total_time
 
+def stop_llm_server():
+    """Trigger the shutdown event to stop the server."""
+    print("Triggering server shutdown...")
+    shutdown_event.set()  # Set the shutdown event to stop the server
+    llm_server_thread.join()
 
+def start_llm_server():
+    llm_server_thread.start()
+    time.sleep(80) # Allow time for the server to start, this could be handled better and may cause crashes if it takes longer to start
 
-
+start_llm_server()
