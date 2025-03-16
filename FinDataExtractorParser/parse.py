@@ -70,7 +70,7 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
 
     # Check that AI method is valid
     if selected_ai in ai_methods:
-        structured_data = ai_methods[selected_ai](prompt)
+        structured_data, elapsed_time, generated_tokens = ai_methods[selected_ai](prompt)
     else:
         raise ValueError(f"Unknown AI method: {selected_ai}")
 
@@ -78,6 +78,7 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
 
     try:
         structured_data = extractJSON.fix_truncated_json(structured_data)
+        print("\nStructured data:", "\n", structured_data)
     except json.JSONDecodeError as e:
         print("Error parsing JSON:", e)
         return None

@@ -18,13 +18,13 @@ def process_text_with_llm(prompt, server_url="http://localhost:8000/v1/chat/comp
     response = requests.post(
         server_url,
         json={"model": "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int8",
-            "messages": [{"role": "system", "content": "You are a helpful financial pdf parsing assistant."}, {"role": "user", "content": prompt}],
-            #"messages": [{"role": "user", "content": prompt}],
+            #"messages": [{"role": "system", "content": "You are a helpful financial pdf parsing assistant. You respond with only json."}, {"role": "user", "content": prompt}],
+            "messages": [{"role": "user", "content": prompt}],
             "max_tokens": 5000,  # Increase for longer output
             #"min_tokens": 900,
             #"top_k": 20,
             "temperature": 0.1,
-            "top_p": 0.1,
+            #"top_p": 0.1,
             #"n": 1,
             #"stop": ["User:", "\n\n"]
             }
@@ -37,8 +37,9 @@ def process_text_with_llm(prompt, server_url="http://localhost:8000/v1/chat/comp
 
 
     #print(f"Generated tokens per second: {tokens_per_second}")
-    #print(response.json())
+    print(response.json())
     content = response.json()['choices'][0]['message']['content']
+    print(response.json()['choices'][0])
     return content, elapsed_time, generated_tokens
 
 
@@ -75,6 +76,6 @@ def stop_llm_server():
 
 def start_llm_server():
     llm_server_thread.start()
-    time.sleep(80) # Allow time for the server to start, this could be handled better and may cause crashes if it takes longer to start
+    time.sleep(60) # Allow time for the server to start, this could be handled better and may cause crashes if it takes longer to start
 
 start_llm_server()
