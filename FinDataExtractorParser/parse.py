@@ -3,7 +3,7 @@ import chardet  # pip install chardet | GNU Lesser General Public License
 import configparser
 
 import extractJSON
-from AI import Ollama
+from AI import Vllm
 # gpt
 # from AI import llama # Phasing out llama bc it's too slow and lowkey trash
 from PDFparsers import pdfPlumber, pyTesseract, linuxTest
@@ -50,26 +50,27 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
     print("\nExtracted text:", "\n", extracted_text)
 
     prompt = (
-        "The following text was extracted from a PDF.\n"
-        "Ignore any terms and conditions, and only extract valuable financial data.\n"
-        "Categorize the extracted data into valid JSON format.\n"
-        "Ensure the JSON is fully valid and does not contain errors.\n"
-        "Return only the JSON array, with no extra text before or after.\n"
-        f"Text:\n{extracted_text}\n"
+        "The following text was extracted from a PDF."
+        "Ignore any terms and conditions, and only extract valuable financial data."
+        "Categorize the extracted data into valid JSON format."
+        "Ensure the JSON is fully valid and does not contain errors."
+        "Return only the JSON array, with no extra text before or after."
+        f"Text:{extracted_text}"
     )
 
     print("\nPrompting AI...")
 
     # Pick AI method based on config
     ai_methods = {
-        "Ollama": Ollama.process_text_with_llm,
+        #"Ollama": Ollama.process_text_with_llm,
+        "vllm": Vllm.process_text_with_llm,
         # "llama": llama.process_text_with_llm,
         # "gpt": gpt.extract_structured_data
     }
 
     # Check that AI method is valid
     if selected_ai in ai_methods:
-        structured_data = ai_methods[selected_ai](prompt)
+        structured_data, elapsed_time, generated_tokens = ai_methods[selected_ai](prompt)
     else:
         raise ValueError(f"Unknown AI method: {selected_ai}")
 
@@ -77,6 +78,7 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
 
     try:
         structured_data = extractJSON.fix_truncated_json(structured_data)
+        print("\nStructured data:", "\n", structured_data)
     except json.JSONDecodeError as e:
         print("Error parsing JSON:", e)
         return None
