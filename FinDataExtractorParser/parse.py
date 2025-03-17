@@ -71,6 +71,7 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
     # Pick AI method based on config
     ai_methods = {
         "Ollama": Ollama.process_text_with_llm,
+        "Ollama/Schema": Ollama.process_text_with_llm_and_schema,
         # "llama": llama.process_text_with_llm,
         # "gpt": gpt.extract_structured_data
     }
@@ -99,7 +100,7 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
     return structured_data
 
 if __name__ == "__main__":
-    fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/schwab.pdf")
+    fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/loan_statement.pdf")
 
 # parses well
 # 2021_2_Statement_removed
