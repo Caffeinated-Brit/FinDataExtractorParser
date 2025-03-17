@@ -3,6 +3,7 @@ import numpy as np
 import json
 from collections import defaultdict
 from difflib import SequenceMatcher
+import time
 
 from FinDataExtractorParser.parse import fullParse
 
@@ -87,7 +88,7 @@ def compare_json_outputs(json_outputs):
 
     return consistency_scores, overall_consistency
 
-
+start_time = time.time()
 # Initialize json_outputs
 json_outputs = []
 
@@ -107,10 +108,13 @@ config.read("config.ini")
 selected_parser = config.get("Parser", "method", fallback="pdfPlumber")
 selected_ai = config.get("AI", "method", fallback="Ollama")
 
+endTime = time.time() - start_time
+
 output_data = {
     "Test_Data": {
         "File_Path": FILE_PATH,
         "Number_of_Runs": TEST_AMOUNT,
+        "Time_Elapsed": endTime,
         "Parser_Used": selected_parser,
         "AI_Used": selected_ai,
         "Disclaimer": "This only checks the consistency of the JSON output. It does not check the accuracy of the data."
