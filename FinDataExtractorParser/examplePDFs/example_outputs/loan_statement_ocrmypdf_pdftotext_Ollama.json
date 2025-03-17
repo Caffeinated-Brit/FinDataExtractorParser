@@ -1,0 +1,82 @@
+{
+  "DocuSign Envelope ID": "FA9SBA6C0-D3CB-450F-9285-CCF18EC5E8DA",
+  "Borrower's Name and Address": {
+    "First Name": "CAMERON V.",
+    "Last Name": "DOWLESS",
+    "Address": "104 E Falcon Run",
+    "City": "Pendleton",
+    "State": "IN",
+    "Zip Code": "46064",
+    "Phone Number": "(800) 621-2105"
+  },
+  "Co-Borrower's Name and Address": {
+    "First Name": "CO-BORROWER'S NAME AND ADDRESS",
+    "Last Name": "",
+    "Address": "1245037",
+    "City": "",
+    "State": "",
+    "Zip Code": "",
+    "Phone Number": ""
+  },
+  "Loan Details": {
+    "Loan Amount Financed": "$31,628.55",
+    "Loan Number": "541004007690",
+    "Loan Officer": "System",
+    "Loan Maturity Date": "2/15/2029",
+    "Annual Interest Rate": "2.99%",
+    "Number of Payments": 83,
+    "Amount per Payment": "$427.63",
+    "Payment Due Dates": [
+      {
+        "Date": "3/15/2022"
+      },
+      {
+        "Date": "2/15/2029"
+      }
+    ],
+    "Security Interest": true,
+    "Collateral": [
+      {
+        "Year": 2022,
+        "Make": "HONDA",
+        "Model": "CIVIC",
+        "Body Type": "",
+        "Serial Number or VIN": "19XFL2H87NE005136"
+      }
+    ],
+    "Late Charges": "$28.00",
+    "Required Deposit Balance": "$0.00",
+    "Property Insurance Fee": "$0.00",
+    "Filing Fee": "$0.00",
+    "Prepayment Penalty": false,
+    "Interest Rate on Loan": "2.99%",
+    "Amount Paid to Others on Your Behalf": [
+      {
+        "Recipient": "GAP",
+        "Amount": "$399.00"
+      },
+      {
+        "Recipient": "MBP",
+        "Amount": "$1,440.00"
+      },
+      {
+        "Recipient": "DPW",
+        "Amount": "$677.00"
+      },
+      {
+        "Recipient": "VPP",
+        "Amount": "$29,112.55"
+      }
+    ],
+    "Security Information": [
+      {
+        "Year": 2022,
+        "Make": "HONDA",
+        "Model": "CIVIC",
+        "Body Type": "",
+        "Serial Number or VIN": "19XFL2H87NE005136"
+      }
+    ],
+    "Returned Payment Fee": "$30.00"
+  }
+}

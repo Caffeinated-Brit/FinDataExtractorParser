@@ -1,0 +1,29 @@
+{
+    "DocuSign Envelope ID": "FA9BA6C0-D3CB-450F-9285-CCF18EC5E8DA",
+    "Loan Details": {
+        "Date of Loan": "2/14/2022",
+        "Loan Maturity Date": "2/15/2029",
+        "Borrower's Name and Address": "Cameron V. Dowless, 104 E Falcon Run, Pendleton, IN:46064",
+        "Loan Number": "541004007690 System",
+        "Loan Officer": "System"
+    },
+    "Borrower's Account Information": {
+        "Account Number": "1245037",
+        "Date of Birth": "6/26/2000"
+    },
+    "Loan Terms": {
+        "Annual Percentage Rate (APR)": "2.99%",
+        "Amount Financed": "$3,493.17",
+        "Total of Payments": "$31,628.55",
+        "Total Sale Price": "$35,920.29"
+    },
+    "Payment Schedule": {
+        "Number of Payments": "83",
+        "Amount of Payments per Payment": "$427.63",
+        "Due Date for First Payment": "3/15/2022",
+        "Due Date for Last Payment": "2/15/2029"
+    },
+    "Security Information": {
+        "Collateral Description": "Shares and deposits in the credit union, as well as the collateral described below. Collateral for other loans with us will also secure this loan, except for your home and household goods."
+    }
+}

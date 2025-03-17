@@ -1,0 +1,56 @@
+{
+    "DocuSign Envelope ID": "FA9SBA6C0-D3CB-450F-9285-CCF18EC5E8DA",
+    "Borrower's Name and Address": "CAMERON V. DOWLESS, 104 E Falcon Run, Pendleton, IN 46064",
+    "Loan Number": "541004007690",
+    "Loan Officer": "System",
+    "Borrower's Account Number": "1245037",
+    "Co-Borrower's Name and Address": "",
+    "Co-Borrower's Date of Birth": "",
+    "Annual Percentage Rate": "2.99%",
+    "Finance Charge": "$3,493.17",
+    "Total Amount Financed": "$31,628.55",
+    "Total Sale Price": "$35,920.29",
+    "Number of Payments": "83",
+    "Amount of Payments When Payments Are Due": [
+        {
+            "Payment Number": "83",
+            "Due Date": "3/15/2022"
+        },
+        {
+            "Payment Number": "1",
+            "Due Date": "2/15/2029"
+        }
+    ],
+    "Security": "Shares and deposits in the credit union, as well as the collateral described below. Collateral for other loans with us will also secure this loan, except for your home and household goods.",
+    "Late Charges": "$28.00",
+    "Required Deposit Balance": "",
+    "Annual Property Insurance": "",
+    "Filing Fee": "",
+    "Prepayment": "No penalty if paid off early",
+    "Interest Rate": "2.99%",
+    "Itemization of Amount Financed": {
+        "Total Amount Financed": "$31,628.55",
+        "Amount Given to You Directly": "$0.00",
+        "Amount Paid on Your Account": "$0.00",
+        "Prepaid Finance Charge": "$0.00"
+    },
+    "Amount Paid to Others on Your Behalf": {
+        "GAP": "$399.00",
+        "MBP": "$1,440.00",
+        "UPS Fee": "",
+        "DPW": "$677.00",
+        "VPP": "$29,112.55",
+        "BECK TOYOTA": ""
+    },
+    "Security Information": {
+        "Year": "2022",
+        "Make": "HONDA",
+        "Model": "CIVIC",
+        "Body Type": "19XFL2H87NE005136",
+        "Serial Number or VIN": "19XFL2H87NE005136"
+    },
+    "Collateral": {
+        "Shares Account Number": "",
+        "Amount": ""
+    }
+}

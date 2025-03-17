@@ -19,10 +19,12 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
     parser_methods = {
         "pdfPlumber": pdfPlumber.extract_text_from_pdf,
         "pyTesseract": pyTesseract.extract_content,
-        "linuxTest": linuxTest.linuxParse
+        "linuxTest": linuxTest.linuxParse,
+        "pytesseract/Images": pyTesseract.convert_pdf_to_images_binary
     }
 
     # Check that parsing method is valid
+    print(f"Selected parser method: {selected_parser}")
     if selected_parser in parser_methods:
         extracted_text = parser_methods[selected_parser](input_filepath)
         # check if pdf is image based, could implement more complex way of checking with
@@ -37,30 +39,44 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
     else:
         raise ValueError(f"Unknown parser method: {selected_parser}")
 
+    # print("extracted text" + )
+
     final_file_path = input_filepath.replace(".pdf", ".txt")
 
-    if selected_parser != "linuxTest":  # Writes to file manually for non-linux parsing methods
-        with open(final_file_path, "w") as file:
-            file.write(extracted_text)
+    # skips some processes as Ollama/Vision uses images directly
+    if selected_parser != "pytesseract/Images":
+        if selected_parser != "linuxTest":  # Writes to file manually for non-linux parsing methods
+            with open(final_file_path, "w") as file:
+                file.write(extracted_text)
 
-    print("\nDetecting file encoding...")
+        print("\nDetecting file encoding...")
 
-    # Detect encoding
-    with open(final_file_path, "rb") as file:
-        raw_data = file.read()
-        detected_encoding = chardet.detect(raw_data)['encoding']
+        # Detect encoding
+        with open(final_file_path, "rb") as file:
+            raw_data = file.read()
+            detected_encoding = chardet.detect(raw_data)['encoding']
 
-    print(f"Detected Encoding: {detected_encoding}")
+        print(f"Detected Encoding: {detected_encoding}")
 
-    # Read file using the detected encoding (for input text files containing ASCII, UTF-8, or other encodings)
-    with open(final_file_path, "r", encoding=detected_encoding, errors="replace") as file:
-        extracted_text = file.read()
+        # Read file using the detected encoding (for input text files containing ASCII, UTF-8, or other encodings)
+        with open(final_file_path, "r", encoding=detected_encoding, errors="replace") as file:
+            extracted_text = file.read()
 
-    print("\nExtracted text:", "\n", extracted_text)
+        print("\nExtracted text:", "\n", extracted_text)
+
+    # prompt = (
+    #     f"The following text was extracted from a PDF named \"{input_filepath}\".\n"
+    #     "Extract and categorize the data from the text. Return as JSON.\n"
+    #     # "Ignore any terms and conditions, and only extract valuable financial data.\n"
+    #     # "Categorize the extracted data into valid JSON format.\n"
+    #     # "Ensure the JSON is fully valid and does not contain errors.\n"
+    #     # "Return only the JSON array, with no extra text before or after.\n"
+    #     f"Text:\n{extracted_text}"
+    # )
 
     prompt = (
-        f"The following text was extracted from a PDF named \"{input_filepath}\".\n"
-        "Extract and categorize the data from the text. Return as JSON.\n"
+        f"The following images were extracted from a PDF named \"{input_filepath}\".\n"
+        "Extract and categorize the data from the text.\n"
         # "Ignore any terms and conditions, and only extract valuable financial data.\n"
         # "Categorize the extracted data into valid JSON format.\n"
         # "Ensure the JSON is fully valid and does not contain errors.\n"
@@ -71,13 +87,19 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
     # Pick AI method based on config
     ai_methods = {
         "Ollama": Ollama.process_text_with_llm,
+        "Ollama/Schema": Ollama.process_text_with_llm_and_schema,
+        "Ollama/Vision": Ollama.process_text_with_llm_vision,
         # "llama": llama.process_text_with_llm,
         # "gpt": gpt.extract_structured_data
     }
 
     # Check that AI method is valid
     if selected_ai in ai_methods:
-        structured_data = ai_methods[selected_ai](prompt)
+        if selected_parser == "pytesseract/Images":
+            # user_images = pyTesseract.convert_pdf_to_images(input_filepath)
+            structured_data = ai_methods[selected_ai](prompt, extracted_text)
+        else:
+            structured_data = ai_methods[selected_ai](prompt)
     else:
         raise ValueError(f"Unknown AI method: {selected_ai}")
 
@@ -99,7 +121,7 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
     return structured_data
 
 if __name__ == "__main__":
-    fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/schwab.pdf")
+    fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf")
 
 # parses well
 # 2021_2_Statement_removed

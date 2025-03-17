@@ -14,6 +14,6 @@ doc = pdf_reader.read_pdf(pdf_url)
 # print(doc.to_text())
 # print(doc.json)
 
-with open("sherpaOutput.txt", "w") as f:
+with open("../examplePDFs/example_outputs/sherpaOutput.txt", "w") as f:
     f.write(doc.to_text() + "\n")
     print("output to sherpaOutput.txt")

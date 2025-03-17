@@ -1,0 +1,22 @@
+{
+    "data": {
+        "account_type": "Cash Account",
+        "program_banks": [
+            "Bank A",
+            "Bank B"
+        ],
+        "interest_rate": "Variable",
+        "annual_percentage_yield": "Weighted average of APY on aggregate deposit balances",
+        "fdic_insurance_coverage": "$250,000 per qualified customer account per banking institution",
+        "tax_consequences": "Cash credits may constitute taxable income and you are responsible for all applicable federal, state, and local taxes and fees related to the acceptance of such credits. You should confer with your personal tax advisor regarding the tax consequences of your receipt of cash credits.",
+        "investment_management_services": "Provided by Wealthfront Advisers LLC",
+        "sweeping_to_program_banks": "Funds are swept to one or more banks where it earns a variable rate of interest and is eligible for FDIC insurance",
+        "account_statement_use_for_tax_reporting": "Not suitable for tax reporting purposes",
+        "annual_tax_report": "Form 1099 issued at the end of each calendar year for annual tax reporting",
+        "money_market_fund_info": "An investment in a Money Market Fund is neither insured nor guaranteed by the Federal Deposit Insurance Corporation (FDIC) or any other government agency. There is no guarantee that the Money Market Fund will be able to maintain its value.",
+        "cash_balance_info": "The amount of funds you can withdraw, not segregated and may be used by Wealthfront Brokerage in its business",
+        "account_statement_availability": "Within 10 business days after statement availability",
+        "oral_communications_protection": "Promptly report any inaccuracy or discrepancy in your account within 10 business days after statement availability and follow up in writing any oral communications by calling 844-995-8437 or emailing support@wealthfront.com. Any oral communications should be re-confirmed in writing to further protect your rights, including your rights under the Securities Investor Protection Act (SIPA). View Wealthfront Brokerage LLC\u2019s most recent Statement of Financial Condition https://www.wealthfront.com/static/documents/WB_Financial_Statement.pdf.",
+        "ownership_info": "Wealthfront Advisers, Wealthfront Brokerage and Wealthfront are wholly owned subsidiaries of Wealthfront Corporation."
+    }
+}

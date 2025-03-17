@@ -3,6 +3,30 @@ from io import BytesIO
 import pypdfium2 as pdfium
 from PIL import Image
 
+def convert_pdf_to_images_binary(file_path, scale=300/72):
+    # Open the PDF file
+    pdf_file = pdfium.PdfDocument(file_path)
+    page_indices = [i for i in range(len(pdf_file))]  # List of page indices
+
+    # Render the PDF pages into images
+    renderer = pdf_file.render(
+        pdfium.PdfBitmap.to_pil,
+        page_indices=page_indices,
+        scale=scale,
+    )
+
+    # List to store the raw binary data of images
+    image_binary_data = []
+
+    # Process each image and store it as raw binary data
+    for i, image in zip(page_indices, renderer):
+        image_byte_array = BytesIO()
+        image.save(image_byte_array, format='jpeg', optimize=True)
+        image_byte_array = image_byte_array.getvalue()  # Get the raw binary data of the image
+        image_binary_data.append(image_byte_array)
+
+    return image_binary_data
+
 # Convert PDF file into images with pypdfium2
 def convert_pdf_to_images(file_path, scale=300/72):
     # print("converting pdf to images")

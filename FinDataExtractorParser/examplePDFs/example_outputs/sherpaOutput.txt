@@ -1,0 +1,130 @@
+CAMERON DOWLESS 1815 W JACKSON ST MUNCIE, IN 47303-4853
+Investment
+ | Cash | $284.81 | $ - | $284.81 | - | $ - | -
+ | --- | --- | --- | --- | --- | --- | ---
+ | Insrd Dep Acct (IDA) | - | - | - | - | - | -
+ | Money Market | - | - | - | - | - | -
+ | Short Balance | - | - | - | - | - | -
+ | Stocks | 125.52 | - | 125.52 | - | - | -
+ | Short Stocks | - | - | - | - | - | -
+ | Fixed Income | - | - | - | - | - | -
+ | Options | - | - | - | - | - | -
+ | Short Options | - | - | - | - | - | -
+ | Mutual Funds | - | - | - | - | - | -
+ | Other | - | - | - | - | - | -
+ | Total | $410.33 | $ 0.00 | $410.33 | - | $ 0.00 | 0.0%
+
+Current Value Prior Value
+Current Value Prior Value
+Income & Expense Summary
+Estimated Income Estimated Yield Portfolio Allocation
+Stocks 30.6%
+Cash 69.4%
+Estimated Income Estimated Yield Portfolio Allocation
+Stocks 30.6%
+Cash 69.4%
+Stocks 30.6%
+Cash 69.4%
+Performance Summary
+YTD
+ | Cost Basis As Of - 02/28/21 ** | $174.78
+ | Unrealized Gains | -
+ | Unrealized Losses | (49.26)
+ | Funds Deposited/(Disbursed) YTD | 470.00
+ | Income/(Expense)YTD | -
+ | Securities Received/(Delivered)YTD | 0.00
+
+*To view realized gains and losses for your account, login at www.tdameritrade.com and visit My Account > Cost Basis.
+YTD
+ | Cost Basis As Of - 02/28/21 ** | $174.78
+ | Unrealized Gains | -
+ | Unrealized Losses | (49.26)
+ | Funds Deposited/(Disbursed) YTD | 470.00
+ | Income/(Expense)YTD | -
+ | Securities Received/(Delivered)YTD | 0.00
+
+*To view realized gains and losses for your account, login at www.tdameritrade.com and visit My Account > Cost Basis.
+Cash Activity Summary
+ |  | Current | YTD
+ | --- | --- | ---
+ | Opening Balance | $ 0.00 | $ -
+ | Securities Purchased | (527.08) | (527.08)
+ | Securities Sold | 341.89 | 341.89
+ | Funds Deposited | 470.00 | 470.00
+ | Funds Disbursed | - | -
+ | Income | - | -
+ | Expense | - | -
+ | Other | - | -
+ | Closing Balance | $284.81 | $284.81
+
+ |  | Reportable | Non Reportable
+ | --- | --- | ---
+ | Income Dividends | $ - | $ - | $ -
+ | --- | --- | --- | ---
+ | Interest | - | - | -
+ | Other | - | - | -
+ | Expense Interest | - | - | -
+ | Fees | - | - | -
+ | Other | - | - | -
+ | Net | $0.00 | $0.00 | $0.00
+
+ |  |  | Statement for Account | # 234-467410 |  |  |  |  |  | 
+ | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+ | 02/01/21 - 02/28/21
+ | Online Cash Services Summary
+ | Description |  |  | Current |  |  |  |  |  | Year To Date
+ | CREDITS
+ |  |  |  | $ | $Electronic Transfer 470.00 | $Electronic Transfer 470.00 | $Electronic Transfer 470.00 | $Electronic Transfer 470.00 | $Electronic Transfer 470.00 | 470.00
+ | Subtotal |  |  | 470.00 |  |  |  |  |  | 470.00
+ | TOTAL |  |  | 470.00 |  |  |  |  |  | 470.00
+ | Account Positions
+ |  | Symbol/ | Current | Market | Purchase |  | Cost | Average | Unrealized | Estimated
+ | Investment Description | CUSIP | Quantity | Price Value | Date |  | Basis | Cost | Gain(Loss) | Income Yield
+ | Stocks - Cash
+ |  |  | $ | $ |  | $ |  | $ | $ | $PALANTIR TECH INC
+ | COM CL A
+ | PLTR | 4 | 23.90 | 95.60 | 02/05/21 | 134.84 | 33.71 | (39.24) | - | -
+ | ZOMEDICA CORP COM | ZOM | 16 | 1.87 29.92 | 02/08/21 |  | 39.94 | 2.50 | (10.02) | - -
+ | Total Stocks |  |  | $125.52 |  | $174.78 |  |  | $(49.26) | $0.00 0.0%
+ | Total Cash Account |  |  | $125.52 |  | $174.78 |  |  | $(49.26) | $0.00 0.0%
+
+Online Cash Services Transaction Detail
+ | Category | Transaction Date | Description | Amount
+ | --- | --- | --- | ---
+ | CREDITS
+ | 02/03/2021 | ELECTRONIC FUNDING | $Electronic Transfer | 50.00
+ |  | 02/05/2021 | ACH IN | 20.00
+ |  | 02/08/2021 | ACH IN | 400.00
+
+Subtotal 470.00
+DEBITS
+ | 02/19/2021 | ACH OUT | $Electronic Transfer (284.81)
+ | --- | --- | ---
+ | 02/19/2021 | ACH OUT - CANCELLED | 284.81
+ | 02/22/2021 | ACH OUT | (284.81)
+ | 02/22/2021 | ACH OUT - CANCELLED | 284.81
+
+ | Subtotal | 0.00
+ | TOTAL | 470.00
+
+Online Cash Services Transaction Detail
+ | Category | Transaction Date | Description | Amount
+ | --- | --- | --- | ---
+ | CREDITS
+ | 02/03/2021 | ELECTRONIC FUNDING | $Electronic Transfer | 50.00
+ |  | 02/05/2021 | ACH IN | 20.00
+ |  | 02/08/2021 | ACH IN | 400.00
+
+Subtotal 470.00
+Subtotal 470.00
+DEBITS
+ | 02/19/2021 | ACH OUT | $Electronic Transfer (284.81)
+ | --- | --- | ---
+ | 02/19/2021 | ACH OUT - CANCELLED | 284.81
+ | 02/22/2021 | ACH OUT | (284.81)
+ | 02/22/2021 | ACH OUT - CANCELLED | 284.81
+
+ | Subtotal | 0.00
+ | TOTAL | 470.00
+
+

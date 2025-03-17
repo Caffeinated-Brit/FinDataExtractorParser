@@ -4,12 +4,14 @@
 
 import nest_asyncio
 from dotenv import load_dotenv
-load_dotenv()
+from llama_cloud_services import LlamaParse
 
+import nltk
+# nltk.download('punkt')
 
 nest_asyncio.apply()
 
-from llama_cloud_services import LlamaParse
+load_dotenv()
 
 parser = LlamaParse(
     # api_key='LLAMA_CLOUD_API_KEY',  # can also be set in your env as LLAMA_CLOUD_API_KEY
@@ -40,7 +42,7 @@ with open(f"./{file_name}", "rb") as f:
 #     # must provide extra_info with file_name key with passing file bytes
 #     documents = parser.load_data(file_bytes, extra_info=extra_info)
 
-with open("llamaParseOutput.txt", "w") as f:
+with open("../examplePDFs/example_outputs/2021_2_Statement_removed_llamaParse.txt", "w") as f:
     for doc in documents:
         f.write(doc.text + "\n")
-    print("output to llamaParseOutput.txt")
+    print("output to 2021_2_Statement_removed_llamaParse.txt")
