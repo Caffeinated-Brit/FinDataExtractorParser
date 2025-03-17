@@ -1,6 +1,7 @@
 import json
 import chardet  # pip install chardet
 import configparser
+import time
 
 import extractJSON
 from AI import Ollama
@@ -14,7 +15,8 @@ config.read("config.ini")
 selected_parser = config.get("Parser", "method", fallback="pdfPlumber")
 selected_ai = config.get("AI", "method", fallback="Ollama")
 
-def fullParse(input_filepath):  # New parsing method allowing for easier local testing
+def fullParse(input_filepath):
+    start_time = time.time()
     # Pick parsing method based on config
     parser_methods = {
         "pdfPlumber": pdfPlumber.extract_text_from_pdf,
@@ -36,6 +38,8 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
             print("Applied OCR workaround, continuing...")
     else:
         raise ValueError(f"Unknown parser method: {selected_parser}")
+
+    print("--- Parser time: %s seconds ---" % (time.time() - start_time))
 
     final_file_path = input_filepath.replace(".pdf", ".txt")
 
@@ -76,6 +80,7 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
         # "gpt": gpt.extract_structured_data
     }
 
+    ai_time = time.time()
     # Check that AI method is valid
     if selected_ai in ai_methods:
         structured_data = ai_methods[selected_ai](prompt)
@@ -83,6 +88,7 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
         raise ValueError(f"Unknown AI method: {selected_ai}")
 
     print("\nAI output:", "\n", structured_data)
+    print("--- AI time: %s seconds ---" % (time.time() - ai_time))
 
     try:
         structured_data = extractJSON.fix_truncated_json(structured_data)
@@ -97,6 +103,7 @@ def fullParse(input_filepath):  # New parsing method allowing for easier local t
         json.dump(structured_data, file, indent=4)
         print("Created output.json")
 
+    print("--- Total time: %s seconds ---" % (time.time() - start_time))
     return structured_data
 
 if __name__ == "__main__":
