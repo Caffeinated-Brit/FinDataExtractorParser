@@ -68,10 +68,6 @@ if __name__ == "__main__":
     prompt = (
         f"The following text was extracted from a PDF.\n"
         "Extract and categorize the data from the text. Return as JSON.\n"
-        # "Ignore any terms and conditions, and only extract valuable financial data.\n"
-        # "Categorize the extracted data into valid JSON format.\n"
-        # "Ensure the JSON is fully valid and does not contain errors.\n"
-        # "Return only the JSON array, with no extra text before or after.\n"
         f"Text:\n"
     )
     print(prompt)

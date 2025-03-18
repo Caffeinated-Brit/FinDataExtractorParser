@@ -107,10 +107,4 @@ def fullParse(input_filepath):
     return structured_data
 
 if __name__ == "__main__":
-    fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/loan_statement.pdf")
-
-# parses well
-# 2021_2_Statement_removed
-
-# AI hates these docs
-# Principal_401k, schwab
+    fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf")

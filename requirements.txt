@@ -1,3 +1,5 @@
+# pip install -r requirement.txt
+
 # API
 Flask~=3.1.0
 flask-cors~=5.0.0
@@ -10,9 +12,9 @@ pypdfium2~=4.30.1
 chardet~=5.2.0
 
 # OpenAI GPT
-langchain-openai~=0.3.2
-langchain~=0.2.17
-python-dotenv~=1.0.1
+# langchain-openai~=0.3.2
+# langchain~=0.2.17
+# python-dotenv~=1.0.1
 
 # Ollama
 ollama~=0.4.2

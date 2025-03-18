@@ -19,4 +19,4 @@ def extract_text_from_pdf(file_path):
 
 
 if __name__ == "__main__":
-    extract_text_from_pdf("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/loan_statement.pdf")
+    extract_text_from_pdf("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf")
