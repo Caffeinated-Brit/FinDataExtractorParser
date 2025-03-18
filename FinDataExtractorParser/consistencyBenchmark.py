@@ -114,7 +114,7 @@ output_data = {
     "Test_Data": {
         "File_Path": FILE_PATH,
         "Number_of_Runs": TEST_AMOUNT,
-        "Time_Elapsed": endTime,
+        "Time_Elapsed": round(endTime, 2),
         "Parser_Used": selected_parser,
         "AI_Used": selected_ai,
         "Disclaimer": "This only checks the consistency of the JSON output. It does not check the accuracy of the data."

@@ -2,8 +2,10 @@
   "Test_Data": {
     "File_Path": "C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf",
     "Number_of_Runs": 3,
+    "Time_Elapsed": 62.399773359298706,
     "Parser_Used": "pdfPlumber",
-    "AI_Used": "Ollama/Schema"
+    "AI_Used": "Ollama/Schema",
+    "Disclaimer": "This only checks the consistency of the JSON output. It does not check the accuracy of the data."
   },
   "Field_Consistency_Scores": {
     "personal_Info.name": 1.0,
