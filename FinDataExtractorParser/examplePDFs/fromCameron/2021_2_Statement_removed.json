@@ -1,0 +1,118 @@
+{
+    "personal_Info": {
+        "name": "TD AMERITRADE CAMERON DOWLESS",
+        "address": "1815 W JACKSON ST, DIVISION OF TD AMERITRADE INC, MUNCIE, IN 47303-4853, PO BOX 2209, OMAHA, NE 68103-2209",
+        "phone_number": "800-669-3900",
+        "email": "www.tdameritrade.com",
+        "bank_account_number": "234-467410"
+    },
+    "company_Info": {
+        "name": "TD Ameritrade Clearing, Inc., Member SIPC",
+        "address": "TD AMERITRADE",
+        "phone_number": "800-669-3900",
+        "email": "www.tdameritrade.com",
+        "website": "www.tdameritrade.com"
+    },
+    "financial_info": {
+        "statement_period": "02/01/21 - 02/28/21",
+        "total_investment_value": "$410.33",
+        "cash_balance": "$284.81",
+        "net_change": "$0.00",
+        "income_yield": "0.0%",
+        "portfolio_allocation": {
+            "Cash": 30.6,
+            "Mutual Funds": 69.4
+        },
+        "cash_activity_summary": {
+            "opening_balance": "$0.00",
+            "closing_balance": "$284.81",
+            "net_change": "$0.00"
+        },
+        "online_cash_services_summary": {
+            "credits": "$470.00",
+            "total": "$470.00"
+        },
+        "account_positions": [
+            {
+                "symbol": "PLTR",
+                "description": "PALANTIR TECH INC",
+                "cusip": "4",
+                "quantity": "1",
+                "price": "$23.90",
+                "purchase_cost": "$134.84",
+                "average_cost_basis": "$174.78",
+                "unrealized_gain_loss": "-$49.26",
+                "income_yield": "-",
+                "current_market_value": "$95.60"
+            },
+            {
+                "symbol": "ZOMEDICA CORP",
+                "description": "COM CL A",
+                "cusip": "16",
+                "quantity": "1",
+                "price": "$29.92",
+                "purchase_cost": "$39.94",
+                "average_cost_basis": "$174.78",
+                "unrealized_gain_loss": "-$10.02",
+                "income_yield": "-",
+                "current_market_value": "$29.92"
+            },
+            {
+                "symbol": "COM CL A",
+                "description": "COM",
+                "cusip": "16",
+                "quantity": "1",
+                "price": "$29.92",
+                "purchase_cost": "$39.94",
+                "average_cost_basis": "$174.78",
+                "unrealized_gain_loss": "-$10.02",
+                "income_yield": "-",
+                "current_market_value": "$29.92"
+            }
+        ],
+        "online_cash_services_transaction_detail": [
+            {
+                "category": "CREDITS",
+                "transaction_date": "02/03/2021",
+                "description": "ELECTRONIC FUNDING",
+                "amount": "$50.00"
+            },
+            {
+                "category": "CREDITS",
+                "transaction_date": "02/05/2021",
+                "description": "ACH IN",
+                "amount": "$20.00"
+            },
+            {
+                "category": "CREDITS",
+                "transaction_date": "02/08/2021",
+                "description": "ACH IN",
+                "amount": "$400.00"
+            },
+            {
+                "category": "DEBITS",
+                "transaction_date": "02/19/2021",
+                "description": "ACH OUT",
+                "amount": "-$284.81"
+            },
+            {
+                "category": "DEBITS",
+                "transaction_date": "02/19/2021",
+                "description": "ACH OUT - CANCELLED",
+                "amount": "-$284.81"
+            },
+            {
+                "category": "DEBITS",
+                "transaction_date": "02/22/2021",
+                "description": "ACH OUT",
+                "amount": "-$284.81"
+            },
+            {
+                "category": "DEBITS",
+                "transaction_date": "02/22/2021",
+                "description": "ACH OUT - CANCELLED",
+                "amount": "-$284.81"
+            }
+        ]
+    }
+}
