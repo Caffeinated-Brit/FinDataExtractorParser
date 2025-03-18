@@ -1,0 +1,53 @@
+{
+    "personal_Info": {
+        "name": "CAMERON V. DOWLESS",
+        "address": "104 E Falcon Run, Pendleton, IN:46064",
+        "phone_number": "(800) 621-2105",
+        "email": "",
+        "bank_account_number": "541004007690 System"
+    },
+    "company_Info": {
+        "name": "m% l t Elements Financial Federal Credit Union",
+        "address": "P.O. Box 7123 AND URITY AGREEMENT, Indianapolis, IN 46207-7123",
+        "phone_number": "(800) 621-2105",
+        "email": "",
+        "website": ""
+    },
+    "financial_info": {
+        "loan_type": "CLOSED-END NOTE",
+        "loan_amount": "$3,493.17",
+        "total_payment": "$31,628.55",
+        "total_sale_price": "$35,920.29",
+        "annual_percentage_rate": "2.99%",
+        "interest_rate": "2.99%"
+    },
+    "payment_schedule": {
+        "number_of_payments": "83",
+        "amount_of_payment": "$427.63",
+        "due_date": "3/15/2022",
+        "number_of_payments_2": "1",
+        "amount_of_payment_2": "$427.00",
+        "due_date_2": "2/15/2029"
+    },
+    "security_info": {
+        "security_type": "Security: Youare giving a security interest in your shares and deposits in the credit union, as well as the collateral described below.",
+        "serial_number_or_vin": "19XFL2H87NE005136",
+        "motor_vehicles": [
+            {
+                "year": "2022",
+                "make": "HONDA",
+                "model": "CIVIC",
+                "body_type": ""
+            }
+        ],
+        "shares_pledged": "",
+        "other_collateral": ""
+    },
+    "additional_info": {
+        "late_charges": "$28.00",
+        "required_deposit_balance": "",
+        "property_insurance": "Youmay obtain property insurance Filing Fee:",
+        "prepayment": "If you pay off early, you will not have to pay a penalty.",
+        "interest": "You will be charged interest on this loan until it is paid in full. Such interest shall be charged at the yearly rate of __ 2.99% _%. "
+    }
+}

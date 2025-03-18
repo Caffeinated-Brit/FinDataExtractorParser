@@ -22,7 +22,7 @@ def parse_pdf():
         return jsonify({"error": "No selected file"}), 400
 
     # Generate a unique filename and save file to temp directory (the llama functionality uses a filepath as of now)
-    temp_filepath = f"{UPLOAD_FOLDER}{uuid.uuid4()}.pdf"
+    temp_filepath = f"{UPLOAD_FOLDER}{file.filename}"
     file.save(temp_filepath)
 
     print("Saved temp file")
