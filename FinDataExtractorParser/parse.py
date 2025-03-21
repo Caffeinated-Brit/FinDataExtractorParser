@@ -2,10 +2,11 @@ import json
 import chardet  # pip install chardet
 import configparser
 import time
+import os
 
 import extractJSON
-from AI import Vllm
-from FinDataExtractorParser.AI import Ollama
+# from AI import Vllm
+from AI import Ollama
 # gpt
 # from AI import llama # Phasing out llama bc it's too slow and lowkey trash
 from PDFparsers import pdfPlumber, pyTesseract, linuxTest
@@ -17,6 +18,9 @@ selected_parser = config.get("Parser", "method", fallback="pdfPlumber")
 selected_ai = config.get("AI", "method", fallback="Ollama")
 
 def fullParse(input_filepath):
+    print("Setting Ollama to have no cache")
+    os.environ["OLLAMA_NO_CACHE"] = "1"
+
     start_time = time.time()
     # Pick parsing method based on config
     parser_methods = {
@@ -84,6 +88,7 @@ def fullParse(input_filepath):
     ai_time = time.time()
     # Check that AI method is valid
     if selected_ai in ai_methods:
+        print("Starting:", selected_ai, " execution")
         structured_data = ai_methods[selected_ai](prompt)
         # structured_data, elapsed_time, generated_tokens = ai_methods[selected_ai](prompt)
     else:

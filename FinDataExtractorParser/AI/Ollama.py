@@ -2,7 +2,7 @@
 # to download the model find it on ollama's site(https://ollama.com/search) and in the command line run "ollama run "name of model""
 # example of getting a model "ollama run llama3.1:8b"
 # dont forget to type the size of the model in addition to the name
-
+import os
 import time
 from concurrent.futures import ThreadPoolExecutor
 
@@ -17,8 +17,8 @@ from pydantic import BaseModel, Extra, Field
 
 #LLM_MODEL="llama3.1:8b"
 #LLM_MODEL="qwen2.5:14b"
-LLM_MODEL="qwen2.5-coder:3b" # for lukas' backpack brick
-# LLM_MODEL="qwen2.5-coder:7b" # for spencers spacestation
+# LLM_MODEL="qwen2.5-coder:7b"
+LLM_MODEL="qwen2.5-coder:3b"
 
 class CompanyInfo(BaseModel):
     name: str
@@ -49,7 +49,7 @@ def process_text_with_llm(user_prompt):
         messages=[{"role": "user", "content": user_prompt}],
         options={"seed": 1, "temperature":0},
         # auto formats output into json, going to keep messing with this and other parameters
-        format="json"
+        # format="json"
     )
     #This returns just the message from the LLM nothing else
     return response.message.content
@@ -118,4 +118,10 @@ if __name__ == "__main__":
         f"Text:\n"
     )
     print(prompt)
-    print(process_text_with_llm(prompt +""" test text here """))
+
+    # print(process_text_with_llm(prompt +""" test text here """))
+    print(process_text_with_llm(""" tell me 3 random space facts """))
+    # os.environ["OLLAMA_NO_CACHE"] = "1"
+    print(process_text_with_llm(""" tell me 3 random space facts """))
+    # os.environ["OLLAMA_NO_CACHE"] = "1"
+    print(process_text_with_llm(""" tell me 3 space random facts """))

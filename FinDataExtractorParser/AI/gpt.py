@@ -26,3 +26,6 @@ def extract_structured_data(prompt, page_number=None):
 
     # Invoke with appropriate input
     return sequence.invoke({"input": prompt_text})
+
+if __name__ == "__main__":
+    print(extract_structured_data("give me 3 space facts."))

@@ -27,11 +27,12 @@ def parse_pdf():
 
     print("Saved temp file")
 
-    # Call fullParse() in parse.py
     try:
+        # Call fullParse() in parse.py
         structured_data = fullParse(temp_filepath)
         return jsonify({"message": "File uploaded and processed successfully!", "data": structured_data}), 200
     except Exception as e:
+        print("Exception in fullParse:", str(e))  # Debugging line
         return jsonify({"error": str(e)}), 500
     # finally:
         # if os.path.exists(temp_filepath):
