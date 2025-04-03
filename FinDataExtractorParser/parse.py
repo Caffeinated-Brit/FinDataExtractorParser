@@ -4,6 +4,8 @@ import configparser
 import time
 import os
 
+from exceptiongroup import catch
+
 import extractJSON
 # from AI import Vllm
 from AI import Ollama
@@ -31,19 +33,24 @@ def fullParse(input_filepath):
     }
 
     # Check that parsing method is valid
-    if selected_parser in parser_methods:
-        extracted_text = parser_methods[selected_parser](input_filepath)
-        # check if pdf is image based, could implement more complex way of checking with
-        if extracted_text == "":
-            print("No text found in pdf using \"" + selected_parser + "\" method. Attempting OCR workaround.")
-            extracted_text = parser_methods["pyTesseract"](input_filepath)
+    try:
+        if selected_parser in parser_methods:
+            extracted_text = parser_methods[selected_parser](input_filepath)
+            # check if pdf is image based, could implement more complex way of checking with
             if extracted_text == "":
-                print("No text found in pdf using OCR workaround. Exiting.")
-                return None
+                print("No text found in pdf using \"" + selected_parser + "\" method. Attempting OCR workaround.")
+                extracted_text = parser_methods["pyTesseract"](input_filepath)
+                if extracted_text == "":
+                    print("No text found in pdf using OCR workaround. Exiting.")
+                    return None
 
-            print("Applied OCR workaround, continuing...")
-    else:
-        raise ValueError(f"Unknown parser method: {selected_parser}")
+                print("Applied OCR workaround, continuing...")
+        else:
+            raise ValueError(f"Unknown parser method: {selected_parser}")
+    except FileNotFoundError as e:
+        print("Pdf file not found, exiting.")
+        raise e
+
 
     print("--- Parser time: %s seconds ---" % (time.time() - start_time))
 
@@ -86,10 +93,14 @@ def fullParse(input_filepath):
         # "gpt": gpt.extract_structured_data
     }
 
+
     ai_time = time.time()
     # Check that AI method is valid
     if selected_ai in ai_methods:
         print("Starting:", selected_ai, " execution")
+        # display AI model used per the config.ini
+        if "Ollama" in selected_ai:
+            print("Ollama Model used:", config.get("Ollama Model", "method", fallback="qwen2.5-coder:3b"))
         structured_data = ai_methods[selected_ai](prompt)
         # structured_data, elapsed_time, generated_tokens = ai_methods[selected_ai](prompt)
     else:
@@ -116,4 +127,4 @@ def fullParse(input_filepath):
     return structured_data
 
 if __name__ == "__main__":
-    fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf")
+    fullParse("examplePDFs/fromCameron/2021_2_Statement_removed.pdf")
