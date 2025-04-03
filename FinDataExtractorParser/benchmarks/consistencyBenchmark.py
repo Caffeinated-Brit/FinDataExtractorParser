@@ -7,7 +7,9 @@ import time
 
 from parse import fullParse
 
-TEST_AMOUNT = 3
+# need to go through and check if fields that only show up for some outputs are docked the correct amount
+
+TEST_AMOUNT = 5
 FILE_PATH = "C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf"
 
 
@@ -103,8 +105,10 @@ field_scores, overall_score = compare_json_outputs(json_outputs)
 
 config = configparser.ConfigParser()
 config.read("config.ini")
+
+# this could be my issue with the config file, i may be overwriting the options here
 selected_parser = config.get("Parser", "method", fallback="pdfPlumber")
-selected_ai = config.get("AI", "method", fallback="Ollama")
+selected_ai = config.get("AI", "method", fallback="Ollama/Schema")
 
 endTime = time.time() - start_time
 

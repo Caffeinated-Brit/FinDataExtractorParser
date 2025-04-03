@@ -14,8 +14,9 @@ from PDFparsers import pdfPlumber, pyTesseract, linuxTest
 # Load configuration
 config = configparser.ConfigParser()
 config.read("config.ini")
+# for some reason having some issues with the config file, the fallback is used be default sometimes
 selected_parser = config.get("Parser", "method", fallback="pdfPlumber")
-selected_ai = config.get("AI", "method", fallback="Ollama")
+selected_ai = config.get("AI", "method", fallback="Ollama/Schema")
 
 def fullParse(input_filepath):
     print("Setting Ollama to have no cache")
