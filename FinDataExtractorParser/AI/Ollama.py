@@ -5,6 +5,7 @@
 import os
 import time
 from concurrent.futures import ThreadPoolExecutor
+import configparser
 
 #tested models
 #llama3.1:8b works well
@@ -15,10 +16,14 @@ from concurrent.futures import ThreadPoolExecutor
 import ollama
 from pydantic import BaseModel, Extra, Field
 
+config = configparser.ConfigParser()
+config.read("config.ini")
+LLM_MODEL =  config.get("Ollama Model", "method", fallback="qwen2.5-coder:3b")
+
 #LLM_MODEL="llama3.1:8b"
 #LLM_MODEL="qwen2.5:14b"
 # LLM_MODEL="qwen2.5-coder:7b"
-LLM_MODEL="qwen2.5-coder:3b"
+# LLM_MODEL="qwen2.5-coder:3b"
 
 class CompanyInfo(BaseModel):
     name: str
