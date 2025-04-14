@@ -76,14 +76,14 @@ def process_text_with_llm_and_schema(user_prompt):
 
     return content, generated_tokens, elapsed_time
 
-def process_text_with_llm(prompt, keep_alive=True, retries=3, threshold=0.95):
+def process_text_with_llm(prompt, keep_alive=True):
     print("Starting Ollama extraction")
     start_time = time.time()
 
     response = ollama.chat(
         model=LLM_MODEL,
         messages=[{"role": "user", "content": prompt}],
-        options={"seed": 42, "temperature":0.9, "top_p":1},
+        options={"seed": 42, "temperature":0.1, "top_p":0.1},
         keep_alive=keep_alive
     )
     end_time = time.time()
@@ -93,30 +93,6 @@ def process_text_with_llm(prompt, keep_alive=True, retries=3, threshold=0.95):
     content = response['message']['content']
 
     return content, generated_tokens, elapsed_time
-
-
-# Not Currently in use
-def generate_checked_text3(prompt, retries=3, threshold=0.50):
-    results = []
-    for r in range(retries):
-        output = process_text_with_llm_and_schema(prompt)
-        results.append(output)
-
-    print(results)
-    # Compare pairwise similarity
-    for i in range(len(results)):
-        #print(results[0][i])
-        for j in range(i + 1, len(results)):
-            ratio = difflib.SequenceMatcher(None, results[i], results[j]).ratio()
-            print("RATIO: ")
-            print(ratio)
-            if ratio > threshold:
-                print(f"Matched outputs with similarity {ratio:.2f}")
-                return results[i]
-
-    print("No sufficiently similar outputs found, defaulting to first.")
-    return results[0]
-
 
 def run_parallel_requests(num_requests, prompt):
     results = []
@@ -141,8 +117,6 @@ def run_benchmarking(num_requests, prompt, keep_alive=False):
     total_time = end_time - start_time
     print(f"Total time for {num_requests} requests: {end_time - start_time} seconds")
     return results, total_time
-
-#run_benchmarking(30)
 
 if __name__ == "__main__":
     prompt = (

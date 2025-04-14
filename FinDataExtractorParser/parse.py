@@ -78,7 +78,7 @@ def fullParse(input_filepath):
     ai_methods = {
         "Ollama": Ollama.process_text_with_llm,
         "Ollama/Schema": Ollama.process_text_with_llm_and_schema,
-        "vllm": Vllm.run_parallel_requests,
+        "Vllm": Vllm.run_parallel_requests,
         # "llama": llama.process_text_with_llm,
         # "gpt": gpt.extract_structured_data
     }
@@ -86,10 +86,8 @@ def fullParse(input_filepath):
     ai_time = time.time()
     # Check that AI method is valid
     if selected_ai in ai_methods:
-        #structured_data = generate_checked_text(prompt)
-        #structured_data = ai_methods[selected_ai](prompt)
-        #structured_data, elapsed_time, generated_tokens = ai_methods[selected_ai](prompt)
-        structured_data, elapsed_time, generated_tokens = generate_checked_text(10, 0.5, prompt, ai_methods)
+        # Past this point elapsed_time and generated_tokens are not used they are only for benchmarking
+        structured_data, elapsed_time, generated_tokens = generate_checked_text(3, 0.5, prompt, ai_methods)
     else:
         raise ValueError(f"Unknown AI method: {selected_ai}")
 
@@ -113,7 +111,7 @@ def fullParse(input_filepath):
     print("--- Total time: %s seconds ---" % (time.time() - start_time))
     return structured_data
 
-
+# This runs the llm chosen multiple times to check that the output is consistent
 def generate_checked_text(retries, threshold, prompt, ai_methods):
     output = ai_methods[selected_ai](retries, prompt)
 

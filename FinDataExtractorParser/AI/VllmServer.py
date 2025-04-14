@@ -60,6 +60,8 @@ def stop_vllm_server(process):
     else:
         print("No running vLLM server to stop.")
 
+# This will start VllmServer standalone, if you want to do dev with this you must comment the line "start_llm_server()"
+# at the bottom of the Vllm.py file.
 if __name__ == "__main__":
     shutdown_event = threading.Event()
 
