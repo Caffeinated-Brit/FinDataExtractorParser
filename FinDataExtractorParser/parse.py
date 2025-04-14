@@ -2,6 +2,7 @@ import json
 import chardet  # pip install chardet
 import configparser
 import time
+import difflib
 
 import extractJSON
 from AI import Vllm
@@ -84,8 +85,9 @@ def fullParse(input_filepath):
     ai_time = time.time()
     # Check that AI method is valid
     if selected_ai in ai_methods:
-        structured_data = ai_methods[selected_ai](prompt)
-        # structured_data, elapsed_time, generated_tokens = ai_methods[selected_ai](prompt)
+        #structured_data = generate_checked_text(prompt)
+        #structured_data = ai_methods[selected_ai](prompt)
+        structured_data, elapsed_time, generated_tokens = ai_methods[selected_ai](prompt)
     else:
         raise ValueError(f"Unknown AI method: {selected_ai}")
 
@@ -108,6 +110,7 @@ def fullParse(input_filepath):
 
     print("--- Total time: %s seconds ---" % (time.time() - start_time))
     return structured_data
+
 
 if __name__ == "__main__":
     fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf")

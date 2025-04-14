@@ -2,7 +2,7 @@
 # to download the model find it on ollama's site(https://ollama.com/search) and in the command line run "ollama run "name of model""
 # example of getting a model "ollama run llama3.1:8b"
 # dont forget to type the size of the model in addition to the name
-
+import difflib
 import time
 from concurrent.futures import ThreadPoolExecutor
 
@@ -17,8 +17,8 @@ from pydantic import BaseModel, Extra, Field
 
 #LLM_MODEL="llama3.1:8b"
 #LLM_MODEL="qwen2.5:14b"
-LLM_MODEL="qwen2.5-coder:3b" # for lukas' backpack brick
-# LLM_MODEL="qwen2.5-coder:7b" # for spencers spacestation
+#LLM_MODEL="qwen2.5-coder:3b" # for lukas' backpack brick
+LLM_MODEL="qwen2.5-coder:7b" # for spencers spacestation
 
 class CompanyInfo(BaseModel):
     name: str
@@ -42,7 +42,7 @@ class FinancialData(BaseModel):
     class Config:
         extra = 'allow'  # Allow extra fields to be added by Ollama
 
-def process_text_with_llm(user_prompt):
+def process_text_with_llm_OLD(user_prompt):
     print("Starting Ollama extraction...")
     response = ollama.chat(
         model=LLM_MODEL,
@@ -56,24 +56,34 @@ def process_text_with_llm(user_prompt):
 
 def process_text_with_llm_and_schema(user_prompt):
     print("Starting Ollama extraction with a json schema...")
+    start_time = time.time()
     response = ollama.chat(
         model=LLM_MODEL,
         messages=[{"role": "user", "content": user_prompt}],
-        options={"seed": 1, "temperature":0},
+        options={"seed": 1, "temperature":0, "top_k":1},
         # auto formats output into json, going to keep messing with this and other parameters
         format=FinancialData.model_json_schema()
     )
     #This returns just the message from the LLM nothing else
-    return response.message.content
+    print(response.message.content)
+    #return response.message.content
 
-def process_text_with_llm_2(prompt, keep_alive=True):
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+
+    generated_tokens = response['eval_count']
+    content = response['message']['content']
+
+    return content, generated_tokens, elapsed_time
+
+def process_text_with_llm(prompt, keep_alive=True, retries=3, threshold=0.95):
     print("Starting Ollama extraction")
     start_time = time.time()
 
     response = ollama.chat(
         model=LLM_MODEL,
         messages=[{"role": "user", "content": prompt}],
-        options={"seed": 42, "temperature":0.1, "top_p":0.1},
+        options={"seed": 42, "temperature":0.9, "top_p":1},
         keep_alive=keep_alive
     )
     end_time = time.time()
@@ -83,14 +93,37 @@ def process_text_with_llm_2(prompt, keep_alive=True):
     content = response['message']['content']
 
     return content, generated_tokens, elapsed_time
-    #return response.message.content
+
+
+# Not Currently in use
+def generate_checked_text(prompt, retries=3, threshold=0.50):
+    results = []
+    for r in range(retries):
+        output = process_text_with_llm_and_schema(prompt)
+        results.append(output)
+
+    print(results)
+    # Compare pairwise similarity
+    for i in range(len(results)):
+        #print(results[0][i])
+        for j in range(i + 1, len(results)):
+            ratio = difflib.SequenceMatcher(None, results[i], results[j]).ratio()
+            print("RATIO: ")
+            print(ratio)
+            if ratio > threshold:
+                print(f"Matched outputs with similarity {ratio:.2f}")
+                return results[i]
+
+    print("No sufficiently similar outputs found, defaulting to first.")
+    return results[0]
+
 
 def run_parallel_requests(num_requests, prompt):
     results = []
     with ThreadPoolExecutor(max_workers=num_requests) as executor:
         futures = []
         for i in range(num_requests):
-            futures.append(executor.submit(process_text_with_llm, prompt))
+            futures.append(executor.submit(process_text_with_llm_and_schema, prompt))
 
         for future in futures:
             print(future.result())
