@@ -89,7 +89,7 @@ def fullParse(input_filepath):
         #structured_data = generate_checked_text(prompt)
         #structured_data = ai_methods[selected_ai](prompt)
         #structured_data, elapsed_time, generated_tokens = ai_methods[selected_ai](prompt)
-        structured_data, elapsed_time, generated_tokens = generate_checked_text(3, 0.5, prompt, ai_methods)
+        structured_data, elapsed_time, generated_tokens = generate_checked_text(10, 0.5, prompt, ai_methods)
     else:
         raise ValueError(f"Unknown AI method: {selected_ai}")
 
@@ -113,7 +113,7 @@ def fullParse(input_filepath):
     print("--- Total time: %s seconds ---" % (time.time() - start_time))
     return structured_data
 
-# This has issues if its not perfect json passed to it
+
 def generate_checked_text(retries, threshold, prompt, ai_methods):
     output = ai_methods[selected_ai](retries, prompt)
 
@@ -124,10 +124,9 @@ def generate_checked_text(retries, threshold, prompt, ai_methods):
             norm_j = normalize_json_string(output[j][0])
 
             ratio = difflib.SequenceMatcher(None, norm_i, norm_j).ratio()
-            print("RATIO: ", ratio)
 
+            print(f"Matched outputs with similarity {ratio:.2f}")
             if ratio > threshold:
-                print(f"Matched outputs with similarity {ratio:.2f}")
                 return output[i]
 
     print("No sufficiently similar outputs found, defaulting to first.")
@@ -137,7 +136,6 @@ def normalize_json_string(text):
     try:
         # Remove Markdown-style ```json ... ``` if present
         if text.startswith("```json"):
-            # Split by lines and remove the first and last
             lines = text.strip().splitlines()
             # Drop first (```json) and last (```)
             text = "\n".join(lines[1:-1])

@@ -22,7 +22,7 @@ def process_text_with_llm(prompt, server_url="http://localhost:8000/v1/chat/comp
             "max_tokens": 5000,  # Increase for longer output
             #"min_tokens": 900,
             #"top_k": 20,
-            "temperature": 0.1,
+            "temperature": 0.15,
             #"top_p": 0.1,
             #"n": 1,
             #"stop": ["User:", "\n\n"]
@@ -36,9 +36,9 @@ def process_text_with_llm(prompt, server_url="http://localhost:8000/v1/chat/comp
 
 
     #print(f"Generated tokens per second: {tokens_per_second}")
-    print(response.json())
+    #print(response.json())
     content = response.json()['choices'][0]['message']['content']
-    print(response.json()['choices'][0])
+    #print(response.json()['choices'][0])
     return content, elapsed_time, generated_tokens
 
 
