@@ -78,7 +78,7 @@ def fullParse(input_filepath):
     ai_methods = {
         "Ollama": Ollama.process_text_with_llm,
         "Ollama/Schema": Ollama.process_text_with_llm_and_schema,
-        "vllm": Vllm.process_text_with_llm,
+        "vllm": Vllm.run_parallel_requests,
         # "llama": llama.process_text_with_llm,
         # "gpt": gpt.extract_structured_data
     }
@@ -115,32 +115,35 @@ def fullParse(input_filepath):
 
 # This has issues if its not perfect json passed to it
 def generate_checked_text(retries, threshold, prompt, ai_methods):
-    results = []
-    for r in range(retries):
-        output = ai_methods[selected_ai](prompt)
-        results.append(output)
+    output = ai_methods[selected_ai](retries, prompt)
 
-    #print(results)
-    # Compare pairwise similarity
-    for i in range(len(results)):
-        #print(results[0][i])
-        for j in range(i + 1, len(results)):
-            norm_i = normalize_json_string(results[i][0])
-            norm_j = normalize_json_string(results[j][0])
+    print("Checking similarity ratio of the following outputs.")
+    for i in range(len(output)):
+        for j in range(i + 1, len(output)):
+            norm_i = normalize_json_string(output[i][0])
+            norm_j = normalize_json_string(output[j][0])
 
             ratio = difflib.SequenceMatcher(None, norm_i, norm_j).ratio()
-            print("RATIO: ")
-            print(ratio)
+            print("RATIO: ", ratio)
+
             if ratio > threshold:
                 print(f"Matched outputs with similarity {ratio:.2f}")
-                return results[i]
+                return output[i]
 
     print("No sufficiently similar outputs found, defaulting to first.")
-    return results[0]
+    return output[0]
 
 def normalize_json_string(text):
     try:
+        # Remove Markdown-style ```json ... ``` if present
+        if text.startswith("```json"):
+            # Split by lines and remove the first and last
+            lines = text.strip().splitlines()
+            # Drop first (```json) and last (```)
+            text = "\n".join(lines[1:-1])
+
         parsed = json.loads(text)
+        print(parsed)
         return json.dumps(parsed, sort_keys=True)
     except Exception as e:
         print("⚠️ Could not normalize output:", e)

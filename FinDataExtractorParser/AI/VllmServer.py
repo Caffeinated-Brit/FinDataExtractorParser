@@ -60,3 +60,18 @@ def stop_vllm_server(process):
     else:
         print("No running vLLM server to stop.")
 
+if __name__ == "__main__":
+    shutdown_event = threading.Event()
+
+    try:
+        server_thread = threading.Thread(target=start_vllm_server, args=(shutdown_event,))
+        server_thread.start()
+        time.sleep(60)
+        print("vLLM server is running. Press Ctrl+C to stop.")
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("\nCtrl+C received. Shutting down...")
+        shutdown_event.set()
+        server_thread.join()
+        print("Server has been shut down.")
