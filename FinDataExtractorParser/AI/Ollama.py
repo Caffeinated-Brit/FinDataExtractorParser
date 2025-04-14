@@ -65,7 +65,7 @@ def process_text_with_llm_and_schema(user_prompt):
         format=FinancialData.model_json_schema()
     )
     #This returns just the message from the LLM nothing else
-    print(response.message.content)
+    #print(response.message.content)
     #return response.message.content
 
     end_time = time.time()
@@ -96,7 +96,7 @@ def process_text_with_llm(prompt, keep_alive=True, retries=3, threshold=0.95):
 
 
 # Not Currently in use
-def generate_checked_text(prompt, retries=3, threshold=0.50):
+def generate_checked_text3(prompt, retries=3, threshold=0.50):
     results = []
     for r in range(retries):
         output = process_text_with_llm_and_schema(prompt)

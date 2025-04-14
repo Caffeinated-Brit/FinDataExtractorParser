@@ -3,6 +3,7 @@ import chardet  # pip install chardet
 import configparser
 import time
 import difflib
+from concurrent.futures import ThreadPoolExecutor
 
 import extractJSON
 from AI import Vllm
@@ -77,7 +78,7 @@ def fullParse(input_filepath):
     ai_methods = {
         "Ollama": Ollama.process_text_with_llm,
         "Ollama/Schema": Ollama.process_text_with_llm_and_schema,
-        # "vllm": Vllm.process_text_with_llm,
+        "vllm": Vllm.process_text_with_llm,
         # "llama": llama.process_text_with_llm,
         # "gpt": gpt.extract_structured_data
     }
@@ -87,7 +88,8 @@ def fullParse(input_filepath):
     if selected_ai in ai_methods:
         #structured_data = generate_checked_text(prompt)
         #structured_data = ai_methods[selected_ai](prompt)
-        structured_data, elapsed_time, generated_tokens = ai_methods[selected_ai](prompt)
+        #structured_data, elapsed_time, generated_tokens = ai_methods[selected_ai](prompt)
+        structured_data, elapsed_time, generated_tokens = generate_checked_text(3, 0.5, prompt, ai_methods)
     else:
         raise ValueError(f"Unknown AI method: {selected_ai}")
 
@@ -111,6 +113,38 @@ def fullParse(input_filepath):
     print("--- Total time: %s seconds ---" % (time.time() - start_time))
     return structured_data
 
+# This has issues if its not perfect json passed to it
+def generate_checked_text(retries, threshold, prompt, ai_methods):
+    results = []
+    for r in range(retries):
+        output = ai_methods[selected_ai](prompt)
+        results.append(output)
+
+    #print(results)
+    # Compare pairwise similarity
+    for i in range(len(results)):
+        #print(results[0][i])
+        for j in range(i + 1, len(results)):
+            norm_i = normalize_json_string(results[i][0])
+            norm_j = normalize_json_string(results[j][0])
+
+            ratio = difflib.SequenceMatcher(None, norm_i, norm_j).ratio()
+            print("RATIO: ")
+            print(ratio)
+            if ratio > threshold:
+                print(f"Matched outputs with similarity {ratio:.2f}")
+                return results[i]
+
+    print("No sufficiently similar outputs found, defaulting to first.")
+    return results[0]
+
+def normalize_json_string(text):
+    try:
+        parsed = json.loads(text)
+        return json.dumps(parsed, sort_keys=True)
+    except Exception as e:
+        print("⚠️ Could not normalize output:", e)
+        return text
 
 if __name__ == "__main__":
     fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf")

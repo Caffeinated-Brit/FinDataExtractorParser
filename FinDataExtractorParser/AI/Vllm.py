@@ -5,7 +5,6 @@ from concurrent.futures import ThreadPoolExecutor
 import requests
 # from vllm import LLM, SamplingParams
 import os
-import torch
 from FinDataExtractorParser.AI.VllmServer import start_vllm_server
 os.environ ['VLLM_USE_V1'] ='1'
 
@@ -78,4 +77,4 @@ def start_llm_server():
     llm_server_thread.start()
     time.sleep(60) # Allow time for the server to start, this could be handled better and may cause crashes if it takes longer to start
 
-# start_llm_server()
+start_llm_server()
