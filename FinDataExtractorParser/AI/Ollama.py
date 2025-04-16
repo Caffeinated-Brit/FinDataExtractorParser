@@ -42,18 +42,6 @@ class FinancialData(BaseModel):
     class Config:
         extra = 'allow'  # Allow extra fields to be added by Ollama
 
-def process_text_with_llm_OLD(user_prompt):
-    print("Starting Ollama extraction...")
-    response = ollama.chat(
-        model=LLM_MODEL,
-        messages=[{"role": "user", "content": user_prompt}],
-        options={"seed": 1, "temperature":0},
-        # auto formats output into json, going to keep messing with this and other parameters
-        format="json"
-    )
-    #This returns just the message from the LLM nothing else
-    return response.message.content
-
 def process_text_with_llm_and_schema(user_prompt):
     print("Starting Ollama extraction with a json schema...")
     start_time = time.time()
@@ -64,9 +52,6 @@ def process_text_with_llm_and_schema(user_prompt):
         # auto formats output into json, going to keep messing with this and other parameters
         format=FinancialData.model_json_schema()
     )
-    #This returns just the message from the LLM nothing else
-    #print(response.message.content)
-    #return response.message.content
 
     end_time = time.time()
     elapsed_time = end_time - start_time

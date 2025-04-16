@@ -89,7 +89,7 @@ def fullParse(input_filepath):
     # Check that AI method is valid
     if selected_ai in ai_methods:
         # Past this point elapsed_time and generated_tokens are not used they are only for benchmarking
-        structured_data, elapsed_time, generated_tokens = generate_checked_text(reruns, threshold, prompt, ai_methods)
+        structured_data, elapsed_time, generated_tokens = verify_similar_outputs(reruns, threshold, prompt, ai_methods)
     else:
         raise ValueError(f"Unknown AI method: {selected_ai}")
     print("\nAI output:", "\n", structured_data)
@@ -113,7 +113,7 @@ def fullParse(input_filepath):
     return structured_data
 
 # This runs the llm chosen multiple times to check that the output is consistent
-def generate_checked_text(reruns, threshold, prompt, ai_methods):
+def verify_similar_outputs(reruns, threshold, prompt, ai_methods):
     outputs = ai_methods[selected_ai](reruns, prompt)
     print("Checking similarity ratio of the following outputs.\n")
 
