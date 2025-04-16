@@ -1,0 +1,79 @@
+{
+    "Statement Reporting Period": "02/01/21 - 02/28/21",
+    "Account Number": "234-467410",
+    "Contact Number": "800-669-3900",
+    "Account Holder": "TD AMERITRADE CAMERON DOWLESS",
+    "Address": "1815 W JACKSON ST, MUNCIE, IN 47303-4853",
+    "Portfolio Summary": {
+        "Cash": {
+            "Current Value": 284.81,
+            "Prior Period Value": 0.0,
+            "Change": 284.81
+        },
+        "Stocks": {
+            "Stocks": 125.52,
+            "Change": 125.52,
+            "Portfolio Allocation": "30.6%"
+        },
+        "Other": {
+            "Total": 410.33
+        }
+    },
+    "Cash Activity Summary": {
+        "Opening Balance": 0.0,
+        "Closing Balance": 284.81
+    },
+    "Income & Expense Summary": {
+        "Income": 0.0,
+        "Expense": 0.0
+    },
+    "Online Cash Services Summary": {
+        "CREDITS": {
+            "Electronic Transfer": {
+                "Current Year": 470.0,
+                "Year To Date": 470.0
+            }
+        },
+        "TOTAL": {
+            "Current Year": 470.0,
+            "Year To Date": 470.0
+        }
+    },
+    "Account Positions": {
+        "Stocks": {
+            "PALANTIR TECH INC PLTR": {
+                "Quantity": 4,
+                "Current Market Price": 23.9,
+                "Purchase Cost": 95.6,
+                "Average Cost Basis": 134.84,
+                "Unrealized Gain(Loss)": -39.24
+            },
+            "ZOMEDICA CORP ZOM": {
+                "Quantity": 16,
+                "Current Market Price": 1.87,
+                "Purchase Cost": 29.92,
+                "Average Cost Basis": 39.94,
+                "Unrealized Gain(Loss)": -10.02
+            }
+        }
+    },
+    "Online Cash Services Transaction Detail": {
+        "CREDITS": {
+            "Electronic Transfer": {
+                "02/03/2021": "ELECTRONIC FUNDING $ 50.00",
+                "02/05/2021": "ACH IN 20.00",
+                "02/08/2021": "ACH IN 400.00"
+            }
+        },
+        "DEBITS": {
+            "Electronic Transfer": {
+                "02/19/2021": "ACH OUT - CANCELLED 284.81",
+                "02/22/2021": "ACH OUT - CANCELLED 284.81"
+            }
+        },
+        "TOTAL": {
+            "CREDITS": 470.0,
+            "DEBITS": 0.0
+        }
+    }
+}

@@ -5,6 +5,8 @@
       <sourceFolder url="file://$MODULE_DIR$/FinDataExtractorParser" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/.venv1" />
+      <excludeFolder url="file://$MODULE_DIR$/FinDataExtractorParser/testing" />
+      <excludeFolder url="file://$MODULE_DIR$/FinDataExtractorParser/examplePDFs" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.10 (FinDataExtractorParser)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
