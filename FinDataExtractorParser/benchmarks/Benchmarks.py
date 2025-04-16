@@ -57,7 +57,7 @@ Please structure your response as follows:
 - **Ensure a long and detailed response**, reaching as close as possible to 5000 tokens.
 """
 
-request_count = 20
+request_count = 5
 
 def benchmark_vllm(prompt):
     from FinDataExtractorParser.AI import Vllm

@@ -75,22 +75,21 @@ def fullParse(input_filepath):
         f"Text:\n{extracted_text}")
 
     # Pick AI method based on config
+
     ai_methods = {
-        "Ollama": Ollama.process_text_with_llm,
-        "Ollama/Schema": Ollama.process_text_with_llm_and_schema,
-        "Vllm": Vllm.run_parallel_requests,
+        "Ollama": Ollama.run_parallel_requests,
+        "Ollama/Schema": Ollama.run_parallel_requests_with_schema,
+        #"Vllm": Vllm.run_parallel_requests,
         # "llama": llama.process_text_with_llm,
         # "gpt": gpt.extract_structured_data
     }
-
     ai_time = time.time()
     # Check that AI method is valid
     if selected_ai in ai_methods:
         # Past this point elapsed_time and generated_tokens are not used they are only for benchmarking
-        structured_data, elapsed_time, generated_tokens = generate_checked_text(3, 0.5, prompt, ai_methods)
+        structured_data, elapsed_time, generated_tokens = generate_checked_text(5, 0.9, prompt, ai_methods)
     else:
         raise ValueError(f"Unknown AI method: {selected_ai}")
-
     print("\nAI output:", "\n", structured_data)
     print("--- AI time: %s seconds ---" % (time.time() - ai_time))
 
@@ -113,33 +112,55 @@ def fullParse(input_filepath):
 
 # This runs the llm chosen multiple times to check that the output is consistent
 def generate_checked_text(retries, threshold, prompt, ai_methods):
-    output = ai_methods[selected_ai](retries, prompt)
+    outputs = ai_methods[selected_ai](retries, prompt)
+    print("Checking similarity ratio of the following outputs.\n")
 
-    print("Checking similarity ratio of the following outputs.")
-    for i in range(len(output)):
-        for j in range(i + 1, len(output)):
-            norm_i = normalize_json_string(output[i][0])
-            norm_j = normalize_json_string(output[j][0])
+    num_outputs = len(outputs)
+    total_similarity = [0.0] * num_outputs
+    comparison_counts = [0] * num_outputs
 
-            ratio = difflib.SequenceMatcher(None, norm_i, norm_j).ratio()
+    # Compare each output against all others
+    for i in range(num_outputs):
+        norm_i = normalize_json_string(outputs[i][0])
+        for j in range(num_outputs):
+            if i == j:
+                continue
+            norm_j = normalize_json_string(outputs[j][0])
+            similarity = difflib.SequenceMatcher(None, norm_i, norm_j).ratio()
+            print(f"Similarity between {i} and {j}: {similarity:.2f}")
 
-            print(f"Matched outputs with similarity {ratio:.2f}")
-            if ratio > threshold:
-                return output[i]
+            total_similarity[i] += similarity
+            comparison_counts[i] += 1
 
-    print("No sufficiently similar outputs found, defaulting to first.")
-    return output[0]
+    average_similarity = [
+        total / count if count > 0 else 0.0
+        for total, count in zip(total_similarity, comparison_counts)
+    ]
+
+    print()
+    for i, avg in enumerate(average_similarity):
+        print(f"Average similarity for output {i}: {avg:.2f}")
+
+    highest_similarity = max(average_similarity)
+
+    # Pick the first output with the highest average similarity
+    best_index = average_similarity.index(highest_similarity)
+
+    if average_similarity[best_index] > threshold:
+        print(f"\nReturning output {best_index} (avg similarity: {average_similarity[best_index]:.2f})")
+        return outputs[best_index]
+
+    print("\nNo sufficiently similar outputs found, defaulting to first.")
+    return outputs[0]
 
 def normalize_json_string(text):
     try:
-        # Remove Markdown-style ```json ... ``` if present
+
         if text.startswith("```json"):
             lines = text.strip().splitlines()
-            # Drop first (```json) and last (```)
             text = "\n".join(lines[1:-1])
 
         parsed = json.loads(text)
-        print(parsed)
         return json.dumps(parsed, sort_keys=True)
     except Exception as e:
         print("⚠️ Could not normalize output:", e)

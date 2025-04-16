@@ -17,8 +17,8 @@ from pydantic import BaseModel, Extra, Field
 
 #LLM_MODEL="llama3.1:8b"
 #LLM_MODEL="qwen2.5:14b"
-#LLM_MODEL="qwen2.5-coder:3b" # for lukas' backpack brick
-LLM_MODEL="qwen2.5-coder:7b" # for spencers spacestation
+LLM_MODEL="qwen2.5-coder:3b" # for lukas' backpack brick
+#LLM_MODEL="qwen2.5-coder:7b" # for spencers spacestation
 
 class CompanyInfo(BaseModel):
     name: str
@@ -60,7 +60,7 @@ def process_text_with_llm_and_schema(user_prompt):
     response = ollama.chat(
         model=LLM_MODEL,
         messages=[{"role": "user", "content": user_prompt}],
-        options={"seed": 1, "temperature":0, "top_k":1},
+        options={"seed": 1, "temperature":0.1, "top_k":1},
         # auto formats output into json, going to keep messing with this and other parameters
         format=FinancialData.model_json_schema()
     )
@@ -77,6 +77,7 @@ def process_text_with_llm_and_schema(user_prompt):
     return content, generated_tokens, elapsed_time
 
 def process_text_with_llm(prompt, keep_alive=True):
+    print("Bees2")
     print("Starting Ollama extraction")
     start_time = time.time()
 
@@ -95,6 +96,22 @@ def process_text_with_llm(prompt, keep_alive=True):
     return content, generated_tokens, elapsed_time
 
 def run_parallel_requests(num_requests, prompt):
+
+    results = []
+    with ThreadPoolExecutor(max_workers=num_requests) as executor:
+        futures = []
+        for i in range(num_requests):
+            futures.append(executor.submit(process_text_with_llm_and_schema, prompt))
+
+        for future in futures:
+            print(future.result())
+            print("-" * 50)
+            results.append(future.result())
+
+    return results
+
+def run_parallel_requests_with_schema(num_requests, prompt):
+
     results = []
     with ThreadPoolExecutor(max_workers=num_requests) as executor:
         futures = []
@@ -109,7 +126,7 @@ def run_parallel_requests(num_requests, prompt):
     return results
 
 def run_benchmarking(num_requests, prompt, keep_alive=False):
-    loaded = process_text_with_llm("Load model into memory before benchmarking.", keep_alive)
+    process_text_with_llm("Load model into memory before benchmarking.", keep_alive)
     start_time = time.time()
     print(f"Running {num_requests} parallel requests:")
     results = run_parallel_requests(num_requests, prompt)
@@ -124,5 +141,7 @@ if __name__ == "__main__":
         "Extract and categorize the data from the text. Return as JSON.\n"
         f"Text:\n"
     )
-    print(prompt)
-    print(process_text_with_llm(prompt +""" test text here """))
+    #print(prompt)
+    #print(run_parallel_requests(5, "Ya Like bees"))
+    run_benchmarking(3, "Ya Like bees")
+
