@@ -1,79 +1,95 @@
 {
     "Statement Reporting Period": "02/01/21 - 02/28/21",
-    "Account Number": "234-467410",
-    "Contact Number": "800-669-3900",
-    "Account Holder": "TD AMERITRADE CAMERON DOWLESS",
-    "Address": "1815 W JACKSON ST, MUNCIE, IN 47303-4853",
+    "Account Information": {
+        "Account Number": "234-467410",
+        "Client Name": "CAMERON DOWLESS",
+        "Address": "1815 W JACKSON ST, MUNCIE, IN 47303-4853"
+    },
     "Portfolio Summary": {
-        "Cash": {
-            "Current Value": 284.81,
-            "Prior Period Value": 0.0,
-            "Change": 284.81
-        },
-        "Stocks": {
-            "Stocks": 125.52,
-            "Change": 125.52,
-            "Portfolio Allocation": "30.6%"
-        },
-        "Other": {
-            "Total": 410.33
+        "Investment": {
+            "Cash": {
+                "Current Value": "$284.81",
+                "Prior Value": "$0.00",
+                "Change": "$284.81",
+                "Period Change": "-",
+                "Estimated Income": "$0.00",
+                "Estimated Yield": "0.0%",
+                "Portfolio Allocation": "69.4%"
+            },
+            "Stocks": {
+                "Current Value": "$125.52",
+                "Prior Value": "-",
+                "Change": "$125.52",
+                "Period Change": "-",
+                "Estimated Income": "$0.00",
+                "Estimated Yield": "0.0%",
+                "Portfolio Allocation": "30.6%"
+            }
         }
     },
     "Cash Activity Summary": {
-        "Opening Balance": 0.0,
-        "Closing Balance": 284.81
-    },
-    "Income & Expense Summary": {
-        "Income": 0.0,
-        "Expense": 0.0
+        "Opening Balance": "$0.00",
+        "Securities Purchased": "($527.08)",
+        "Securities Sold": "$341.89",
+        "Funds Deposited": "$470.00",
+        "Funds Disbursed": "-",
+        "Income": "-",
+        "Expense": "-",
+        "Other": "-",
+        "Closing Balance": "$284.81"
     },
     "Online Cash Services Summary": {
-        "CREDITS": {
+        "Credits": {
             "Electronic Transfer": {
-                "Current Year": 470.0,
-                "Year To Date": 470.0
-            }
-        },
-        "TOTAL": {
-            "Current Year": 470.0,
-            "Year To Date": 470.0
+                "Current": "$470.00",
+                "Year To Date": "$470.00"
+            },
+            "Total": "$470.00"
         }
     },
     "Account Positions": {
-        "Stocks": {
-            "PALANTIR TECH INC PLTR": {
+        "Investment Description": "Stocks - Cash",
+        "Symbol/CUSIP": {
+            "PALANTIR TECH INC (PLTR)": {
                 "Quantity": 4,
-                "Current Market Price": 23.9,
-                "Purchase Cost": 95.6,
-                "Average Cost Basis": 134.84,
-                "Unrealized Gain(Loss)": -39.24
+                "Current Price": "$23.90",
+                "Market Value": "$95.60",
+                "Purchase Date": "02/05/21",
+                "Cost Basis": "$134.84",
+                "Average Cost": "$33.71",
+                "Unrealized Gain/Loss": "$ (39.24)",
+                "Estimated Income": "$0.00",
+                "Yield": "0.0%"
             },
-            "ZOMEDICA CORP ZOM": {
+            "ZOMEDICA CORP (ZOM)": {
                 "Quantity": 16,
-                "Current Market Price": 1.87,
-                "Purchase Cost": 29.92,
-                "Average Cost Basis": 39.94,
-                "Unrealized Gain(Loss)": -10.02
+                "Current Price": "$1.87",
+                "Market Value": "$29.92",
+                "Purchase Date": "02/08/21",
+                "Cost Basis": "$39.94",
+                "Average Cost": "$2.50",
+                "Unrealized Gain/Loss": "$ (10.02)",
+                "Estimated Income": "$0.00",
+                "Yield": "0.0%"
             }
         }
     },
     "Online Cash Services Transaction Detail": {
-        "CREDITS": {
+        "Credits": {
             "Electronic Transfer": {
-                "02/03/2021": "ELECTRONIC FUNDING $ 50.00",
-                "02/05/2021": "ACH IN 20.00",
-                "02/08/2021": "ACH IN 400.00"
+                "02/03/2021": "ELECTRONIC FUNDING - $50.00",
+                "02/05/2021": "ACH IN - $20.00",
+                "02/08/2021": "ACH IN - $400.00",
+                "Subtotal": "$470.00"
             }
         },
-        "DEBITS": {
+        "Debits": {
             "Electronic Transfer": {
-                "02/19/2021": "ACH OUT - CANCELLED 284.81",
-                "02/22/2021": "ACH OUT - CANCELLED 284.81"
+                "02/19/2021": "ACH OUT - CANCELLED - $284.81",
+                "02/22/2021": "ACH OUT - CANCELLED - $284.81",
+                "Subtotal": "$0.00"
             }
         },
-        "TOTAL": {
-            "CREDITS": 470.0,
-            "DEBITS": 0.0
-        }
+        "Total": "$470.00"
     }
 }

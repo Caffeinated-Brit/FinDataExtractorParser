@@ -1,0 +1,67 @@
+{
+    "Statement Reporting Period": "02/01/21 - 02/28/21",
+    "Account Number": "234-467410",
+    "Contact Number": "800-669-3900",
+    "Account Holder": "TD AMERITRADE CAMERON DOWLESS",
+    "Address": "1815 W JACKSON ST, MUNCIE, IN 47303-4853",
+    "Portfolio Summary": {
+        "Cash": 284.81,
+        "Stocks": 125.52,
+        "Total Investment Value": 410.33
+    },
+    "Cash Activity Summary": {
+        "Opening Balance": 0.0,
+        "Securities Purchased": -527.08,
+        "Securities Sold": 341.89,
+        "Funds Deposited": 470.0,
+        "Funds Disbursed": 0.0,
+        "Closing Balance": 284.81
+    },
+    "Online Cash Services Summary": {
+        "CREDITS": {
+            "Electronic Transfer": 470.0
+        },
+        "TOTAL": 470.0
+    },
+    "Account Positions": {
+        "Stocks": {
+            "PALANTIR TECH INC PLTR": {
+                "Quantity": 4,
+                "Current Market Price": 23.9,
+                "Purchase Cost": 95.6,
+                "Average Cost Basis": 134.84,
+                "Unrealized Gain(Loss)": -39.24
+            },
+            "ZOMEDICA CORP ZOM": {
+                "Quantity": 16,
+                "Current Market Price": 1.87,
+                "Purchase Cost": 29.92,
+                "Average Cost Basis": 39.94,
+                "Unrealized Gain(Loss)": -10.02
+            },
+            "Total Stocks": {
+                "Quantity": 125.52,
+                "Cost Basis": 174.78,
+                "Unrealized Gain(Loss)": -49.26,
+                "Income": 0.0
+            }
+        }
+    },
+    "Online Cash Services Transaction Detail": {
+        "CREDITS": {
+            "Electronic Transfer": {
+                "02/03/2021": 50.0,
+                "02/05/2021": 20.0,
+                "02/08/2021": 400.0
+            },
+            "TOTAL": 470.0
+        },
+        "DEBITS": {
+            "Electronic Transfer": {
+                "02/19/2021": -284.81,
+                "02/22/2021": -284.81
+            },
+            "TOTAL": 0.0
+        }
+    }
+}

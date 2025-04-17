@@ -1,5 +1,5 @@
 # Ensure that you have a Linux environment setup in WSL
-# apt install poppler-utils (run this in WSL)
+# run this in WSL: "apt install poppler-utils"
 
 import subprocess
 
@@ -11,5 +11,9 @@ def linuxParse(input_pdf):
         subprocess.run(command, check=True)
         outputfile = input_pdf.replace(".pdf",".txt")
         print(f"Text extracted to: {outputfile}")
+        # return outputfile
     except subprocess.CalledProcessError as e:
         print(f"An error occurred: {e}")
+
+if __name__ == "__main__":
+    linuxParse("C:/Users/lukas/Desktop/Current GIT/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf")

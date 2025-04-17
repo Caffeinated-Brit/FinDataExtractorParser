@@ -24,7 +24,7 @@ from pydantic import BaseModel, Extra, Field
 
 config = configparser.ConfigParser()
 config.read("config.ini")
-LLM_MODEL =  config.get("Ollama Model", "method", fallback="qwen2.5-coder:3b")
+LLM_MODEL =  config.get("Ollama Model", "model", fallback="qwen2.5-coder:3b")
 
 class CompanyInfo(BaseModel):
     name: str

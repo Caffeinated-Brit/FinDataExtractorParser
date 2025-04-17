@@ -12,7 +12,7 @@ import extractJSON
 from AI import Ollama
 # gpt
 # from AI import llama # Phasing out llama bc it's too slow and lowkey trash
-from PDFparsers import pdfPlumber, pyTesseract, linuxTest
+from PDFparsers import pdfPlumber, pyTesseract, linux_pdftotext
 from configs import configLoader
 from configs.ai_methods import ai_methods
 from configs.parser_methods import parser_methods
@@ -22,7 +22,7 @@ def run_parse(parse_method, file_path):
     try:
         if parse_method in parser_methods:
             extracted_text = parser_methods[parse_method](file_path)
-            # check if pdf is image based, could implement more complex way of checking
+            # check if pdf is image based, could implement more complex way of checking for images
             if extracted_text == "":
                 print("No text found in pdf using \"" + parse_method + "\" method. Attempting OCR workaround.")
                 extracted_text = parser_methods["pyTesseract"](file_path)
@@ -49,7 +49,6 @@ def run_ai(ai_method, prompt, config):
         # structured_data, elapsed_time, generated_tokens = ai_methods[ai_method](prompt)
     else:
         raise ValueError(f"Unknown AI method: {ai_method}")
-
     return ai_methods[ai_method](prompt)
 
 def fullParse(input_filepath):
@@ -58,7 +57,7 @@ def fullParse(input_filepath):
     selected_ai = config["ai"]
 
     print("Setting Ollama to have no cache")
-    os.environ["OLLAMA_NO_CACHE"] = "1" # this may or may not work I cannot tell
+    os.environ["OLLAMA_NO_CACHE"] = "1" # this may or may not work I cannot tell, its fairly consitent with or without
 
     start_time = time.time()
 
@@ -69,7 +68,7 @@ def fullParse(input_filepath):
 
     final_file_path = input_filepath.replace(".pdf", ".txt")
 
-    if selected_parser != "linuxTest":  # Writes to file manually for non-linux parsing methods
+    if selected_parser != "linux_pdftotext":  # Writes to file manually for non-linux parsing methods, the linux parsing outputs its own txt file
         with open(final_file_path, "w") as file:
             file.write(extracted_text)
 
@@ -114,7 +113,7 @@ def fullParse(input_filepath):
     output_file_path = input_filepath.replace(".pdf", ".json")
     with open(output_file_path, "w", encoding="utf-8") as file:
         json.dump(structured_data, file, indent=4)
-        print("Created output.json")
+        print("Created output json at: " + output_file_path)
 
     print("--- Total time: %s seconds ---" % (time.time() - start_time))
     return structured_data
@@ -128,4 +127,4 @@ if __name__ == "__main__":
     # print(run_parse(selected_parser,"examplePDFs/fromCameron/2021_2_Statement_removed.pdf"))
     # print(run_ai(selected_ai, prompt))
 
-    fullParse("examplePDFs/fromCameron/2021_2_Statement_removed.pdf")
+    print(fullParse("examplePDFs/fromCameron/2021_2_Statement_removed.pdf"))
