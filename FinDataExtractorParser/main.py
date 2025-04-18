@@ -14,9 +14,6 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route('/parse', methods=['POST'])
 def parse_pdf():
-    schema = request.files.get('schema')
-
-
 
     if 'file' not in request.files:
         return jsonify({"error": "No file part"}), 400
