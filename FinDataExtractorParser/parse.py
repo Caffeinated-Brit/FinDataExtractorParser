@@ -4,15 +4,6 @@ import configparser
 import time
 import os
 
-from exceptiongroup import catch
-
-# import configs.configLoader
-import extractJSON
-# from AI import Vllm
-from AI import Ollama
-# gpt
-# from AI import llama # Phasing out llama bc it's too slow and lowkey trash
-from PDFparsers import pdfPlumber, pyTesseract, linux_pdftotext
 from configs import configLoader
 from configs.ai_methods import ai_methods
 from configs.parser_methods import parser_methods
@@ -45,6 +36,8 @@ def run_ai(ai_method, prompt, config):
         # display AI model used per the config.ini
         if "Ollama" in ai_method:
             print("Ollama Model used:", config["ollama_model"])
+            print("Setting Ollama to have no cache")
+            os.environ["OLLAMA_NO_CACHE"] = "1"  # this may or may not work I cannot tell, its fairly consitent with or without
             # structured_data = ai_methods[ai_method](prompt)
         # structured_data, elapsed_time, generated_tokens = ai_methods[ai_method](prompt)
     else:
@@ -55,9 +48,6 @@ def fullParse(input_filepath):
     config = configLoader.load_config()
     selected_parser = config["parser"]
     selected_ai = config["ai"]
-
-    print("Setting Ollama to have no cache")
-    os.environ["OLLAMA_NO_CACHE"] = "1" # this may or may not work I cannot tell, its fairly consitent with or without
 
     start_time = time.time()
 
@@ -101,7 +91,7 @@ def fullParse(input_filepath):
     print("--- AI time: %s seconds ---" % (time.time() - ai_time))
 
     try:
-        # does not work with gpt, also not really needed anymore, also was made in a rush so it is poor
+        # does not work with gpt, also not really needed anymore, also was made in a rush so it is poor, commenting out for now
         # structured_data = extractJSON.fix_truncated_json(structured_data)
         print("\nStructured data:", "\n", structured_data)
     except json.JSONDecodeError as e:
@@ -127,4 +117,4 @@ if __name__ == "__main__":
     # print(run_parse(selected_parser,"examplePDFs/fromCameron/2021_2_Statement_removed.pdf"))
     # print(run_ai(selected_ai, prompt))
 
-    print(fullParse("examplePDFs/fromCameron/2021_2_Statement_removed.pdf"))
+    print(fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf"))

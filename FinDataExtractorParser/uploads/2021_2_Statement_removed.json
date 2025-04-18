@@ -2,8 +2,9 @@
     "Statement Reporting Period": "02/01/21 - 02/28/21",
     "Account Number": "234-467410",
     "Contact Number": "800-669-3900",
-    "Account Holder": "TD AMERITRADE CAMERON DOWLESS",
+    "Account Holder": "CAMERON DOWLESS",
     "Address": "1815 W JACKSON ST, MUNCIE, IN 47303-4853",
+    "TD Ameritrade Address": "PO BOX 2209, OMAHA, NE 68103-2209",
     "Portfolio Summary": {
         "Cash": 284.81,
         "Stocks": 125.52,
@@ -38,12 +39,6 @@
                 "Purchase Cost": 29.92,
                 "Average Cost Basis": 39.94,
                 "Unrealized Gain(Loss)": -10.02
-            },
-            "Total Stocks": {
-                "Quantity": 125.52,
-                "Cost Basis": 174.78,
-                "Unrealized Gain(Loss)": -49.26,
-                "Income": 0.0
             }
         }
     },
@@ -53,15 +48,14 @@
                 "02/03/2021": 50.0,
                 "02/05/2021": 20.0,
                 "02/08/2021": 400.0
-            },
-            "TOTAL": 470.0
+            }
         },
         "DEBITS": {
             "Electronic Transfer": {
                 "02/19/2021": -284.81,
                 "02/22/2021": -284.81
-            },
-            "TOTAL": 0.0
-        }
+            }
+        },
+        "TOTAL": 470.0
     }
 }

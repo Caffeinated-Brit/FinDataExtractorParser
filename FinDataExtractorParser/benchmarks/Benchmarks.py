@@ -1,6 +1,7 @@
 from collections import Counter
 
-small_prompt = "Give me an essay about bees with at least 10 talking points."
+tiny_prompt = "How are you today?"
+small_prompt = "Give me information about bees."
 large_prompt = """I need a comprehensive, highly detailed, and in-depth essay that reaches at least 5000 tokens about "The Role of Bees in the Global Ecosystem and Their Economic, Environmental, and Agricultural Impact." 
 
 Please structure your response as follows:
@@ -56,7 +57,7 @@ Please structure your response as follows:
 - **Ensure a long and detailed response**, reaching as close as possible to 5000 tokens.
 """
 
-request_count = 50
+request_count = 5
 
 def benchmark_vllm(prompt):
     from FinDataExtractorParser.AI import Vllm
@@ -93,12 +94,11 @@ def benchmark_ollama(prompt):
     from FinDataExtractorParser.AI import Ollama
     ollama_results, ollama_total_time = Ollama.run_benchmarking(request_count, prompt)
 
-    total_generated_tokens = sum(result[2] for result in ollama_results)
+    total_generated_tokens = sum(result[1] for result in ollama_results)
 
     # Counting occurrences of each response
     response_texts = [result[0] for result in ollama_results]
     response_counts = Counter(response_texts)
-
     unique_responses = len(response_counts)
     most_common_response, most_common_count = response_counts.most_common(1)[0]  # Get most common response
     repeatability_percentage = ((request_count - unique_responses) / (request_count - 1)) * 100
@@ -121,14 +121,14 @@ def benchmark_ollama(prompt):
 
 
 # Run both benchmarks and store results
-vllm_results = benchmark_vllm(large_prompt)
-#ollama_results = benchmark_ollama(large_prompt)
+#vllm_results = benchmark_vllm(large_prompt)
+ollama_results = benchmark_ollama(tiny_prompt)
 
 print("\nFinal Benchmarking Summary:")
 print("=" * 50)
 for result in [
-    #ollama_results,
-    vllm_results
+    ollama_results,
+    #vllm_results
     ]:
     print(f"\nBenchmarking Results for {result['model']}:")
     print("-" * 50)

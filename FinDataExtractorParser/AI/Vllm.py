@@ -5,7 +5,6 @@ from concurrent.futures import ThreadPoolExecutor
 import requests
 # from vllm import LLM, SamplingParams
 import os
-import torch
 from FinDataExtractorParser.AI.VllmServer import start_vllm_server
 os.environ ['VLLM_USE_V1'] ='1'
 
@@ -37,9 +36,9 @@ def process_text_with_llm(prompt, server_url="http://localhost:8000/v1/chat/comp
 
 
     #print(f"Generated tokens per second: {tokens_per_second}")
-    print(response.json())
+    #print(response.json())
     content = response.json()['choices'][0]['message']['content']
-    print(response.json()['choices'][0])
+    #print(response.json()['choices'][0])
     return content, elapsed_time, generated_tokens
 
 
@@ -69,13 +68,13 @@ def run_benchmarking(num_requests, prompt):
     return results, total_time
 
 def stop_llm_server():
-    """Trigger the shutdown event to stop the server."""
+    # Trigger the shutdown event to stop the server.
     print("Triggering server shutdown...")
-    shutdown_event.set()  # Set the shutdown event to stop the server
+    shutdown_event.set()
     llm_server_thread.join()
 
 def start_llm_server():
     llm_server_thread.start()
     time.sleep(60) # Allow time for the server to start, this could be handled better and may cause crashes if it takes longer to start
 
-# start_llm_server()
+#start_llm_server()
