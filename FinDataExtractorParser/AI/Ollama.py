@@ -78,13 +78,13 @@ def process_text_with_llm(user_prompt):
     #This returns just the message from the LLM nothing else
     return response.message.content
 
-def process_text_with_llm_2(prompt, keep_alive=True):
-    end_time = time.time()
-    elapsed_time = end_time - start_time
-
-    generated_tokens = response['eval_count']
-    content = response['message']['content']
-    return content, generated_tokens, elapsed_time
+# def process_text_with_llm_2(prompt, keep_alive=True):
+#     end_time = time.time()
+#     elapsed_time = end_time - start_time
+#
+#     generated_tokens = response['eval_count']
+#     content = response['message']['content']
+#     return content, generated_tokens, elapsed_time
 
 def process_text_with_llm_and_verification(prompt, keep_alive=True):
     print("Starting Ollama extraction")

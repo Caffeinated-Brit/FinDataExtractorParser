@@ -17,4 +17,4 @@ def linuxParse(input_pdf):
 
 if __name__ == "__main__":
     linuxParse("C:/Users/lukas/Desktop/Current GIT/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf")
-    linuxParse("examplePDFs/fromCameron/2021_2_Statement_removed.pdf")
+    # linuxParse("examplePDFs/fromCameron/2021_2_Statement_removed.pdf")

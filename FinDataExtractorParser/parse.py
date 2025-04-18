@@ -48,6 +48,7 @@ def fullParse(input_filepath):
     config = configLoader.load_config()
     selected_parser = config["parser"]
     selected_ai = config["ai"]
+    selected_schema = config["scheme"]
 
     start_time = time.time()
 
