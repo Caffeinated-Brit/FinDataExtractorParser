@@ -1,9 +1,9 @@
 import json
 import chardet  # pip install chardet
-import configparser
 import time
 import os
 
+import extractJSON
 from configs import configLoader
 from configs.ai_methods import ai_methods
 from configs.parser_methods import parser_methods
@@ -29,26 +29,25 @@ def run_parse(parse_method, file_path):
         raise e
     return extracted_text
 
-def run_ai(ai_method, prompt, config):
-    if ai_method in ai_methods:
-        print("Starting:", ai_method, " execution")
+def run_ai(selected_ai, prompt, config):
+    if selected_ai in ai_methods:
+        print("Starting:", selected_ai, " execution")
         # structured_data = ai_methods[ai_method](prompt)
         # display AI model used per the config.ini
-        if "Ollama" in ai_method:
+        if "Ollama" in selected_ai:
             print("Ollama Model used:", config["ollama_model"])
             print("Setting Ollama to have no cache")
             os.environ["OLLAMA_NO_CACHE"] = "1"  # this may or may not work I cannot tell, its fairly consitent with or without
             # structured_data = ai_methods[ai_method](prompt)
         # structured_data, elapsed_time, generated_tokens = ai_methods[ai_method](prompt)
     else:
-        raise ValueError(f"Unknown AI method: {ai_method}")
-    return ai_methods[ai_method](prompt)
+        raise ValueError(f"Unknown AI method: {selected_ai}")
+    return ai_methods[selected_ai](prompt)
 
 def fullParse(input_filepath):
     config = configLoader.load_config()
     selected_parser = config["parser"]
     selected_ai = config["ai"]
-    selected_schema = config["scheme"]
 
     start_time = time.time()
 
@@ -92,8 +91,9 @@ def fullParse(input_filepath):
     print("--- AI time: %s seconds ---" % (time.time() - ai_time))
 
     try:
-        # does not work with gpt, also not really needed anymore, also was made in a rush so it is poor, commenting out for now
-        # structured_data = extractJSON.fix_truncated_json(structured_data)
+        if selected_parser != "gpt":
+            # does not work with gpt, was made in a rush so it is poor still works in some cases
+            structured_data = extractJSON.fix_truncated_json(structured_data)
         print("\nStructured data:", "\n", structured_data)
     except json.JSONDecodeError as e:
         print("Error parsing JSON:", e)

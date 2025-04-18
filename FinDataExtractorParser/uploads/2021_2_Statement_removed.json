@@ -1,61 +1,114 @@
 {
     "Statement Reporting Period": "02/01/21 - 02/28/21",
     "Account Number": "234-467410",
-    "Contact Number": "800-669-3900",
-    "Account Holder": "CAMERON DOWLESS",
-    "Address": "1815 W JACKSON ST, MUNCIE, IN 47303-4853",
-    "TD Ameritrade Address": "PO BOX 2209, OMAHA, NE 68103-2209",
-    "Portfolio Summary": {
-        "Cash": 284.81,
-        "Stocks": 125.52,
-        "Total Investment Value": 410.33
+    "Contact Information": {
+        "Phone Number": "800-669-3900",
+        "Address": "1815 W JACKSON ST, DIVISION OF TD AMERITRADE INC, MUNCIE, IN 47303-4853, PO BOX 2209, OMAHA, NE 68103-2209"
     },
-    "Cash Activity Summary": {
-        "Opening Balance": 0.0,
-        "Securities Purchased": -527.08,
-        "Securities Sold": 341.89,
-        "Funds Deposited": 470.0,
-        "Funds Disbursed": 0.0,
-        "Closing Balance": 284.81
-    },
-    "Online Cash Services Summary": {
-        "CREDITS": {
-            "Electronic Transfer": 470.0
-        },
-        "TOTAL": 470.0
-    },
-    "Account Positions": {
+    "Investment Summary": {
+        "Cash": "$284.81",
+        "Insrd Dep Acct (IDA)": "-",
+        "Money Market": "-",
+        "Short Balance": "-",
         "Stocks": {
-            "PALANTIR TECH INC PLTR": {
-                "Quantity": 4,
-                "Current Market Price": 23.9,
-                "Purchase Cost": 95.6,
-                "Average Cost Basis": 134.84,
-                "Unrealized Gain(Loss)": -39.24
-            },
-            "ZOMEDICA CORP ZOM": {
-                "Quantity": 16,
-                "Current Market Price": 1.87,
-                "Purchase Cost": 29.92,
-                "Average Cost Basis": 39.94,
-                "Unrealized Gain(Loss)": -10.02
-            }
+            "Total Value": "$125.52",
+            "Percentage of Portfolio": "30.6%"
+        },
+        "Fixed Income": "-",
+        "Options": "-",
+        "Short Options": "-",
+        "Mutual Funds": {
+            "Cash": "-"
+        },
+        "Other": {
+            "Percentage of Portfolio": "69.4%"
         }
     },
+    "Cash Activity Summary": {
+        "Income & Expense Summary": {
+            "Income": "$0.00",
+            "Expense": "$0.00"
+        },
+        "Performance Summary": {
+            "Net Change": "$0.00"
+        }
+    },
+    "Online Cash Services Summary": {
+        "Description": {
+            "CREDITS": "Electronic Transfer"
+        },
+        "Current Year To Date": {
+            "Electronic Transfer": "$470.00"
+        }
+    },
+    "Account Positions": {
+        "Symbol/ Current Market Purchase Cost Average Unrealized Estimated Investment Description CUSIP Quantity Price Value Date Basis Cost Gain(Loss) Income Yield": [
+            {
+                "Symbol": "PALANTIR TECH INC",
+                "CUSIP": "PLTR",
+                "Quantity": "4",
+                "Price": "$23.90",
+                "Value": "$95.60",
+                "Date": "02/05/21",
+                "Basis Cost": "$134.84",
+                "Gain(Loss)": "-$39.24",
+                "Income Yield": "-"
+            },
+            {
+                "Symbol": "COM CL A",
+                "CUSIP": "ZOMEDICA CORP",
+                "Quantity": "16",
+                "Price": "$1.87",
+                "Value": "$29.92",
+                "Date": "02/08/21",
+                "Basis Cost": "$39.94",
+                "Gain(Loss)": "-$10.02",
+                "Income Yield": "-"
+            },
+            {
+                "Symbol": "COM",
+                "CUSIP": "",
+                "Quantity": "125.52",
+                "Price": "$174.78",
+                "Value": "$174.78",
+                "Date": "02/28/21**",
+                "Basis Cost": "$174.78",
+                "Gain(Loss)": "-$49.26",
+                "Income Yield": "0.0%"
+            }
+        ]
+    },
     "Online Cash Services Transaction Detail": {
-        "CREDITS": {
-            "Electronic Transfer": {
-                "02/03/2021": 50.0,
-                "02/05/2021": 20.0,
-                "02/08/2021": 400.0
-            }
-        },
-        "DEBITS": {
-            "Electronic Transfer": {
-                "02/19/2021": -284.81,
-                "02/22/2021": -284.81
-            }
-        },
-        "TOTAL": 470.0
+        "Category": [
+            "CREDITS",
+            "DEBITS"
+        ],
+        "Transaction Date": [
+            "02/03/2021",
+            "02/05/2021",
+            "02/08/2021",
+            "02/19/2021",
+            "02/19/2021",
+            "02/22/2021",
+            "02/22/2021"
+        ],
+        "Description": [
+            "ELECTRONIC FUNDING",
+            "ACH IN",
+            "ACH IN",
+            "ACH OUT",
+            "ACH OUT - CANCELLED",
+            "ACH OUT",
+            "ACH OUT - CANCELLED"
+        ],
+        "Amount": [
+            "$50.00",
+            "$20.00",
+            "$400.00",
+            "-$284.81",
+            "-$284.81",
+            "-$284.81",
+            "-$284.81"
+        ]
     }
 }

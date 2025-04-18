@@ -1,7 +1,7 @@
 import subprocess
 
 from unittest.mock import patch
-from PDFparsers.linuxTest import linuxParse
+from PDFparsers.linux_pdftotext import linuxParse
 
 def test_linuxParse_success(tmp_path):
     # temp pdf file for test
