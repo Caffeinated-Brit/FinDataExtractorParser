@@ -14,12 +14,26 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route('/parse', methods=['POST'])
 def parse_pdf():
+    schema = request.files.get('schema')
+
+
+
     if 'file' not in request.files:
         return jsonify({"error": "No file part"}), 400
 
     file = request.files['file']
     if file.filename == '':
         return jsonify({"error": "No selected file"}), 400
+
+    if 'schema' not in request.files:
+        return jsonify({"error": "No schema uploaded"}), 400
+
+    schema = request.files.get('schema')
+
+    print(f"File: {file.filename}, Content-Type: {file.content_type}")
+    print(f"Schema: {schema.filename}, Content-Type: {schema.content_type}")
+
+
 
     # Generate a unique filename and save file to temp directory (the llama functionality uses a filepath as of now)
     temp_filepath = f"{UPLOAD_FOLDER}{file.filename}"
