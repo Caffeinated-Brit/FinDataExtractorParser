@@ -14,6 +14,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route('/parse', methods=['POST'])
 def parse_pdf():
+    print("bees")
 
     if 'file' not in request.files:
         return jsonify({"error": "No file part"}), 400
@@ -22,13 +23,10 @@ def parse_pdf():
     if file.filename == '':
         return jsonify({"error": "No selected file"}), 400
 
-    if 'schema' not in request.files:
-        return jsonify({"error": "No schema uploaded"}), 400
-
-    schema = request.files.get('schema')
-
-    print(f"File: {file.filename}, Content-Type: {file.content_type}")
-    print(f"Schema: {schema.filename}, Content-Type: {schema.content_type}")
+    if 'schema' in request.files:
+        schema = request.files.get('schema')
+        print(f"File: {file.filename}, Content-Type: {file.content_type}")
+        print(f"Schema: {schema.filename}, Content-Type: {schema.content_type}")
 
 
 
