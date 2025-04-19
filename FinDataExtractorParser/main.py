@@ -21,6 +21,14 @@ def parse_pdf():
     if file.filename == '':
         return jsonify({"error": "No selected file"}), 400
 
+    # accept json schema for Ollama as a file from the backend
+    if 'schema' in request.files:
+        schema = request.files.get('schema')
+        print(f"File: {file.filename}, Content-Type: {file.content_type}")
+        print(f"Schema: {schema.filename}, Content-Type: {schema.content_type}")
+        print(schema)
+
+
     # Generate a unique filename and save file to temp directory (the llama functionality uses a filepath as of now)
     temp_filepath = f"{UPLOAD_FOLDER}{file.filename}"
     file.save(temp_filepath)
