@@ -55,6 +55,7 @@ class FinancialData(BaseModel):
     class Config:
         extra = 'allow'  # Allow extra fields to be added by Ollama
 
+#Do not call except for run_parallel_requests_with_schema
 def process_text_with_llm_and_schema(user_prompt):
     print("Starting Ollama extraction with a json schema...")
     start_time = time.time()
@@ -65,28 +66,15 @@ def process_text_with_llm_and_schema(user_prompt):
         # auto formats output into json, going to keep messing with this and other parameters
         format=FinancialData.model_json_schema()
     )
+    end_time = time.time()
+    elapsed_time = end_time - start_time
 
-def process_text_with_llm(user_prompt):
-    print("Starting Ollama extraction...")
-    response = ollama.chat(
-        model=LLM_MODEL,
-        messages=[{"role": "user", "content": user_prompt}],
-        options={"seed": 1, "temperature":0},
-        # auto formats output into json, going to keep messing with this and other parameters
-        # format="json"
-    )
-    #This returns just the message from the LLM nothing else
-    return response.message.content
+    generated_tokens = response['eval_count']
+    content = response['message']['content']
+    return content, generated_tokens, elapsed_time
 
-# def process_text_with_llm_2(prompt, keep_alive=True):
-#     end_time = time.time()
-#     elapsed_time = end_time - start_time
-#
-#     generated_tokens = response['eval_count']
-#     content = response['message']['content']
-#     return content, generated_tokens, elapsed_time
-
-def process_text_with_llm_and_verification(prompt, keep_alive=True):
+#Do not call except for run_parallel_requests
+def process_text_with_llm(prompt, keep_alive=True):
     print("Starting Ollama extraction")
     start_time = time.time()
 
@@ -108,7 +96,7 @@ def run_parallel_requests(num_requests, prompt):
     with ThreadPoolExecutor(max_workers=num_requests) as executor:
         futures = []
         for i in range(num_requests):
-            futures.append(executor.submit(process_text_with_llm_and_schema, prompt))
+            futures.append(executor.submit(process_text_with_llm, prompt))
 
         for future in futures:
             print(future.result())
@@ -127,9 +115,9 @@ def run_parallel_requests_with_schema(num_requests, prompt):
             print(future.result())
             print("-" * 50)
             results.append(future.result())
-
     return results
 
+# Use only for benchmarking
 def run_benchmarking(num_requests, prompt, keep_alive=False):
     process_text_with_llm("Load model into memory before benchmarking.", keep_alive)
     start_time = time.time()
