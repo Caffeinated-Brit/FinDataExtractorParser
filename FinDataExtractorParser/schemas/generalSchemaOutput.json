@@ -1,0 +1,189 @@
+{
+    "$defs": {
+        "CompanyInfo": {
+            "properties": {
+                "name": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "Company name",
+                    "title": "Name"
+                },
+                "address": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "Company address",
+                    "title": "Address"
+                },
+                "phone_number": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "Company phone number",
+                    "title": "Phone Number"
+                },
+                "email": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "Company email address",
+                    "title": "Email"
+                },
+                "website": {
+                    "anyOf": [
+                        {
+                            "format": "uri",
+                            "maxLength": 2083,
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "Company website URL",
+                    "title": "Website"
+                }
+            },
+            "title": "CompanyInfo",
+            "type": "object"
+        },
+        "PersonalInfo": {
+            "properties": {
+                "name": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "Person's full name",
+                    "title": "Name"
+                },
+                "address": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "Person's home address",
+                    "title": "Address"
+                },
+                "phone_number": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "Person's phone number",
+                    "title": "Phone Number"
+                },
+                "email": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "Person's email address",
+                    "title": "Email"
+                },
+                "bank_account_number": {
+                    "anyOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "default": null,
+                    "description": "Bank account number",
+                    "title": "Bank Account Number"
+                }
+            },
+            "title": "PersonalInfo",
+            "type": "object"
+        }
+    },
+    "properties": {
+        "personal_Info": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/PersonalInfo"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null
+        },
+        "company_Info": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/CompanyInfo"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null
+        },
+        "financial_info": {
+            "anyOf": [
+                {
+                    "additionalProperties": true,
+                    "type": "object"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "default": null,
+            "description": "Structured or semi-structured financial information",
+            "title": "Financial Info"
+        }
+    },
+    "title": "FinancialData",
+    "type": "object"
+}

@@ -1,54 +1,70 @@
+import difflib
 import json
 import chardet  # pip install chardet
 import configparser
 import time
-import difflib
-from concurrent.futures import ThreadPoolExecutor
+import os
 
 import extractJSON
-from AI import Vllm
-from FinDataExtractorParser.AI import Ollama
-# gpt
-# from AI import llama # Phasing out llama bc it's too slow and lowkey trash
-from PDFparsers import pdfPlumber, pyTesseract, linuxTest
+from configs import configLoader
+from configs.ai_methods import ai_methods
+from configs.parser_methods import parser_methods
 
-# Load configuration
-config = configparser.ConfigParser()
-config.read("config.ini")
-selected_parser = config.get("Parser", "method", fallback="pdfPlumber")
-selected_ai = config.get("AI", "method", fallback="Ollama")
-reruns = int(config.get("Verification", "reruns", fallback=3))
-threshold = float(config.get("Verification", "threshold", fallback=0.9))
+def run_parse(parse_method, file_path):
+    # Check that parsing method is valid
+    try:
+        if parse_method in parser_methods:
+            extracted_text = parser_methods[parse_method](file_path)
+            # check if pdf is image based, could implement more complex way of checking for images
+            if extracted_text == "":
+                print("No text found in pdf using \"" + parse_method + "\" method. Attempting OCR workaround.")
+                extracted_text = parser_methods["pyTesseract"](file_path)
+                if extracted_text == "":
+                    print("No text found in pdf using OCR workaround. Exiting.")
+                    return None
+
+                print("Applied OCR workaround, continuing...")
+        else:
+            raise ValueError(f"Unknown parser method: {parse_method}")
+    except FileNotFoundError as e:
+        print("Pdf file not found, exiting.")
+        raise e
+    return extracted_text
+
+def run_ai(ai_method, prompt, config):
+    if ai_method in ai_methods:
+        print("Starting:", ai_method, " execution")
+        # structured_data = ai_methods[ai_method](prompt)
+        # display AI model used per the config.ini
+        if "Ollama" in ai_method:
+            print("Ollama Model used:", config["ollama_model"])
+            print("Setting Ollama to have no cache")
+            os.environ["OLLAMA_NO_CACHE"] = "1"  # this may or may not work I cannot tell, its fairly consitent with or without
+            # structured_data = ai_methods[ai_method](prompt)
+        # structured_data, elapsed_time, generated_tokens = ai_methods[ai_method](prompt)
+    else:
+        raise ValueError(f"Unknown AI method: {ai_method}")
+
+    structured_data, elapsed_time, generated_tokens = verify_similar_outputs(3, 0.9, prompt, ai_method)
+    return structured_data
+    #return ai_methods[ai_method](prompt)
 
 def fullParse(input_filepath):
+    config = configLoader.load_config()
+    selected_parser = config["parser"]
+    selected_ai = config["ai"]
+    selected_schema = config["schema"]
+
     start_time = time.time()
-    # Pick parsing method based on config
-    parser_methods = {
-        "pdfPlumber": pdfPlumber.extract_text_from_pdf,
-        "pyTesseract": pyTesseract.extract_content,
-        "linuxTest": linuxTest.linuxParse
-    }
 
-    # Check that parsing method is valid
-    if selected_parser in parser_methods:
-        extracted_text = parser_methods[selected_parser](input_filepath)
-        # check if pdf is image based, could implement more complex way of checking with
-        if extracted_text == "":
-            print("No text found in pdf using \"" + selected_parser + "\" method. Attempting OCR workaround.")
-            extracted_text = parser_methods["pyTesseract"](input_filepath)
-            if extracted_text == "":
-                print("No text found in pdf using OCR workaround. Exiting.")
-                return None
-
-            print("Applied OCR workaround, continuing...")
-    else:
-        raise ValueError(f"Unknown parser method: {selected_parser}")
+    # call chosen parsing method -----------------------------------
+    extracted_text = run_parse(selected_parser, input_filepath)
 
     print("--- Parser time: %s seconds ---" % (time.time() - start_time))
 
     final_file_path = input_filepath.replace(".pdf", ".txt")
 
-    if selected_parser != "linuxTest":  # Writes to file manually for non-linux parsing methods
+    if selected_parser != "linux_pdftotext":  # Writes to file manually for non-linux parsing methods, the linux parsing outputs its own txt file
         with open(final_file_path, "w") as file:
             file.write(extracted_text)
 
@@ -70,32 +86,18 @@ def fullParse(input_filepath):
     prompt = (
         f"The following text was extracted from a PDF named \"{input_filepath}\".\n"
         "Extract and categorize the data from the text. Return as JSON.\n"
-        # "Ignore any terms and conditions, and only extract valuable financial data.\n"
-        # "Categorize the extracted data into valid JSON format.\n"
-        # "Ensure the JSON is fully valid and does not contain errors.\n"
-        # "Return only the JSON array, with no extra text before or after.\n"
         f"Text:\n{extracted_text}")
 
-    # Pick AI method based on config
-
-    ai_methods = {
-        "Ollama": Ollama.run_parallel_requests,
-        "Ollama/Schema": Ollama.run_parallel_requests_with_schema,
-        #"Vllm": Vllm.run_parallel_requests,
-        # "llama": llama.process_text_with_llm,
-        # "gpt": gpt.extract_structured_data
-    }
     ai_time = time.time()
-    # Check that AI method is valid
-    if selected_ai in ai_methods:
-        # Past this point elapsed_time and generated_tokens are not used they are only for benchmarking
-        structured_data, elapsed_time, generated_tokens = verify_similar_outputs(reruns, threshold, prompt, ai_methods)
-    else:
-        raise ValueError(f"Unknown AI method: {selected_ai}")
-    print("\nAI output:", "\n", structured_data)
+
+    # call chosen ai method ---------------------------------------------------
+    structured_data = run_ai(selected_ai, prompt, config)
+
+    #print("\nAI output:", "\n", structured_data)
     print("--- AI time: %s seconds ---" % (time.time() - ai_time))
 
     try:
+        # does not work with gpt, also not really needed anymore, also was made in a rush so it is poor, commenting out for now
         structured_data = extractJSON.fix_truncated_json(structured_data)
         print("\nStructured data:", "\n", structured_data)
     except json.JSONDecodeError as e:
@@ -107,13 +109,13 @@ def fullParse(input_filepath):
     output_file_path = input_filepath.replace(".pdf", ".json")
     with open(output_file_path, "w", encoding="utf-8") as file:
         json.dump(structured_data, file, indent=4)
-        print("Created output.json")
+        print("Created output json at: " + output_file_path)
 
     print("--- Total time: %s seconds ---" % (time.time() - start_time))
     return structured_data
 
-# This runs the llm chosen multiple times to check that the output is consistent
-def verify_similar_outputs(reruns, threshold, prompt, ai_methods):
+#This will run the selected ai multiple times and output the most similar to the others
+def verify_similar_outputs(reruns, threshold, prompt, selected_ai):
     outputs = ai_methods[selected_ai](reruns, prompt)
     print("Checking similarity ratio of the following outputs.\n")
 
@@ -157,7 +159,6 @@ def verify_similar_outputs(reruns, threshold, prompt, ai_methods):
 
 def normalize_json_string(text):
     try:
-
         if text.startswith("```json"):
             lines = text.strip().splitlines()
             text = "\n".join(lines[1:-1])
@@ -168,5 +169,15 @@ def normalize_json_string(text):
         print("⚠️ Could not normalize output:", e)
         return text
 
+
+
 if __name__ == "__main__":
-    fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf")
+    # config = configLoader.load_config()
+    # print(config)
+    # selected_parser = config["parser"]
+    # selected_ai = config["ai"]
+    #
+    # print(run_parse(selected_parser,"examplePDFs/fromCameron/2021_2_Statement_removed.pdf"))
+    # print(run_ai(selected_ai, prompt))
+
+    print(fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf"))

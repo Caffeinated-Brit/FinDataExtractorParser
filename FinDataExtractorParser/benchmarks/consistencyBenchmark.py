@@ -5,9 +5,11 @@ from collections import defaultdict
 from difflib import SequenceMatcher
 import time
 
-from FinDataExtractorParser.parse import fullParse
+from parse import fullParse
 
-TEST_AMOUNT = 3
+# need to go through and check if fields that only show up for some outputs are docked the correct amount
+
+TEST_AMOUNT = 5
 FILE_PATH = "C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf"
 
 
@@ -85,13 +87,11 @@ def compare_json_outputs(json_outputs):
 
     # Compute overall consistency score
     overall_consistency = np.mean(list(consistency_scores.values()))
-
     return consistency_scores, overall_consistency
 
 start_time = time.time()
-# Initialize json_outputs
-json_outputs = []
 
+json_outputs = []
 # Populate json_outputs by running parsing multiple times
 for i in range(TEST_AMOUNT):
     json_outputs.append(fullParse(FILE_PATH))
@@ -105,8 +105,10 @@ field_scores, overall_score = compare_json_outputs(json_outputs)
 
 config = configparser.ConfigParser()
 config.read("config.ini")
+
+# this could be my issue with the config file, i may be overwriting the options here
 selected_parser = config.get("Parser", "method", fallback="pdfPlumber")
-selected_ai = config.get("AI", "method", fallback="Ollama")
+selected_ai = config.get("AI", "method", fallback="Ollama/Schema")
 
 endTime = time.time() - start_time
 
@@ -126,5 +128,4 @@ output_data = {
 with open("consistencyBenchmarkOutput.json", "w") as f:
     json.dump(output_data, f, indent=2)
 
-# Print confirmation
 print("Consistency benchmark results saved to consistencyBenchmarkOutput.json")
