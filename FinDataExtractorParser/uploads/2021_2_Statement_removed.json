@@ -1,114 +1,103 @@
 {
-    "Statement Reporting Period": "02/01/21 - 02/28/21",
-    "Account Number": "234-467410",
-    "Contact Information": {
-        "Phone Number": "800-669-3900",
-        "Address": "1815 W JACKSON ST, DIVISION OF TD AMERITRADE INC, MUNCIE, IN 47303-4853, PO BOX 2209, OMAHA, NE 68103-2209"
+    "personal_Info": {
+        "name": "Cameron Dowless",
+        "address": "1815 W JACKSON ST, DIVISION OF TD AMERITRADE INC, MUNCIE, IN 47303-4853, PO BOX 2209, OMAHA, NE 68103-2209",
+        "phone_number": "800-669-3900",
+        "email": "www.tdameritrade.com",
+        "bank_account_number": "234-467410"
     },
-    "Investment Summary": {
-        "Cash": "$284.81",
-        "Insrd Dep Acct (IDA)": "-",
-        "Money Market": "-",
-        "Short Balance": "-",
-        "Stocks": {
-            "Total Value": "$125.52",
-            "Percentage of Portfolio": "30.6%"
-        },
-        "Fixed Income": "-",
-        "Options": "-",
-        "Short Options": "-",
-        "Mutual Funds": {
-            "Cash": "-"
-        },
-        "Other": {
-            "Percentage of Portfolio": "69.4%"
-        }
+    "company_Info": {
+        "name": "TD Ameritrade Clearing, Inc.",
+        "address": "PO BOX 2209, OMAHA, NE 68103-2209",
+        "phone_number": "800-669-3900",
+        "email": "www.tdameritrade.com",
+        "website": "https://www.tdameritrade.com"
     },
-    "Cash Activity Summary": {
-        "Income & Expense Summary": {
-            "Income": "$0.00",
-            "Expense": "$0.00"
+    "financial_info": {
+        "statement_period": "02/01/21 - 02/28/21",
+        "total_investment_value": "$410.33",
+        "cash_balance": "$284.81",
+        "net_change": "$0.00",
+        "income_yield": "0.0%",
+        "portfolio_allocation": {
+            "Cash": "69.4%",
+            "Stocks": "30.6%"
         },
-        "Performance Summary": {
-            "Net Change": "$0.00"
-        }
-    },
-    "Online Cash Services Summary": {
-        "Description": {
-            "CREDITS": "Electronic Transfer"
-        },
-        "Current Year To Date": {
-            "Electronic Transfer": "$470.00"
-        }
-    },
-    "Account Positions": {
-        "Symbol/ Current Market Purchase Cost Average Unrealized Estimated Investment Description CUSIP Quantity Price Value Date Basis Cost Gain(Loss) Income Yield": [
+        "transaction_details": [
             {
-                "Symbol": "PALANTIR TECH INC",
-                "CUSIP": "PLTR",
-                "Quantity": "4",
-                "Price": "$23.90",
-                "Value": "$95.60",
-                "Date": "02/05/21",
-                "Basis Cost": "$134.84",
-                "Gain(Loss)": "-$39.24",
-                "Income Yield": "-"
+                "category": "CREDITS",
+                "transactions": [
+                    {
+                        "date": "02/03/2021",
+                        "description": "ELECTRONIC FUNDING",
+                        "amount": "$50.00"
+                    },
+                    {
+                        "date": "02/05/2021",
+                        "description": "ACH IN 20.00",
+                        "amount": "$20.00"
+                    },
+                    {
+                        "date": "02/08/2021",
+                        "description": "ACH IN 400.00",
+                        "amount": "$400.00"
+                    }
+                ]
             },
             {
-                "Symbol": "COM CL A",
-                "CUSIP": "ZOMEDICA CORP",
-                "Quantity": "16",
-                "Price": "$1.87",
-                "Value": "$29.92",
-                "Date": "02/08/21",
-                "Basis Cost": "$39.94",
-                "Gain(Loss)": "-$10.02",
-                "Income Yield": "-"
-            },
-            {
-                "Symbol": "COM",
-                "CUSIP": "",
-                "Quantity": "125.52",
-                "Price": "$174.78",
-                "Value": "$174.78",
-                "Date": "02/28/21**",
-                "Basis Cost": "$174.78",
-                "Gain(Loss)": "-$49.26",
-                "Income Yield": "0.0%"
+                "category": "DEBITS",
+                "transactions": [
+                    {
+                        "date": "02/19/2021",
+                        "description": "ACH OUT $ (284.81)",
+                        "amount": "-$284.81"
+                    },
+                    {
+                        "date": "02/19/2021",
+                        "description": "ACH OUT - CANCELLED 284.81",
+                        "amount": "-$284.81"
+                    },
+                    {
+                        "date": "02/22/2021",
+                        "description": "ACH OUT (284.81)",
+                        "amount": "-$284.81"
+                    },
+                    {
+                        "date": "02/22/2021",
+                        "description": "ACH OUT - CANCELLED 284.81",
+                        "amount": "-$284.81"
+                    }
+                ]
             }
-        ]
-    },
-    "Online Cash Services Transaction Detail": {
-        "Category": [
-            "CREDITS",
-            "DEBITS"
         ],
-        "Transaction Date": [
-            "02/03/2021",
-            "02/05/2021",
-            "02/08/2021",
-            "02/19/2021",
-            "02/19/2021",
-            "02/22/2021",
-            "02/22/2021"
-        ],
-        "Description": [
-            "ELECTRONIC FUNDING",
-            "ACH IN",
-            "ACH IN",
-            "ACH OUT",
-            "ACH OUT - CANCELLED",
-            "ACH OUT",
-            "ACH OUT - CANCELLED"
-        ],
-        "Amount": [
-            "$50.00",
-            "$20.00",
-            "$400.00",
-            "-$284.81",
-            "-$284.81",
-            "-$284.81",
-            "-$284.81"
+        "account_positions": [
+            {
+                "symbol": "PLTR",
+                "current_market_price": "$23.90",
+                "purchase_cost": "$134.84",
+                "unrealized_gain_loss": "-$39.24",
+                "estimated_value": "$95.60",
+                "quantity": "4",
+                "investment_description": "PALANTIR TECH INC"
+            },
+            {
+                "symbol": "ACH IN 20.00",
+                "current_market_price": "$134.84",
+                "purchase_cost": "$134.84",
+                "unrealized_gain_loss": "-$39.24",
+                "estimated_value": "$95.60",
+                "quantity": "4",
+                "investment_description": "ACH IN 20.00"
+            },
+            {
+                "symbol": "ACH OUT $ (284.81)",
+                "current_market_price": "$134.84",
+                "purchase_cost": "$134.84",
+                "unrealized_gain_loss": "-$39.24",
+                "estimated_value": "$95.60",
+                "quantity": "4",
+                "investment_description": "ACH OUT $ (284.81)"
+            }
         ]
     }
 }

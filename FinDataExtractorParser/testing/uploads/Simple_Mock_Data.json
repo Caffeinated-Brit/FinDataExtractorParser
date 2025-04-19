@@ -1,22 +1,5 @@
 {
-    "personal_Info": {
-        "name": "Lukas Maynard",
-        "address": "1234 whocare lane",
-        "phone_number": "555-555-5555",
-        "email": "lukas.maynard@example.com",
-        "bank_account_number": "12345678901234567890"
-    },
-    "company_Info": {
-        "name": "Example Company",
-        "address": "123 Main St, Anytown, USA",
-        "phone_number": "555-555-5555",
-        "email": "info@example.com",
-        "website": "www.example.com"
-    },
-    "financial_info": {
-        "income": "$100,000 per year",
-        "tax_rate": "28%",
-        "savings_account_balance": "$50,000",
-        "credit_score": "750"
-    }
+    "name": "Lukas Maynard",
+    "date": "11/29/2024",
+    "address": "1234 whocare lane"
 }

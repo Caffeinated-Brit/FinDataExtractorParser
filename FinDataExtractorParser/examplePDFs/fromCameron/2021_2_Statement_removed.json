@@ -91,37 +91,50 @@
         }
     },
     "OnlineCashServicesSummary": {
-        "Description": "CREDITS",
-        "CurrentYearToDate": "$470.00"
+        "CREDITS": {
+            "CurrentYear": "$470.00",
+            "ToDate": "$470.00"
+        },
+        "Subtotal": "$470.00",
+        "TOTAL": "$470.00"
     },
     "AccountPositions": {
-        "Symbol/CurrentMarketPurchaseCostAverageUnrealizedEstimatedInvestmentDescriptionCUSIPQuantityPriceValueDateBasisCostGain(Loss)IncomeYield": [
+        "Symbol/CurrentMarketPurchaseCostAverageUnrealizedEstimatedInvestmentDescriptionCUSIPQuantityPriceValueDateBasisYield": [
             {
-                "Symbol": "-",
-                "CurrentMarketPurchaseCost": "$23.90",
-                "AverageUnrealizedValue": "$125.52",
-                "TotalCostBasis": "$174.78",
-                "Date": "02/03/2021",
-                "GainLoss": "-$49.26",
+                "Symbol": "125.52",
+                "CurrentMarketPurchaseCost": "$174.78",
+                "AverageUnrealizedGainLoss": "-$49.26",
+                "EstimatedValue": "$125.52",
+                "Description": "Stocks",
+                "CUSIP": "",
+                "Quantity": "",
+                "Price": "",
+                "DateBasis": "",
                 "Yield": "30.6%"
             },
             {
-                "Symbol": "-",
-                "CurrentMarketPurchaseCost": "$23.90",
-                "AverageUnrealizedValue": "$125.52",
-                "TotalCostBasis": "$174.78",
-                "Date": "02/05/2021",
-                "GainLoss": "-$49.26",
+                "Symbol": "125.52",
+                "CurrentMarketPurchaseCost": "$174.78",
+                "AverageUnrealizedGainLoss": "-$49.26",
+                "EstimatedValue": "$125.52",
+                "Description": "MutualFunds",
+                "CUSIP": "",
+                "Quantity": "",
+                "Price": "",
+                "DateBasis": "",
                 "Yield": "30.6%"
             },
             {
-                "Symbol": "-",
-                "CurrentMarketPurchaseCost": "$23.90",
-                "AverageUnrealizedValue": "$125.52",
-                "TotalCostBasis": "$174.78",
-                "Date": "02/08/2021",
-                "GainLoss": "-$49.26",
-                "Yield": "30.6%"
+                "Symbol": "125.52",
+                "CurrentMarketPurchaseCost": "$174.78",
+                "AverageUnrealizedGainLoss": "-$49.26",
+                "EstimatedValue": "$125.52",
+                "Description": "Other",
+                "CUSIP": "",
+                "Quantity": "",
+                "Price": "",
+                "DateBasis": "",
+                "Yield": "69.4%"
             }
         ]
     },

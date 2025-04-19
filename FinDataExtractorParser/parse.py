@@ -1,5 +1,7 @@
+import difflib
 import json
 import chardet  # pip install chardet
+import configparser
 import time
 import os
 
@@ -7,6 +9,8 @@ import extractJSON
 from configs import configLoader
 from configs.ai_methods import ai_methods
 from configs.parser_methods import parser_methods
+from verification_parsing import verify_similar_outputs
+
 
 def run_parse(parse_method, file_path):
     # Check that parsing method is valid
@@ -29,20 +33,25 @@ def run_parse(parse_method, file_path):
         raise e
     return extracted_text
 
-def run_ai(selected_ai, prompt, config):
-    if selected_ai in ai_methods:
-        print("Starting:", selected_ai, " execution")
+def run_ai(ai_method, prompt, config):
+
+    if ai_method in ai_methods:
+        print("Starting:", ai_method, " execution")
         # structured_data = ai_methods[ai_method](prompt)
         # display AI model used per the config.ini
-        if "Ollama" in selected_ai:
+        if "Ollama" in ai_method:
             print("Ollama Model used:", config["ollama_model"])
             print("Setting Ollama to have no cache")
             os.environ["OLLAMA_NO_CACHE"] = "1"  # this may or may not work I cannot tell, its fairly consitent with or without
             # structured_data = ai_methods[ai_method](prompt)
-        # structured_data, elapsed_time, generated_tokens = ai_methods[ai_method](prompt)
+        if config["activeVerification"] == "True":
+            print("Active Verification:", config["activeVerification"])
+            structured_data, elapsed_time, generated_tokens = verify_similar_outputs(3, 0.9, prompt, ai_method)
+        else:
+            structured_data = ai_methods[ai_method](prompt)
     else:
-        raise ValueError(f"Unknown AI method: {selected_ai}")
-    return ai_methods[selected_ai](prompt)
+        raise ValueError(f"Unknown AI method: {ai_method}")
+    return structured_data
 
 def fullParse(input_filepath):
     config = configLoader.load_config()
@@ -87,12 +96,12 @@ def fullParse(input_filepath):
     # call chosen ai method ---------------------------------------------------
     structured_data = run_ai(selected_ai, prompt, config)
 
-    print("\nAI output:", "\n", structured_data)
+    #print("\nAI output:", "\n", structured_data)
     print("--- AI time: %s seconds ---" % (time.time() - ai_time))
 
     try:
-        if selected_parser != "gpt":
-            # does not work with gpt, was made in a rush so it is poor still works in some cases
+        if selected_ai != "gpt":
+            # does not work with gpt, was made in a rush so it is poor
             structured_data = extractJSON.fix_truncated_json(structured_data)
         print("\nStructured data:", "\n", structured_data)
     except json.JSONDecodeError as e:
@@ -109,6 +118,7 @@ def fullParse(input_filepath):
     print("--- Total time: %s seconds ---" % (time.time() - start_time))
     return structured_data
 
+
 if __name__ == "__main__":
     # config = configLoader.load_config()
     # print(config)
@@ -118,4 +128,4 @@ if __name__ == "__main__":
     # print(run_parse(selected_parser,"examplePDFs/fromCameron/2021_2_Statement_removed.pdf"))
     # print(run_ai(selected_ai, prompt))
 
-    print(fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/schwab.pdf"))
+    print(fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf"))
