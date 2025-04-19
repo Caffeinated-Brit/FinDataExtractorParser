@@ -8,7 +8,7 @@ from unittest.mock import patch, MagicMock
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from AI import Ollama
-from PDFparsers import pdfPlumber, pyTesseract, linuxTest
+from PDFparsers import pdfPlumber, pyTesseract, linux_pdftotext
 import extractJSON
 
 # Sample extracted text from PDF for testing
@@ -34,7 +34,7 @@ def mock_pdf_parsing():
     """Mock different PDF parsing methods."""
     with patch.object(pdfPlumber, "extract_text_from_pdf", return_value=MOCK_EXTRACTED_TEXT), \
          patch.object(pyTesseract, "extract_content", return_value=MOCK_EXTRACTED_TEXT), \
-         patch.object(linuxTest, "linuxParse", return_value=MOCK_EXTRACTED_TEXT):
+         patch.object(linux_pdftotext, "linuxParse", return_value=MOCK_EXTRACTED_TEXT):
         yield
 
 

@@ -7,6 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.venv1" />
       <excludeFolder url="file://$MODULE_DIR$/FinDataExtractorParser/testing" />
       <excludeFolder url="file://$MODULE_DIR$/FinDataExtractorParser/examplePDFs" />
+      <excludeFolder url="file://$MODULE_DIR$/Research and Development" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
