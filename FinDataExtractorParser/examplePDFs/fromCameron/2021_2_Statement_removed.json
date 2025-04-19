@@ -1,1 +1,161 @@
-"{\n  \"StatementReportingPeriod\": \"02/01/21 - 02/28/21\",\n  \"AccountNumber\": \"234-467410\",\n  \"ContactInfo\": {\n    \"Phone\": \"800-669-3900\",\n    \"Address\": {\n      \"Street\": \"1815 W JACKSON ST\",\n      \"City\": \"MUNCIE\",\n      \"State\": \"IN\",\n      \"ZipCode\": \"47303-4853\",\n      \"POBox\": \"2209\",\n      \"Country\": \"USA\"\n    },\n    \"ClearingCompany\": \"TD Ameritrade Clearing, Inc., Member SIPC\"\n  },\n  \"PortfolioSummary\": {\n    \"Cash\": {\n      \"Value\": \"$284.81\",\n      \"Change\": \"-\",\n      \"Income\": \"-\",\n      \"Yield\": \"-\"\n    },\n    \"InsrdDepAcct\": {\n      \"Value\": \"-\",\n      \"Change\": \"-\",\n      \"Income\": \"-\",\n      \"Yield\": \"-\"\n    },\n    \"MoneyMarket\": {\n      \"Value\": \"-\",\n      \"Change\": \"-\",\n      \"Income\": \"-\",\n      \"Yield\": \"-\"\n    },\n    \"ShortBalance\": {\n      \"Value\": \"-\",\n      \"Change\": \"-\",\n      \"Income\": \"-\",\n      \"Yield\": \"-\"\n    },\n    \"Stocks\": {\n      \"TotalValue\": \"$125.52\",\n      \"TotalCostBasis\": \"$174.78\",\n      \"TotalGainLoss\": \"-$49.26\",\n      \"Yield\": \"30.6%\"\n    },\n    \"ShortStocks\": {\n      \"TotalValue\": \"-\",\n      \"TotalCostBasis\": \"-\",\n      \"TotalGainLoss\": \"-\",\n      \"Yield\": \"-\"\n    },\n    \"FixedIncome\": {\n      \"TotalValue\": \"-\",\n      \"TotalCostBasis\": \"-\",\n      \"TotalGainLoss\": \"-\",\n      \"Yield\": \"-\"\n    },\n    \"Options\": {\n      \"TotalValue\": \"-\",\n      \"TotalCostBasis\": \"-\",\n      \"TotalGainLoss\": \"-\",\n      \"Yield\": \"-\"\n    },\n    \"ShortOptions\": {\n      \"TotalValue\": \"-\",\n      \"TotalCostBasis\": \"-\",\n      \"TotalGainLoss\": \"-\",\n      \"Yield\": \"-\"\n    },\n    \"MutualFunds\": {\n      \"TotalValue\": \"$125.52\",\n      \"TotalCostBasis\": \"$174.78\",\n      \"TotalGainLoss\": \"-$49.26\",\n      \"Yield\": \"30.6%\"\n    },\n    \"Other\": {\n      \"TotalValue\": \"$125.52\",\n      \"TotalCostBasis\": \"$174.78\",\n      \"TotalGainLoss\": \"-$49.26\",\n      \"Yield\": \"69.4%\"\n    }\n  },\n  \"CashActivitySummary\": {\n    \"IncomeExpenseSummary\": {\n      \"OpeningBalance\": \"$0.00\",\n      \"ClosingBalance\": \"$284.81\"\n    },\n    \"PerformanceSummary\": {\n      \"NetChange\": \"$0.00\"\n    }\n  },\n  \"OnlineCashServicesSummary\": {\n    \"Description\": \"CREDITS\",\n    \"CurrentYearToDate\": \"$470.00\"\n  },\n  \"AccountPositions\": {\n    \"Symbol/CurrentMarketPurchaseCostAverageUnrealizedEstimatedInvestmentDescriptionCUSIPQuantityPriceValueDateBasisCostGain(Loss)IncomeYield\": [\n      {\n        \"Symbol\": \"-\",\n        \"CurrentMarketPurchaseCost\": \"$23.90\",\n        \"AverageUnrealizedValue\": \"$125.52\",\n        \"TotalCostBasis\": \"$174.78\",\n        \"Date\": \"02/03/2021\",\n        \"GainLoss\": \"-$49.26\",\n        \"Yield\": \"30.6%\"\n      },\n      {\n        \"Symbol\": \"-\",\n        \"CurrentMarketPurchaseCost\": \"$23.90\",\n        \"AverageUnrealizedValue\": \"$125.52\",\n        \"TotalCostBasis\": \"$174.78\",\n        \"Date\": \"02/05/2021\",\n        \"GainLoss\": \"-$49.26\",\n        \"Yield\": \"30.6%\"\n      },\n      {\n        \"Symbol\": \"-\",\n        \"CurrentMarketPurchaseCost\": \"$23.90\",\n        \"AverageUnrealizedValue\": \"$125.52\",\n        \"TotalCostBasis\": \"$174.78\",\n        \"Date\": \"02/08/2021\",\n        \"GainLoss\": \"-$49.26\",\n        \"Yield\": \"30.6%\"\n      }\n    ]\n  },\n  \"OnlineCashServicesTransactionDetail\": {\n    \"Category\": [\n      \"CREDITS\",\n      \"DEBITS\"\n    ],\n    \"TransactionDate\": [\n      \"02/03/2021\",\n      \"02/05/2021\",\n      \"02/08/2021\",\n      \"02/19/2021\",\n      \"02/19/2021\",\n      \"02/22/2021\",\n      \"02/22/2021\"\n    ],\n    \"Description\": [\n      \"ELECTRONIC FUNDING\",\n      \"ACH IN\",\n      \"ACH IN\",\n      \"ACH OUT\",\n      \"ACH OUT - CANCELLED\",\n      \"ACH OUT\",\n      \"ACH OUT - CANCELLED\"\n    ],\n    \"Amount\": [\n      \"$50.00\",\n      \"$20.00\",\n      \"$400.00\",\n      \"-$284.81\",\n      \"-$284.81\",\n      \"-$284.81\",\n      \"-$284.81\"\n    ]\n  }\n}"
+{
+    "StatementReportingPeriod": "02/01/21 - 02/28/21",
+    "AccountNumber": "234-467410",
+    "ContactInfo": {
+        "Phone": "800-669-3900",
+        "Address": {
+            "Street": "1815 W JACKSON ST",
+            "City": "MUNCIE",
+            "State": "IN",
+            "ZipCode": "47303-4853",
+            "POBox": "2209",
+            "Country": "USA"
+        },
+        "ClearingCompany": "TD Ameritrade Clearing, Inc., Member SIPC"
+    },
+    "PortfolioSummary": {
+        "Cash": {
+            "Value": "$284.81",
+            "Change": "-",
+            "Income": "-",
+            "Yield": "-"
+        },
+        "InsrdDepAcct": {
+            "Value": "-",
+            "Change": "-",
+            "Income": "-",
+            "Yield": "-"
+        },
+        "MoneyMarket": {
+            "Value": "-",
+            "Change": "-",
+            "Income": "-",
+            "Yield": "-"
+        },
+        "ShortBalance": {
+            "Value": "-",
+            "Change": "-",
+            "Income": "-",
+            "Yield": "-"
+        },
+        "Stocks": {
+            "TotalValue": "$125.52",
+            "TotalCostBasis": "$174.78",
+            "TotalGainLoss": "-$49.26",
+            "Yield": "30.6%"
+        },
+        "ShortStocks": {
+            "TotalValue": "-",
+            "TotalCostBasis": "-",
+            "TotalGainLoss": "-",
+            "Yield": "-"
+        },
+        "FixedIncome": {
+            "TotalValue": "-",
+            "TotalCostBasis": "-",
+            "TotalGainLoss": "-",
+            "Yield": "-"
+        },
+        "Options": {
+            "TotalValue": "-",
+            "TotalCostBasis": "-",
+            "TotalGainLoss": "-",
+            "Yield": "-"
+        },
+        "ShortOptions": {
+            "TotalValue": "-",
+            "TotalCostBasis": "-",
+            "TotalGainLoss": "-",
+            "Yield": "-"
+        },
+        "MutualFunds": {
+            "TotalValue": "$125.52",
+            "TotalCostBasis": "$174.78",
+            "TotalGainLoss": "-$49.26",
+            "Yield": "30.6%"
+        },
+        "Other": {
+            "TotalValue": "$125.52",
+            "TotalCostBasis": "$174.78",
+            "TotalGainLoss": "-$49.26",
+            "Yield": "69.4%"
+        }
+    },
+    "CashActivitySummary": {
+        "IncomeExpenseSummary": {
+            "OpeningBalance": "$0.00",
+            "ClosingBalance": "$284.81"
+        },
+        "PerformanceSummary": {
+            "NetChange": "$0.00"
+        }
+    },
+    "OnlineCashServicesSummary": {
+        "Description": "CREDITS",
+        "CurrentYearToDate": "$470.00"
+    },
+    "AccountPositions": {
+        "Symbol/CurrentMarketPurchaseCostAverageUnrealizedEstimatedInvestmentDescriptionCUSIPQuantityPriceValueDateBasisCostGain(Loss)IncomeYield": [
+            {
+                "Symbol": "-",
+                "CurrentMarketPurchaseCost": "$23.90",
+                "AverageUnrealizedValue": "$125.52",
+                "TotalCostBasis": "$174.78",
+                "Date": "02/03/2021",
+                "GainLoss": "-$49.26",
+                "Yield": "30.6%"
+            },
+            {
+                "Symbol": "-",
+                "CurrentMarketPurchaseCost": "$23.90",
+                "AverageUnrealizedValue": "$125.52",
+                "TotalCostBasis": "$174.78",
+                "Date": "02/05/2021",
+                "GainLoss": "-$49.26",
+                "Yield": "30.6%"
+            },
+            {
+                "Symbol": "-",
+                "CurrentMarketPurchaseCost": "$23.90",
+                "AverageUnrealizedValue": "$125.52",
+                "TotalCostBasis": "$174.78",
+                "Date": "02/08/2021",
+                "GainLoss": "-$49.26",
+                "Yield": "30.6%"
+            }
+        ]
+    },
+    "OnlineCashServicesTransactionDetail": {
+        "Category": [
+            "CREDITS",
+            "DEBITS"
+        ],
+        "TransactionDate": [
+            "02/03/2021",
+            "02/05/2021",
+            "02/08/2021",
+            "02/19/2021",
+            "02/19/2021",
+            "02/22/2021",
+            "02/22/2021"
+        ],
+        "Description": [
+            "ELECTRONIC FUNDING",
+            "ACH IN",
+            "ACH IN",
+            "ACH OUT",
+            "ACH OUT - CANCELLED",
+            "ACH OUT",
+            "ACH OUT - CANCELLED"
+        ],
+        "Amount": [
+            "$50.00",
+            "$20.00",
+            "$400.00",
+            "-$284.81",
+            "-$284.81",
+            "-$284.81",
+            "-$284.81"
+        ]
+    }
+}

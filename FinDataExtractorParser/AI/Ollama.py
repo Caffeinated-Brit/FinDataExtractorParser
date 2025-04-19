@@ -2,6 +2,7 @@
 # to download the model find it on ollama's site(https://ollama.com/search) and in the command line run "ollama run "name of model""
 # example of getting a model "ollama run llama3.1:8b"
 # dont forget to type the size of the model in addition to the name
+import json
 import os
 import difflib
 import time
@@ -33,31 +34,8 @@ LLM_MODEL =  config.get("Ollama Model", "model", fallback="qwen2.5-coder:3b")
 # LLM_MODEL="qwen2.5-coder:3b" # for lukas' backpack brick
 #LLM_MODEL="qwen2.5-coder:7b" # for spencers spacestation
 
-# class CompanyInfo(BaseModel):
-#     name: str
-#     address: str
-#     phone_number: str
-#     email: str
-#     website: str
-#
-# class PersonalInfo(BaseModel):
-#     name: str
-#     address: str
-#     phone_number: str
-#     email: str
-#     bank_account_number: str
-#
-# class FinancialData(BaseModel):
-#     personal_Info: PersonalInfo
-#     company_Info: CompanyInfo
-#     financial_info: dict = Field(..., description="This is where the financial data will go")
-#
-#     class Config:
-#         extra = 'allow'  # Allow extra fields to be added by Ollama
-
 def process_text_with_llm_and_schema(user_prompt):
     print("Starting Ollama extraction with a json schema...")
-    start_time = time.time()
     response = ollama.chat(
         model=LLM_MODEL,
         messages=[{"role": "user", "content": user_prompt}],
@@ -65,7 +43,6 @@ def process_text_with_llm_and_schema(user_prompt):
         # auto formats output into json, going to keep messing with this and other parameters
         format=general_schema_basic.FinancialData.model_json_schema()
     )
-    print(general_schema_basic.FinancialData.model_json_schema())
     return response.message.content
 
 def process_text_with_llm(user_prompt):
@@ -75,18 +52,10 @@ def process_text_with_llm(user_prompt):
         messages=[{"role": "user", "content": user_prompt}],
         options={"seed": 1, "temperature":0},
         # auto formats output into json, going to keep messing with this and other parameters
-        # format="json"
+        format="json"
     )
     #This returns just the message from the LLM nothing else
     return response.message.content
-
-# def process_text_with_llm_2(prompt, keep_alive=True):
-#     end_time = time.time()
-#     elapsed_time = end_time - start_time
-#
-#     generated_tokens = response['eval_count']
-#     content = response['message']['content']
-#     return content, generated_tokens, elapsed_time
 
 def process_text_with_llm_and_verification(prompt, keep_alive=True):
     print("Starting Ollama extraction")

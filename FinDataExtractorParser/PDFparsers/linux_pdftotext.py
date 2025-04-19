@@ -16,5 +16,5 @@ def linuxParse(input_pdf):
         print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    linuxParse("C:/Users/lukas/Desktop/Current GIT/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf")
+    linuxParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/schwab.pdf")
     # linuxParse("examplePDFs/fromCameron/2021_2_Statement_removed.pdf")

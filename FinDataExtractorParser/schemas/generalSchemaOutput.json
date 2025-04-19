@@ -1,6 +1,7 @@
 {
     "$defs": {
         "CompanyInfo": {
+            "additionalProperties": true,
             "properties": {
                 "name": {
                     "anyOf": [
@@ -57,9 +58,6 @@
                 "website": {
                     "anyOf": [
                         {
-                            "format": "uri",
-                            "maxLength": 2083,
-                            "minLength": 1,
                             "type": "string"
                         },
                         {
@@ -75,6 +73,7 @@
             "type": "object"
         },
         "PersonalInfo": {
+            "additionalProperties": true,
             "properties": {
                 "name": {
                     "anyOf": [
@@ -146,6 +145,7 @@
             "type": "object"
         }
     },
+    "additionalProperties": true,
     "properties": {
         "personal_Info": {
             "anyOf": [
@@ -172,7 +172,6 @@
         "financial_info": {
             "anyOf": [
                 {
-                    "additionalProperties": true,
                     "type": "object"
                 },
                 {
