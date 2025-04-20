@@ -33,6 +33,8 @@ def run_parse(parse_method, file_path):
         raise e
     return extracted_text
 
+
+# This is a good place to put any specific model config or other specific config at
 def run_ai(ai_method, prompt, config):
 
     if ai_method in ai_methods:
@@ -46,7 +48,8 @@ def run_ai(ai_method, prompt, config):
             # structured_data = ai_methods[ai_method](prompt)
         if config["activeVerification"] == "True":
             print("Active Verification:", config["activeVerification"])
-            structured_data, elapsed_time, generated_tokens = verify_similar_outputs(3, 0.9, prompt, ai_method)
+
+            structured_data, elapsed_time, generated_tokens = verify_similar_outputs(int(config["reruns"]), float(config["threshold"]), prompt, ai_method)
         else:
             structured_data = ai_methods[ai_method](prompt)
     else:
