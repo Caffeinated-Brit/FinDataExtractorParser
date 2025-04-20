@@ -33,7 +33,9 @@ def run_parse(parse_method, file_path):
         raise e
     return extracted_text
 
-def run_ai(ai_method, prompt, config):
+
+# This is a good place to put any specific model config or other specific config at
+def run_ai(ai_method, prompt, config, schema):
 
     if ai_method in ai_methods:
         print("Starting:", ai_method, " execution")
@@ -46,14 +48,15 @@ def run_ai(ai_method, prompt, config):
             # structured_data = ai_methods[ai_method](prompt)
         if config["activeVerification"] == "True":
             print("Active Verification:", config["activeVerification"])
-            structured_data, elapsed_time, generated_tokens = verify_similar_outputs(3, 0.9, prompt, ai_method)
+
+            structured_data = verify_similar_outputs(int(config["reruns"]), float(config["threshold"]), prompt, ai_method, schema)
         else:
-            structured_data = ai_methods[ai_method](prompt)
+            structured_data = verify_similar_outputs(1, 0.9, prompt, ai_method, schema)
     else:
         raise ValueError(f"Unknown AI method: {ai_method}")
     return structured_data
 
-def fullParse(input_filepath):
+def fullParse(input_filepath, schema):
     config = configLoader.load_config()
     selected_parser = config["parser"]
     selected_ai = config["ai"]
@@ -94,7 +97,7 @@ def fullParse(input_filepath):
     ai_time = time.time()
 
     # call chosen ai method ---------------------------------------------------
-    structured_data = run_ai(selected_ai, prompt, config)
+    structured_data = run_ai(selected_ai, prompt, config, schema)
 
     #print("\nAI output:", "\n", structured_data)
     print("--- AI time: %s seconds ---" % (time.time() - ai_time))

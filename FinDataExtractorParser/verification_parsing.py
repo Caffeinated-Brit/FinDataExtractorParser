@@ -3,17 +3,19 @@ import difflib
 import json
 import sys
 
-from AI import OllamaVerification, Vllm
+from AI import Vllm, Ollama
 from configs.ai_methods import ai_methods
 
-def verify_similar_outputs(reruns, threshold, prompt, selected_ai):
+def verify_similar_outputs(reruns, threshold, prompt, selected_ai, schema):
+    #TODO: Make sure this works with vllm and make it work with schemas
     if "vllm" in selected_ai:
         outputs = Vllm.run_parallel_requests(reruns, prompt)
     elif "Ollama" in selected_ai:
-        if "schema" in selected_ai:
-            outputs = OllamaVerification.run_parallel_requests_with_schema(reruns, prompt)
+        if schema is not None:
+            print(type(schema))
+            outputs = Ollama.run_parallel_requests_with_schema(reruns, prompt, schema)
         else:
-            outputs = OllamaVerification.run_parallel_requests(reruns, prompt)
+            outputs = Ollama.run_parallel_requests(reruns, prompt)
     else:
         print(f"AI chosen \"{selected_ai}\" not eligible for verification, exiting.")
         sys.exit(1)
@@ -67,6 +69,6 @@ def normalize_json_string(text):
         parsed = json.loads(text)
         return json.dumps(parsed, sort_keys=True)
     except Exception as e:
-        print("⚠️ Could not normalize output:", e)
+        print("Could not normalize output:", e)
         return text
 
