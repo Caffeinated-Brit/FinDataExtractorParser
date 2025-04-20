@@ -57,9 +57,3 @@ def mock_encoding_detection():
     """Mock file encoding detection."""
     with patch.object(chardet, "detect", return_value={"encoding": "utf-8"}):
         yield
-
-
-@pytest.fixture
-def image_pdf_path():
-    """Provide the path to a real image-based PDF for testing."""
-    return os.path.join(os.path.dirname(__file__), "loan_statement.pdf")

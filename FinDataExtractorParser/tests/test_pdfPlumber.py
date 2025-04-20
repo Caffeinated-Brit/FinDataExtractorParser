@@ -9,10 +9,11 @@ def test_valid_pdf_extraction():
     extracted_text = pdfPlumber.extract_text_from_pdf(TEST_PDF_PATH)
     assert "Lukas Maynard" in extracted_text
 
-def test_missing_pdf():
-    """test when the PDF file is missing"""
-    extracted_text = pdfPlumber.extract_text_from_pdf("nonexistent.pdf")
-    assert extracted_text == "", "Expected empty string when file does not exist"
+# removed this and put it in parse.py to cover more bases
+# def test_missing_pdf():
+#     """test when the PDF file is missing"""
+#     extracted_text = pdfPlumber.extract_text_from_pdf("nonexistent.pdf")
+#     assert extracted_text == "", "Expected empty string when file does not exist"
 
 @patch("pdfplumber.open")
 def test_empty_pdf(mock_pdfplumber):
