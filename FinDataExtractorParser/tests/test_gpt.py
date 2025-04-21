@@ -25,7 +25,7 @@ def test_extract_structured_data_inner_mock(mocker):
     mock_sequence.__or__.return_value = mock_sequence
 
     # Run actual function
-    result = gpt.extract_structured_data("test prompt")
+    result = gpt.extract_structured_data("test prompt", "test model")
 
     # Assert result is what we mocked
     assert result == {"data": "exists"}
