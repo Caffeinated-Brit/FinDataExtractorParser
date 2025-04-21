@@ -9,7 +9,11 @@ from configs.ai_methods import ai_methods
 def verify_similar_outputs(reruns, threshold, prompt, selected_ai, schema):
     #TODO: Make sure this works with vllm and make it work with schemas
     if "vllm" in selected_ai:
-        outputs = Vllm.run_parallel_requests(reruns, prompt)
+        if schema is not None:
+            print(type(schema))
+            outputs = Vllm.run_parallel_requests_with_schema(reruns, prompt, schema)
+        else:
+            outputs = Vllm.run_parallel_requests(reruns, prompt)
     elif "Ollama" in selected_ai:
         if schema is not None:
             print(type(schema))
@@ -28,11 +32,11 @@ def verify_similar_outputs(reruns, threshold, prompt, selected_ai, schema):
 
     # Compare each output against all others
     for i in range(num_outputs):
-        norm_i = normalize_json_string(outputs[i][0])
+        norm_i = normalize_json_string(outputs[i])
         for j in range(num_outputs):
             if i == j:
                 continue
-            norm_j = normalize_json_string(outputs[j][0])
+            norm_j = normalize_json_string(outputs[j])
             similarity = difflib.SequenceMatcher(None, norm_i, norm_j).ratio()
             print(f"Similarity between {i} and {j}: {similarity:.2f}")
 
@@ -69,6 +73,6 @@ def normalize_json_string(text):
         parsed = json.loads(text)
         return json.dumps(parsed, sort_keys=True)
     except Exception as e:
-        print("Could not normalize output:", e)
+        print("⚠️ Could not normalize output:", e)
         return text
 

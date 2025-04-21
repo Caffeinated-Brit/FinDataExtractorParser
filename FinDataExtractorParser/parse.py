@@ -51,7 +51,7 @@ def run_ai(ai_method, prompt, config, schema):
 
             structured_data = verify_similar_outputs(int(config["reruns"]), float(config["threshold"]), prompt, ai_method, schema)
         else:
-            structured_data = ai_methods[ai_method](prompt, schema)
+            structured_data = verify_similar_outputs(1, 0.1, prompt, ai_method, schema)
     else:
         raise ValueError(f"Unknown AI method: {ai_method}")
     return structured_data

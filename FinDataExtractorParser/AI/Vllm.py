@@ -1,3 +1,4 @@
+import json
 import sys
 import threading
 import time
@@ -11,6 +12,21 @@ os.environ ['VLLM_USE_V1'] ='1'
 shutdown_event = threading.Event()
 llm_server_thread = threading.Thread(target=start_vllm_server, args=(shutdown_event,))
 
+def schema_json_convertion(schema):
+    try:
+        if isinstance(schema, str):
+            return json.loads(schema)
+        elif isinstance(schema, dict):
+            return schema
+        else:
+            # Assume it's a Pydantic model and get its JSON schema
+            return schema.model_json_schema()
+    except json.JSONDecodeError as e:
+        print("Failed to decode JSON:", e)
+        return None
+    except Exception as e:
+        print("Error processing schema:", e)
+        return None
 
 def process_text_with_llm(prompt, server_url="http://localhost:8000/v1/chat/completions"):
     start_time = time.time()
@@ -39,10 +55,10 @@ def process_text_with_llm(prompt, server_url="http://localhost:8000/v1/chat/comp
     #print(response.json())
     content = response.json()['choices'][0]['message']['content']
     #print(response.json()['choices'][0])
-    return content, elapsed_time, generated_tokens
+    return content
 
 
-def run_parallel_requests(num_requests, prompt):
+def run_parallel_requests(num_requests, prompt, ):
     results = []
     with ThreadPoolExecutor(max_workers=num_requests) as executor:
         futures = []
@@ -54,6 +70,58 @@ def run_parallel_requests(num_requests, prompt):
             print("-" * 50)
             results.append(future.result())
 
+    return results
+
+def process_text_with_llm_and_schema(prompt, schema, server_url="http://localhost:8000/v1/chat/completions"):
+    schema_json = schema_json_convertion(schema)
+    #print(type(schema))
+    #print(schema)
+
+    print("Starting Vllm extraction with a json schema...")
+    start_time = time.time()
+    try:
+        response = requests.post(
+            server_url,
+            json={"model": "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int8",
+                  # "messages": [{"role": "system", "content": "You are a helpful financial pdf parsing assistant. You respond with only json."}, {"role": "user", "content": prompt}],
+                  "messages": [{"role": "user", "content": prompt}],
+                  #"max_tokens": 15000,
+                  # "min_tokens": 900,
+                  # "top_k": 20,
+                  "temperature": 0.1,
+                  "top_p": 0.1,
+                  # "n": 1,
+                  # "stop": ["User:", "\n\n"]
+                  "guided_json": schema_json
+                  }
+        )
+    except Exception as e:
+        print("Error processing schema, schema may be invalid:", e)
+        raise e
+
+    end_time = time.time()
+
+    elapsed_time = end_time - start_time
+    generated_tokens = response.json().get("usage", {}).get("completion_tokens", 0)
+
+    # print(f"Generated tokens per second: {tokens_per_second}")
+    # print(response.json())
+    content = response.json()['choices'][0]['message']['content']
+    # print(response.json()['choices'][0])
+    #return content, elapsed_time, generated_tokens
+    return content
+
+def run_parallel_requests_with_schema(num_requests, prompt, schema):
+    results = []
+    with ThreadPoolExecutor(max_workers=num_requests) as executor:
+        futures = []
+        for i in range(num_requests):
+            futures.append(executor.submit(process_text_with_llm_and_schema, prompt, schema))
+
+        for future in futures:
+            print(future.result())
+            print("-" * 50)
+            results.append(future.result())
     return results
 
 
