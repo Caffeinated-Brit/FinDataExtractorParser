@@ -27,7 +27,7 @@ parser = LlamaParse(
 # print(documents)
 
 
-file_name = "2021_2_Statement_removed.pdf"
+file_name = "../examplePDFs/fromCameron/2021_2_Statement_removed.pdf"
 extra_info = {"file_name": file_name}
 
 with open(f"./{file_name}", "rb") as f:

@@ -50,15 +50,15 @@ def test_run_ai_valid_method(mocker, mock_config):
     mock_ai = mocker.Mock(return_value={"sample": "output"})
     mocker.patch.dict("parse.ai_methods", {"Ollama/Schema": mock_ai})
 
-    result = run_ai("Ollama/Schema", "Some input prompt", mock_config)
+    result = run_ai("Ollama/Schema", "Some input prompt", mock_config, "mockSchema")
     print(result)
     assert result == {"sample": "output"}
     # ensure the mock is run and not the real function
-    mock_ai.assert_called_once_with("Some input prompt")
+    mock_ai.assert_called_once_with("Some input prompt", "mockSchema")
 
 def test_run_ai_invalid_method(mock_config):
     with pytest.raises(ValueError):
-        run_ai("unknownAI", "prompt", mock_config)
+        run_ai("unknownAI", "prompt", mock_config, "mockSchema")
 
 # def test_full_parse(mocker):
 #     # Mock config loader

@@ -1,26 +1,43 @@
 import os
+import pytest
 from unittest.mock import patch, MagicMock
 from PDFparsers import pdfPlumber
 
-TEST_PDF_PATH = os.path.join(os.path.dirname(__file__), "Simple_Mock_Data.pdf")
+# Path to a real test file you expect to be in your repo
+TEST_PDF_PATH = "../tests/uploads/Simple_Mock_Data.pdf"
+
 
 def test_valid_pdf_extraction():
-    """test extracting text from a valid pdf"""
+    """Test extracting text from a real PDF"""
     extracted_text = pdfPlumber.extract_text_from_pdf(TEST_PDF_PATH)
-    assert "Lukas Maynard" in extracted_text
 
-# removed this and put it in parse.py to cover more bases
-# def test_missing_pdf():
-#     """test when the PDF file is missing"""
-#     extracted_text = pdfPlumber.extract_text_from_pdf("nonexistent.pdf")
-#     assert extracted_text == "", "Expected empty string when file does not exist"
+    assert isinstance(extracted_text, str)
+    assert "Lukas Maynard" in extracted_text
+    assert len(extracted_text.strip()) > 0
+
 
 @patch("pdfplumber.open")
-def test_empty_pdf(mock_pdfplumber):
-    """test extracting text from an empty pdf"""
+def test_empty_pdf_returns_empty_string(mock_pdfplumber):
+    """Test behavior when PDF has no pages"""
     mock_pdf = MagicMock()
-    mock_pdf.pages = []
+    mock_pdf.pages = []  # Simulate no pages in PDF
     mock_pdfplumber.return_value.__enter__.return_value = mock_pdf
 
-    extracted_text = pdfPlumber.extract_text_from_pdf(os.path.join(os.path.dirname(__file__), "dummy.pdf"))
-    assert extracted_text == "", "Expected empty string for an empty PDF"
+    dummy_path = os.path.join(os.path.dirname(__file__), "dummy.pdf")
+    result = pdfPlumber.extract_text_from_pdf(dummy_path)
+
+    assert result == "", "Expected empty string for a PDF with no pages"
+
+
+@patch("pdfplumber.open")
+def test_pdf_with_page_no_text(mock_pdfplumber):
+    """Test behavior when pages exist but contain no text"""
+    mock_page = MagicMock()
+    mock_page.extract_text.return_value = None  # simulate blank page
+    mock_pdf = MagicMock()
+    mock_pdf.pages = [mock_page, mock_page]
+
+    mock_pdfplumber.return_value.__enter__.return_value = mock_pdf
+
+    result = pdfPlumber.extract_text_from_pdf("fake_path.pdf")
+    assert result == "", "Expected empty string when no text is extracted from any pages"

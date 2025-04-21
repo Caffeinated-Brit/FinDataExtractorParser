@@ -8,7 +8,8 @@ from langchain_openai import ChatOpenAI
 load_dotenv()
 
 # Function to structure output as JSON using JsonOutputParser
-def extract_structured_data(prompt, page_number=None):
+# added schema for potential future use, also to match Ollama function calls
+def extract_structured_data(prompt, schema, page_number=None):
     llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-1106")
     parser = JsonOutputParser()
 

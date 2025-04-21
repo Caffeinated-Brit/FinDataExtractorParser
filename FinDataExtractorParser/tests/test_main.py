@@ -16,7 +16,7 @@ def mock_full_parse():
 
 def test_parse_pdf_success(client, mock_full_parse):
     """Test successful parsing using existing pdf"""
-    pdf_path = os.path.join(os.path.dirname(__file__), "Simple_Mock_Data.pdf")
+    pdf_path = "../tests/uploads/Simple_Mock_Data.pdf"
 
     assert os.path.exists(pdf_path), f"Test PDF not found: {pdf_path}"
 
@@ -36,7 +36,7 @@ def test_parse_pdf_success(client, mock_full_parse):
 @patch('os.remove')  # Prevents accidental file deletions
 def test_parse_pdf_failure(mock_full_parse, mock_remove, client):
     """Test when fullParse raises an exception"""
-    pdf_path = os.path.join(os.path.dirname(__file__), "Simple_Mock_Data.pdf")
+    pdf_path = "../tests/uploads/Simple_Mock_Data.pdf"
 
     assert os.path.exists(pdf_path), f"Test PDF not found: {pdf_path}"
 

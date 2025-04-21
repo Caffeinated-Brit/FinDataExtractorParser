@@ -10,6 +10,7 @@ from configs import configLoader
 from configs.ai_methods import ai_methods
 from configs.parser_methods import parser_methods
 from verification_parsing import verify_similar_outputs
+from schemas.small_schema import FinancialData
 
 
 def run_parse(parse_method, file_path):
@@ -36,7 +37,6 @@ def run_parse(parse_method, file_path):
 
 # This is a good place to put any specific model config or other specific config at
 def run_ai(ai_method, prompt, config, schema):
-
     if ai_method in ai_methods:
         print("Starting:", ai_method, " execution")
         # structured_data = ai_methods[ai_method](prompt)
@@ -51,7 +51,7 @@ def run_ai(ai_method, prompt, config, schema):
 
             structured_data = verify_similar_outputs(int(config["reruns"]), float(config["threshold"]), prompt, ai_method, schema)
         else:
-            structured_data = verify_similar_outputs(1, 0.9, prompt, ai_method, schema)
+            structured_data = ai_methods[ai_method](prompt, schema)
     else:
         raise ValueError(f"Unknown AI method: {ai_method}")
     return structured_data
@@ -73,6 +73,7 @@ def fullParse(input_filepath, schema):
     if selected_parser != "linux_pdftotext":  # Writes to file manually for non-linux parsing methods, the linux parsing outputs its own txt file
         with open(final_file_path, "w") as file:
             file.write(extracted_text)
+            print("Created output text at: " + final_file_path)
 
     print("\nDetecting file encoding...")
 
@@ -87,12 +88,15 @@ def fullParse(input_filepath, schema):
     with open(final_file_path, "r", encoding=detected_encoding, errors="replace") as file:
         extracted_text = file.read()
 
-    print("\nExtracted text:", "\n", extracted_text)
+    # print("\nExtracted text:", "\n", extracted_text)
 
-    prompt = (
-        f"The following text was extracted from a PDF named \"{input_filepath}\".\n"
-        "Extract and categorize the data from the text. Return as JSON.\n"
-        f"Text:\n{extracted_text}")
+    # prompt = (
+    #     f"The following text was extracted from a PDF named \"{input_filepath}\".\n"
+    #     "Extract and categorize the data from the text. Return as JSON.\n"
+    #     f"Text:\n{extracted_text}")
+
+    prompt = config["prompt_template"].format(filepath=input_filepath, text=extracted_text)
+    print("\nPrompt:", "\n", prompt)
 
     ai_time = time.time()
 
@@ -131,4 +135,4 @@ if __name__ == "__main__":
     # print(run_parse(selected_parser,"examplePDFs/fromCameron/2021_2_Statement_removed.pdf"))
     # print(run_ai(selected_ai, prompt))
 
-    print(fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf"))
+    print(fullParse("C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf", FinancialData.model_json_schema()))
