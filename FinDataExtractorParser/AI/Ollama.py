@@ -55,11 +55,9 @@ def schema_json_convertion(schema):
 # Only call from run_parallel_requests_with_schema
 def process_text_with_llm_and_schema(user_prompt, schema):
     schema_json = schema_json_convertion(schema)
-    print(type(schema))
-    print(schema)
+    #print(type(schema))
+    #print(schema)
 
-    print(type(schema_json))
-    print(schema_json)
 
     print("Starting Ollama extraction with a json schema...")
     try:
@@ -88,6 +86,32 @@ def process_text_with_llm(user_prompt):
     )
     #This returns just the message from the LLM nothing else
     return response.message.content
+
+def run_parallel_requests(num_requests, prompt):
+    results = []
+    with ThreadPoolExecutor(max_workers=num_requests) as executor:
+        futures = []
+        for i in range(num_requests):
+            futures.append(executor.submit(process_text_with_llm, prompt))
+
+        for future in futures:
+            print(future.result())
+            print("-" * 50)
+            results.append(future.result())
+    return results
+
+def run_parallel_requests_with_schema(num_requests, prompt, schema):
+    results = []
+    with ThreadPoolExecutor(max_workers=num_requests) as executor:
+        futures = []
+        for i in range(num_requests):
+            futures.append(executor.submit(process_text_with_llm_and_schema, prompt, schema))
+
+        for future in futures:
+            print(future.result())
+            print("-" * 50)
+            results.append(future.result())
+    return results
 
 if __name__ == "__main__":
     prompt = (
