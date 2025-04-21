@@ -28,7 +28,7 @@ def test_process_text_with_llm_and_schema(mock_chat, mock_ollama_response):
     mock_chat.return_value = mock_ollama_response
 
     user_prompt = "Extract financial data."
-    response = process_text_with_llm_and_schema(user_prompt)
+    response = process_text_with_llm_and_schema(user_prompt, {"mock": "schema"})
 
     assert response == '{"message": "mock response"}'
     mock_chat.assert_called_once()
