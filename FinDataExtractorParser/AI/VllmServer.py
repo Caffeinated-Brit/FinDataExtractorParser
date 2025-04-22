@@ -16,8 +16,8 @@ def start_vllm_server(shutdown_event):
             '--gpu_memory_utilization=0.9',
             '--tensor_parallel_size=' + str(num_gpus),
             '--enforce_eager',
-            '--max_num_seqs=80',
-            '--max_model_len=11000',
+            '--max_num_seqs=80', # Increase this to allow more to run at one time as hardware allows
+            '--max_model_len=11000', # Increase this to allow for longer combined inputs and outputs as hardware allows
         ]
         print("Starting vLLM server...")
         process = subprocess.Popen(

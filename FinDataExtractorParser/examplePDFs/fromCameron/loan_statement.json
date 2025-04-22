@@ -1,0 +1,58 @@
+{
+    "DocuSign Envelope ID": "FA9BA6C0-D3CB-450F -9285-CCF18EC5E8DA",
+    "Loan Details": {
+        "Annual Percentage Rate (APR)": "2.99%",
+        "Finance Charge": "$3,493.17",
+        "Amount Financed": "$31,628.55",
+        "Total Payments": "$35,920.29"
+    },
+    "Loan Dates": {
+        "Date of Loan": "2/14/2022",
+        "Maturity Date": "2/15/2029"
+    },
+    "Borrower Information": {
+        "Name": "CAMERON V. DOWLESS",
+        "Address": "104 E Falcon Run\nPendleton, IN:46064",
+        "Date of Birth": "6/26/2000"
+    },
+    "Co-Borrower Information": {
+        "Name": null,
+        "Address": "1245037",
+        "Date of Birth": null
+    },
+    "Payment Schedule": [
+        {
+            "Number of Payments": 83,
+            "Amount of Payment": "$427.63",
+            "Due Date": "3/15/2022"
+        },
+        {
+            "Number of Payments": 1,
+            "Amount of Payment": "$427.00",
+            "Due Date": "2/15/2029"
+        }
+    ],
+    "Security Information": {
+        "Serial Number or VIN": "19XFL2H87NE005136",
+        "Motor Vehicles": [
+            {
+                "Year": "2022",
+                "Make": "HONDA",
+                "Model": "CIVIC",
+                "Body Type": null
+            }
+        ],
+        "Shares Pledged": null,
+        "Other Collateral": null
+    },
+    "Late Charges": "$28.00",
+    "Required Deposit Balance": null,
+    "Property Insurance": {
+        "Description": "You may obtain property insurance from anyone you want that is acceptable to us. If you do not obtain property insurance we will obtain it at your cost.",
+        "Cost": null
+    },
+    "Filing Fee": "$30.00",
+    "Prepayment Information": {
+        "Penalty for Early Payment": "No penalty if paid off early"
+    }
+}

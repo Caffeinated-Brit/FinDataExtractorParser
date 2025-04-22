@@ -1,0 +1,4 @@
+Simple Mock Data
+Name: Lukas Maynard
+Date: 11/29/2024
+Address: 1234 whocare lane
