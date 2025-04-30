@@ -1,6 +1,5 @@
 from AI import Ollama, gpt, Vllm
 
-# from AI import Vllm, gpt  # Future extensions
 # outdated/worse methods: llama
 
 ai_methods = {

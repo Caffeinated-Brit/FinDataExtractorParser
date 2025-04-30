@@ -6,27 +6,12 @@ from concurrent.futures import ThreadPoolExecutor
 import requests
 # from vllm import LLM, SamplingParams
 import os
+from FinDataExtractorParser.AI.Ollama import schema_json_convertion
 from FinDataExtractorParser.AI.VllmServer import start_vllm_server
 os.environ ['VLLM_USE_V1'] ='1'
 
 shutdown_event = threading.Event()
 llm_server_thread = threading.Thread(target=start_vllm_server, args=(shutdown_event,))
-
-def schema_json_convertion(schema):
-    try:
-        if isinstance(schema, str):
-            return json.loads(schema)
-        elif isinstance(schema, dict):
-            return schema
-        else:
-            # Assume it's a Pydantic model and get its JSON schema
-            return schema.model_json_schema()
-    except json.JSONDecodeError as e:
-        print("Failed to decode JSON:", e)
-        return None
-    except Exception as e:
-        print("Error processing schema:", e)
-        return None
 
 def process_text_with_llm(prompt, server_url="http://localhost:8000/v1/chat/completions"):
     start_time = time.time()

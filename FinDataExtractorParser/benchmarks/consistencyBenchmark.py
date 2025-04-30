@@ -5,13 +5,14 @@ from collections import defaultdict
 from difflib import SequenceMatcher
 import time
 
+from configs import configLoader
 from parse import fullParse
+# this file creates a json file that shows the consistency of each json field through multiple runs of the full parse-AI pipeline
+# also contains overall consistency score at the bottom of the output json file
 
-# need to go through and check if fields that only show up for some outputs are docked the correct amount
+# need to go through and check if fields that only show up for some outputs(runs) are docked the correct amount
 
-TEST_AMOUNT = 5
-FILE_PATH = "C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf"
-
+from schemas import small_schema
 
 def compare_json_outputs(json_outputs):
     """
@@ -89,43 +90,49 @@ def compare_json_outputs(json_outputs):
     overall_consistency = np.mean(list(consistency_scores.values()))
     return consistency_scores, overall_consistency
 
-start_time = time.time()
+def run_conisitency_benchmark(test_amount, file_path, schema):
+    start_time = time.time()
 
-json_outputs = []
-# Populate json_outputs by running parsing multiple times
-for i in range(TEST_AMOUNT):
-    json_outputs.append(fullParse(FILE_PATH))
+    json_outputs = []
+    # Populate json_outputs by running parsing multiple times
 
-# Call compare_json_outputs to determine consistency
-field_scores, overall_score = compare_json_outputs(json_outputs)
+    for i in range(test_amount):
+        json_outputs.append(fullParse(file_path, schema))
 
-# Print results
-# print(f"Field Consistency Scores:\n{json.dumps(field_scores, indent=2)}")
-# print(f"Overall Consistency Score: {overall_score:.2f}")
+    # Call compare_json_outputs to determine consistency
+    field_scores, overall_score = compare_json_outputs(json_outputs)
 
-config = configparser.ConfigParser()
-config.read("config.ini")
+    # Print results
+    # print(f"Field Consistency Scores:\n{json.dumps(field_scores, indent=2)}")
+    # print(f"Overall Consistency Score: {overall_score:.2f}")
 
-# this could be my issue with the config file, i may be overwriting the options here
-selected_parser = config.get("Parser", "method", fallback="pdfPlumber")
-selected_ai = config.get("AI", "method", fallback="Ollama/Schema")
+    config = configLoader.load_config()
+    selected_parser = config["parser"]
+    selected_ai = config["ai"]
 
-endTime = time.time() - start_time
+    endTime = time.time() - start_time
 
-output_data = {
-    "Test_Data": {
-        "File_Path": FILE_PATH,
-        "Number_of_Runs": TEST_AMOUNT,
-        "Time_Elapsed": round(endTime, 2),
-        "Parser_Used": selected_parser,
-        "AI_Used": selected_ai,
-        "Disclaimer": "This only checks the consistency of the JSON output. It does not check the accuracy of the data."
-    },
-    "Field_Consistency_Scores": field_scores,
-    "Overall_Consistency_Score": round(overall_score, 4)
-}
+    output_data = {
+        "Test_Data": {
+            "File_Path": file_path,
+            "Number_of_Runs": test_amount,
+            "Time_Elapsed": round(endTime, 2),
+            "Parser_Used": selected_parser,
+            "AI_Used": selected_ai,
+            "Disclaimer": "This only checks the consistency of the JSON output. It does not check the accuracy of the data."
+        },
+        "Field_Consistency_Scores": field_scores,
+        "Overall_Consistency_Score": round(overall_score, 4)
+    }
 
-with open("consistencyBenchmarkOutput.json", "w") as f:
-    json.dump(output_data, f, indent=2)
+    with open("consistencyBenchmarkOutput.json", "w") as f:
+        json.dump(output_data, f, indent=2)
 
-print("Consistency benchmark results saved to consistencyBenchmarkOutput.json")
+    print("Consistency benchmark results saved to consistencyBenchmarkOutput.json")
+
+if __name__ == "__main__":
+    test_amount = 3
+    file_path = "C:/Users/lukas/Desktop/Capstone/FinDataExtractorParser/FinDataExtractorParser/examplePDFs/fromCameron/2021_2_Statement_removed.pdf"
+    # ensure to import the schema you want to test
+    schema = small_schema.FinancialData.model_json_schema()
+    run_conisitency_benchmark(test_amount, file_path, schema)

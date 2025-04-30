@@ -3,6 +3,13 @@ import re
 
 def fix_truncated_json(ai_output):
     # Attempts to parse JSON output from AI, auto-fixing truncated or extra text issues.
+    if not isinstance(ai_output, (str, bytes)):
+        # If ai_output is already a dict/list, return it as is
+        if isinstance(ai_output, (dict, list)):
+            return ai_output
+        # If it's neither string/bytes nor dict/list, convert it to string
+        ai_output = str(ai_output)
+
     ai_output = extract_json(ai_output)  # Extract just the JSON part
     if not ai_output:
         print("No valid JSON detected in AI output.")
@@ -22,7 +29,7 @@ def fix_truncated_json(ai_output):
             print("No valid JSON structure found.")
             return None
 
-        fixed_json = ai_output[:last_valid+1]  # Trim to the last valid bracket
+        fixed_json = ai_output[:last_valid + 1]  # Trim to the last valid bracket
 
         try:
             return json.loads(fixed_json)
@@ -30,8 +37,12 @@ def fix_truncated_json(ai_output):
             print("Still invalid JSON after truncation.")
             return None
 
+
 def extract_json(ai_output):
     # Extracts only the JSON portion from a mixed AI output containing explanations and JSON.
+    if not isinstance(ai_output, (str, bytes)):
+        ai_output = str(ai_output)
+
     json_match = re.search(r'(\[.*\]|\{.*\})', ai_output, re.DOTALL)
     if json_match:
         return json_match.group(1)

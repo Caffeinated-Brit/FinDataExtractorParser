@@ -1,1 +1,151 @@
-null
+{
+    "Statement Reporting Period": "02/01/21 - 02/28/21",
+    "Account Number": "234-467410",
+    "Contact Information": {
+        "Phone Number": "800-669-3900",
+        "Address": "1815 W JACKSON ST, DIVISION OF TD AMERITRADE INC, MUNCIE, IN 47303-4853, PO BOX 2209, OMAHA, NE 68103-2209"
+    },
+    "Investment Summary": {
+        "Cash": {
+            "Value": "$284.81",
+            "Change": "-",
+            "Income": "-",
+            "Yield": "-"
+        },
+        "Insrd Dep Acct (IDA)": {
+            "Value": "-",
+            "Change": "-",
+            "Income": "-",
+            "Yield": "-"
+        },
+        "Money Market": {
+            "Value": "-",
+            "Change": "-",
+            "Income": "-",
+            "Yield": "-"
+        },
+        "Short Balance": {
+            "Value": "-",
+            "Change": "-",
+            "Income": "-",
+            "Yield": "-"
+        },
+        "Stocks": {
+            "Total Value": "$125.52",
+            "Total Change": "-",
+            "Total Income": "-",
+            "Total Yield": "30.6%",
+            "Details": [
+                {
+                    "Symbol": "PALANTIR TECH INC PLTR",
+                    "Quantity": 4,
+                    "Price": "$23.90",
+                    "Market Value": "$95.60",
+                    "Purchase Cost": "$134.84",
+                    "Cost Basis": "$174.78",
+                    "Gain(Loss)": "-$49.26",
+                    "Income Yield": "-"
+                },
+                {
+                    "Symbol": "COM CL A",
+                    "Quantity": 16,
+                    "Price": "$1.87",
+                    "Market Value": "$29.92",
+                    "Purchase Cost": "$39.94",
+                    "Cost Basis": "$174.78",
+                    "Gain(Loss)": "-$10.02",
+                    "Income Yield": "-"
+                }
+            ]
+        },
+        "Short Stocks": {
+            "Total Value": "-",
+            "Total Change": "-",
+            "Total Income": "-",
+            "Total Yield": "-"
+        },
+        "Fixed Income": {
+            "Total Value": "-",
+            "Total Change": "-",
+            "Total Income": "-",
+            "Total Yield": "-"
+        },
+        "Options": {
+            "Total Value": "-",
+            "Total Change": "-",
+            "Total Income": "-",
+            "Total Yield": "-"
+        },
+        "Short Options": {
+            "Total Value": "-",
+            "Total Change": "-",
+            "Total Income": "-",
+            "Total Yield": "-"
+        },
+        "Mutual Funds": {
+            "Total Value": "$125.52",
+            "Total Change": "-",
+            "Total Income": "-",
+            "Total Yield": "69.4%",
+            "Details": [
+                {
+                    "Symbol": "Cash",
+                    "Quantity": 0,
+                    "Price": "$0.00",
+                    "Market Value": "$0.00",
+                    "Purchase Cost": "$174.78",
+                    "Cost Basis": "$174.78",
+                    "Gain(Loss)": "-$49.26",
+                    "Income Yield": "-"
+                }
+            ]
+        },
+        "Other": {
+            "Total Value": "$125.52",
+            "Total Change": "-",
+            "Total Income": "-",
+            "Total Yield": "-"
+        }
+    },
+    "Investment Transactions": {
+        "Cash Transactions": [
+            {
+                "Date": "02/19/2021",
+                "Type": "ACH OUT",
+                "Amount": "$284.81"
+            },
+            {
+                "Date": "02/19/2021",
+                "Type": "ACH OUT - CANCELLED",
+                "Amount": "$284.81"
+            },
+            {
+                "Date": "02/22/2021",
+                "Type": "ACH OUT",
+                "Amount": "$284.81"
+            },
+            {
+                "Date": "02/22/2021",
+                "Type": "ACH OUT - CANCELLED",
+                "Amount": "$284.81"
+            }
+        ],
+        "Debit Transactions": [
+            {
+                "Date": "02/03/2021",
+                "Type": "ELECTRONIC FUNDING",
+                "Amount": "$50.00"
+            },
+            {
+                "Date": "02/05/2021",
+                "Type": "ACH IN",
+                "Amount": "$20.00"
+            },
+            {
+                "Date": "02/08/2021",
+                "Type": "ACH IN",
+                "Amount": "$400.00"
+            }
+        ]
+    }
+}

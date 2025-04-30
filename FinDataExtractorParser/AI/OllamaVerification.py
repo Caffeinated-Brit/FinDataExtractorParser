@@ -25,22 +25,23 @@ import configparser
 import ollama
 from pydantic import BaseModel, Extra, Field
 
-from schemas.general_schema_basic import FinancialData
+from AI.Ollama import schema_json_convertion
 
 config = configparser.ConfigParser()
 config.read("config.ini")
 LLM_MODEL =  config.get("Ollama Model", "model", fallback="qwen2.5-coder:3b")
 
 #Do not call except for run_parallel_requests_with_schema
-def process_text_with_llm_and_schema_verification(user_prompt):
-    print("Starting Ollama extraction with a json schema...")
+def process_text_with_llm_and_schema_verification(user_prompt, schema):
+    schema_json = schema_json_convertion(schema)
+    print("Starting Ollama extraction-verification with a json schema...")
     start_time = time.time()
     response = ollama.chat(
         model=LLM_MODEL,
         messages=[{"role": "user", "content": user_prompt}],
         options={"seed": 1, "temperature":0.1, "top_k":1},
         # auto formats output into json, going to keep messing with this and other parameters
-        format=FinancialData.model_json_schema()
+        format=schema_json
     )
     end_time = time.time()
     elapsed_time = end_time - start_time
@@ -51,20 +52,22 @@ def process_text_with_llm_and_schema_verification(user_prompt):
 
 #Do not call except for run_parallel_requests
 def process_text_with_llm_verification(prompt, keep_alive=True):
-    print("Starting Ollama extraction")
+    print("Starting Ollama extraction-verification...")
     start_time = time.time()
 
     response = ollama.chat(
         model=LLM_MODEL,
         messages=[{"role": "user", "content": prompt}],
         options={"seed": 42, "temperature":0.1, "top_p":0.1},
-        keep_alive=keep_alive
+        keep_alive=keep_alive,
+        format="json"
     )
     end_time = time.time()
     elapsed_time = end_time - start_time
 
     generated_tokens = response['eval_count']
     content = response['message']['content']
+    print("Ollama extraction-verification "+content)
     return content, generated_tokens, elapsed_time
 
 def run_parallel_requests(num_requests, prompt):
@@ -80,12 +83,12 @@ def run_parallel_requests(num_requests, prompt):
             results.append(future.result())
     return results
 
-def run_parallel_requests_with_schema(num_requests, prompt):
+def run_parallel_requests_with_schema(num_requests, prompt, schema):
     results = []
     with ThreadPoolExecutor(max_workers=num_requests) as executor:
         futures = []
         for i in range(num_requests):
-            futures.append(executor.submit(process_text_with_llm_and_schema_verification, prompt))
+            futures.append(executor.submit(process_text_with_llm_and_schema_verification, prompt, schema))
 
         for future in futures:
             print(future.result())
