@@ -8,5 +8,5 @@ ai_methods = {
     "Ollama/Schema": Ollama.process_text_with_llm_and_schema,
     "gpt": gpt.extract_structured_data,
     "vllm": Vllm.process_text_with_llm,
-    # "llama": llama.process_text_with_llm,
+    #"llama": llama.process_text_with_llm,
 }
