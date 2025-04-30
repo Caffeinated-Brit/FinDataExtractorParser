@@ -124,7 +124,6 @@ def run_parallel_requests_with_schema(num_requests, prompt, schema):
             results.append(future.result())
     return results
 
-
 def run_benchmarking(num_requests, prompt):
     start_time = time.time()
     print(f"Running {num_requests} parallel requests:")
@@ -145,4 +144,4 @@ def start_llm_server():
     llm_server_thread.start()
     time.sleep(60) # Allow time for the server to start, this could be handled better and may cause crashes if it takes longer to start
 
-start_llm_server()
+#start_llm_server()
