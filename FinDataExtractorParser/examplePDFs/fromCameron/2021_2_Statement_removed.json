@@ -11,7 +11,11 @@
             "POBox": "2209",
             "Country": "USA"
         },
-        "ClearingCompany": "TD Ameritrade Clearing, Inc., Member SIPC"
+        "Company": {
+            "Name": "TD AMERITRADE CAMERON DOWLESS",
+            "Division": "TD AMERITRADE INC",
+            "Clearing": "TD Ameritrade Clearing, Inc., Member SIPC"
+        }
     },
     "PortfolioSummary": {
         "Cash": {
@@ -40,135 +44,96 @@
         },
         "Stocks": {
             "TotalValue": "$125.52",
-            "TotalCostBasis": "$174.78",
-            "TotalGainLoss": "-$49.26",
-            "Yield": "30.6%"
+            "TotalChange": "-",
+            "TotalIncome": "-",
+            "TotalYield": "30.6%",
+            "Details": [
+                {
+                    "Symbol": "PLTR",
+                    "Description": "PALANTIR TECH INC",
+                    "CUSIP": "4",
+                    "Quantity": "1",
+                    "Price": "$23.90",
+                    "MarketValue": "$95.60",
+                    "PurchaseDate": "02/05/21",
+                    "CostBasis": "$134.84",
+                    "GainLoss": "-$39.24",
+                    "IncomeYield": "-"
+                },
+                {
+                    "Symbol": "ZOM",
+                    "Description": "COM CL A",
+                    "CUSIP": "16",
+                    "Quantity": "1",
+                    "Price": "$1.87",
+                    "MarketValue": "$29.92",
+                    "PurchaseDate": "02/08/21",
+                    "CostBasis": "$39.94",
+                    "GainLoss": "-$10.02",
+                    "IncomeYield": "-"
+                }
+            ]
         },
         "ShortStocks": {
             "TotalValue": "-",
-            "TotalCostBasis": "-",
-            "TotalGainLoss": "-",
-            "Yield": "-"
+            "TotalChange": "-",
+            "TotalIncome": "-",
+            "TotalYield": "-"
         },
         "FixedIncome": {
             "TotalValue": "-",
-            "TotalCostBasis": "-",
-            "TotalGainLoss": "-",
-            "Yield": "-"
+            "TotalChange": "-",
+            "TotalIncome": "-",
+            "TotalYield": "-"
         },
         "Options": {
             "TotalValue": "-",
-            "TotalCostBasis": "-",
-            "TotalGainLoss": "-",
-            "Yield": "-"
+            "TotalChange": "-",
+            "TotalIncome": "-",
+            "TotalYield": "-"
         },
         "ShortOptions": {
             "TotalValue": "-",
-            "TotalCostBasis": "-",
-            "TotalGainLoss": "-",
-            "Yield": "-"
+            "TotalChange": "-",
+            "TotalIncome": "-",
+            "TotalYield": "-"
         },
         "MutualFunds": {
-            "TotalValue": "$125.52",
-            "TotalCostBasis": "$174.78",
-            "TotalGainLoss": "-$49.26",
-            "Yield": "30.6%"
+            "TotalValue": "$174.78",
+            "TotalChange": "-",
+            "TotalIncome": "-",
+            "TotalYield": "0.0%"
         },
         "Other": {
-            "TotalValue": "$125.52",
-            "TotalCostBasis": "$174.78",
-            "TotalGainLoss": "-$49.26",
-            "Yield": "69.4%"
+            "TotalValue": "$69.4%",
+            "TotalChange": "-",
+            "TotalIncome": "-",
+            "TotalYield": "-"
         }
     },
-    "CashActivitySummary": {
-        "IncomeExpenseSummary": {
-            "OpeningBalance": "$0.00",
-            "ClosingBalance": "$284.81"
-        },
-        "PerformanceSummary": {
-            "NetChange": "$0.00"
-        }
-    },
-    "OnlineCashServicesSummary": {
-        "CREDITS": {
-            "CurrentYear": "$470.00",
-            "ToDate": "$470.00"
-        },
-        "Subtotal": "$470.00",
-        "TOTAL": "$470.00"
-    },
-    "AccountPositions": {
-        "Symbol/CurrentMarketPurchaseCostAverageUnrealizedEstimatedInvestmentDescriptionCUSIPQuantityPriceValueDateBasisYield": [
+    "CashActivity": {
+        "TotalValue": "$284.81",
+        "Details": [
             {
-                "Symbol": "125.52",
-                "CurrentMarketPurchaseCost": "$174.78",
-                "AverageUnrealizedGainLoss": "-$49.26",
-                "EstimatedValue": "$125.52",
-                "Description": "Stocks",
-                "CUSIP": "",
-                "Quantity": "",
-                "Price": "",
-                "DateBasis": "",
-                "Yield": "30.6%"
+                "Date": "02/19/2021",
+                "Type": "ACH OUT",
+                "Amount": "-$284.81"
             },
             {
-                "Symbol": "125.52",
-                "CurrentMarketPurchaseCost": "$174.78",
-                "AverageUnrealizedGainLoss": "-$49.26",
-                "EstimatedValue": "$125.52",
-                "Description": "MutualFunds",
-                "CUSIP": "",
-                "Quantity": "",
-                "Price": "",
-                "DateBasis": "",
-                "Yield": "30.6%"
+                "Date": "02/19/2021",
+                "Type": "ACH OUT - CANCELLED",
+                "Amount": "-$284.81"
             },
             {
-                "Symbol": "125.52",
-                "CurrentMarketPurchaseCost": "$174.78",
-                "AverageUnrealizedGainLoss": "-$49.26",
-                "EstimatedValue": "$125.52",
-                "Description": "Other",
-                "CUSIP": "",
-                "Quantity": "",
-                "Price": "",
-                "DateBasis": "",
-                "Yield": "69.4%"
+                "Date": "02/22/2021",
+                "Type": "ACH OUT",
+                "Amount": "-$284.81"
+            },
+            {
+                "Date": "02/22/2021",
+                "Type": "ACH OUT - CANCELLED",
+                "Amount": "-$284.81"
             }
-        ]
-    },
-    "OnlineCashServicesTransactionDetail": {
-        "Category": [
-            "CREDITS",
-            "DEBITS"
-        ],
-        "TransactionDate": [
-            "02/03/2021",
-            "02/05/2021",
-            "02/08/2021",
-            "02/19/2021",
-            "02/19/2021",
-            "02/22/2021",
-            "02/22/2021"
-        ],
-        "Description": [
-            "ELECTRONIC FUNDING",
-            "ACH IN",
-            "ACH IN",
-            "ACH OUT",
-            "ACH OUT - CANCELLED",
-            "ACH OUT",
-            "ACH OUT - CANCELLED"
-        ],
-        "Amount": [
-            "$50.00",
-            "$20.00",
-            "$400.00",
-            "-$284.81",
-            "-$284.81",
-            "-$284.81",
-            "-$284.81"
         ]
     }
 }

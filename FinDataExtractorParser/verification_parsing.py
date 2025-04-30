@@ -3,7 +3,7 @@ import difflib
 import json
 import sys
 
-from AI import Vllm, Ollama
+from AI import Vllm, OllamaVerification
 from configs.ai_methods import ai_methods
 
 def verify_similar_outputs(reruns, threshold, prompt, selected_ai, schema):
@@ -17,9 +17,10 @@ def verify_similar_outputs(reruns, threshold, prompt, selected_ai, schema):
     elif "Ollama" in selected_ai:
         if schema is not None:
             print(type(schema))
-            outputs = Ollama.run_parallel_requests_with_schema(reruns, prompt, schema)
+            print("verification schema:" + schema)
+            outputs = OllamaVerification.run_parallel_requests_with_schema(reruns, prompt, schema)
         else:
-            outputs = Ollama.run_parallel_requests(reruns, prompt)
+            outputs = OllamaVerification.run_parallel_requests(reruns, prompt)
     else:
         print(f"AI chosen \"{selected_ai}\" not eligible for verification, exiting.")
         sys.exit(1)

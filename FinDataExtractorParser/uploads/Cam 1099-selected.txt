@@ -1,0 +1,395 @@
+Page 1 of 16
+Wealthfront Brokerage LLC Tax Information Statement Date: 02/10/2024 2023
+Account 8W17Y5BC Document ID: 40R6 334 4R37
+261 Hamilton Ave
+Palo Alto, CA 94301 Cameron Dowless
+Customer Service: 844-995-8437
+85 S Union Blvd
+Apt. 395
+Lakewood, CO 80228-2230
+PAYER'S TIN: 27-1967207 RECIPIENT'S TIN:XXX-XX-1311
+11-[ ]FATCAfilingrequirement(seeinstructions) SummaryInformation 13-[ ]FATCAfilingrequirement(seeinstructions)
+DIVIDENDS AND DISTRIBUTIONS 2023 1099-DIV* OMB No. 1545-0110 MISCELLANEOUS INFORMATION 2023 1099-MISC* OMB No. 1545-0115
+1a- Total ordinary dividends (includes lines 1b, 5, 2e) 49.85 2- Royalties 0.00
+1b- Qualified dividends 29.61 3- Other income 0.00
+2a- Total capital gain distributions (includes lines 2b, 2c, 2d, 2f) 0.00 4- Federal income tax withheld 0.00
+2b- Unrecaptured Section 1250 gain 0.00 8- Substitute payments in lieu of dividends or interest 0.00
+2c- Section 1202 gain 0.00
+2d- Collectibles (28%) gain 0.00 SECTION 1256 CONTRACTS 2023 1099-B* OMB No. 1545-0715
+2e- Section 897 ordinary dividends 0.00
+2f- Section 897 capital gain 0.00 8- Profit or (loss) realized in 2023 on closed contracts 0.00
+3- Nondividend distributions 0.00 9- Unrealized profit or (loss) on open contracts-12/31/2022 0.00
+4- Federal income tax withheld 0.00 10- Unrealized profit or (loss) on open contracts-12/31/2023 0.00
+5- Section 199A dividends 0.59 11- Aggregate profit or (loss) on contracts 0.00
+6- Investment expenses 0.00
+If applicable, proceeds from sale transactions appear summarized below and are
+8- Foreign country or US possession: See detail 7- Foreign tax paid: 3.59
+detailed in subsequent sections of this document.
+9- Cash liquidation distributions 0.00
+* This is important tax information and is being furnished to the Internal Revenue Service.
+10- Noncash liquidation distributions 0.00
+Ifyouarerequiredto fileareturn,anegligencepenaltyor othersanctionmaybeimposedon
+12- Exempt-interest dividends (includes line 13) 5.37
+you if this income is taxable and the IRS determines that it has not been reported.
+13- Specified private activity bond interest dividends (AMT) 0.00
+SUMMARYOFPROCEEDS,GAINS&LOSSES,ADJUSTMENTSANDWITHHOLDING
+Refer to the 1099-B and Proceeds not reported to the IRS pages to ensure that you consider all relevant items and to determine the correct gains and losses. The amounts shown below are for informational purposes.
+Term Form8949type Proceeds Costbasis Marketdiscount Washsalelossdisallowed Netgainorloss(-)
+Short A (basis reported to the IRS) 2,791.49 2,937.52 0.00 0.00 -146.03
+Short B (basis not reported to the IRS) 0.00 0.00 0.00 0.00 0.00
+Short C (Form 1099-B not received) 0.00 0.00 0.00 0.00 0.00
+Total Short-term 2,791.49 2,937.52 0.00 0.00 -146.03
+Long D (basis reported to the IRS) 0.00 0.00 0.00 0.00 0.00
+Long E (basis not reported to the IRS) 0.00 0.00 0.00 0.00 0.00
+Long F (Form 1099-B not received) 0.00 0.00 0.00 0.00 0.00
+Total Long-term 0.00 0.00 0.00 0.00 0.00
+Undetermined B or E (basis not reported to the IRS) 0.00 0.00 0.00 0.00 0.00
+Undetermined C or F (Form 1099-B not received) 0.00 0.00 0.00 0.00 0.00
+Total Undetermined-term 0.00 0.00 0.00 0.00 0.00
+Grandtotal 2,791.49 2,937.52 0.00 0.00 -146.03
+Withholding Amount
+Federal income tax withheld 0.00
+Changes to dividend tax classifications processed after your original tax form is issued for 2023 may require an amended tax form.Page 2 of 16
+Wealthfront Brokerage LLC Account 8W17Y5BC
+Summary Information
+2023 (continued) 02/10/2024
+INTEREST INCOME 2023 1099-INT ORIGINAL ISSUE DISCOUNT AND ADJUSTMENTS
+OMB No. 1545-0112
+This is important tax information and is being furnished to the Internal Revenue Service. Usebond-by-bonddetailsfromtheForm1099-OIDpage(s)todetermineamountsof
+If you are required to file a return, a negligence penalty or other sanction may be OriginalIssueDiscountincomeforyourincometaxreturn(s).Theamountsshowninthis
+imposed on you if this income is taxable and the IRS determines that it has not been sectionareforyourreferencewhenpreparingyourincometaxreturn(s).
+reported. Original issue discount for the year 0.00
+1- Interest income (not included in line 3) 0.00 Acquisition premium (covered lots) 0.00
+2- Early withdrawal penalty 0.00 Acquisition premium (noncovered lots) 0.00
+3- Interest on US Savings Bonds & Treasury obligations 0.00 Original issue discount on Treasury obligations 0.00
+4- Federal income tax withheld 0.00 Acquisition premium, Treasury obligations (covered lots) 0.00
+5- Investment expenses 0.00 Acquisition premium, Treasury obligations (noncovered lots) 0.00
+7- Foreign country or US possession: 6- Foreign tax paid: 0.00 Tax-exempt OID 0.00
+8- Tax-exempt interest (includes line 9) 0.00 Tax-exempt OID (lots not reported) 0.00
+9- Specified private activity bond interest (AMT) 0.00 Acquisition premium (covered) 0.00
+10- Market discount (covered lots) 0.00 Acquisition premium (lots not reported) 0.00
+11- Bond premium (covered lots) 0.00 Tax-exempt OID on private activity bonds 0.00
+12- Bond premium on Treasury obligations (covered lots) 0.00 Tax-exempt OID on private activity bonds (lots not reported) 0.00
+13- Bond premium on tax-exempt bonds (categorized below) 0.00 Acquisition premium (AMT, covered) 0.00
+Tax-exempt obligations (covered lots) 0.00 Acquisition premium (AMT, lots not reported) 0.00
+Tax-exempt private activity obligations (AMT, covered lots) 0.00 Market discount (all lots) 0.00
+14- Tax-exempt and tax credit bond CUSIP number Early withdrawal penalty 0.00
+FATCAfilingrequirement[] Investment expenses 0.00
+RECONCILIATIONS, FEES, EXPENSES AND EXPENDITURES
+ThefollowingamountsarenotreportedtotheIRS.Theyarepresentedhereforyourreference
+whenpreparingyourtaxreturn(s). TheamountsinthissectionarenotreportedtotheIRS.Theyarepresentedhereforyour
+referencewhenpreparingyourincometaxreturn(s).
+Taxable accrued interest paid 0.00
+Taxable accrued Treasury interest paid 0.00 Other Receipts & Reconciliations- Partnership distributions 0.00
+Tax-exempt accrued interest paid 0.00 Other Receipts & Reconciliations- Foreign tax paid- partnership 0.00
+Tax-exempt accrued interest paid (AMT) 0.00 Other Receipts & Reconciliations- Return of principal 0.00
+Taxable accrued nonqualified interest paid 0.00 Other Receipts & Reconciliations- Deferred income payment 0.00
+Tax-exempt accrued nonqualified interest paid 0.00 Other Receipts & Reconciliations- Deemed premium 0.00
+Tax-exempt accrued nonqualified interest paid (AMT) 0.00 Other Receipts & Reconciliations- Income accrual- UIT 0.00
+Nonqualified interest 0.00 Other Receipts & Reconciliations- Basis adjustments 0.00
+Tax-exempt nonqualified interest 0.00 Other Receipts & Reconciliations- Foreign tax pd beyond treaty 0.00
+Tax-exempt nonqualified interest (AMT) 0.00 Fees & Expenses- Margin interest 0.00
+Interest shortfall on contingent payment debt 0.00 Fees & Expenses- Dividends paid on short position 0.00
+Bond premium- Non Treasury obligations (noncovered lots) 0.00 Fees & Expenses- Interest paid on short position 0.00
+Bond premium- Treasury obligations (noncovered lots) 0.00 Fees & Expenses- Non reportable distribution expense 0.00
+Bond premium- Tax-exempt obligations (noncovered lots) 0.00 Fees & Expenses- Other expenses 0.00
+Bond premium- Tax-exempt obligations (AMT, noncovered lots) 0.00 Fees & Expenses- Severance tax 0.00
+Market discount (noncovered lots) 0.00
+Fees & Expenses- Organizational expense 0.00
+Fees & Expenses- Miscellaneous fees 2.79
+STATE TAX WITHHELD Fees & Expenses- Tax-exempt investment expense 0.00
+UsethedetailsoftheStateTaxWithholdingpage(s)todeterminetheappropriateamountsfor Foreign Exchange Gains & Losses- Foreign currency gain/loss 0.00
+yourincometaxreturn(s).Theamountsshowninthissectionareforyourreference.
+1099-DIV total withheld 0.00
+1099-INT total withheld 0.00
+1099-OID total withheld 0.00
+1099-MISC total withheld 0.00
+1099-B total withheld 0.00Page 3 of 16
+Wealthfront Brokerage LLC Account 8W17Y5BC
+Proceeds from Broker and Barter Exchange Transactions
+2023 1099-B* OMB No. 1545-0715 02/10/2024
+Sales transactions are organized into sections according to term (long, short or undetermined) and covered status (covered or noncovered). For tax lots whose term is undetermined, use your historical
+documents to establish the cost basis and date of purchase. The Box 12, Check if basis reported to IRS checkmark, is reflected as being checked in the title of the covered securities pages of Forms
+1099-B, short-term and long-term. The title pages of the noncovered securities pages for Forms 1099-B reflect that Box 12 is not being checked, as these securities are not being reported to the IRS.
+Several columns include both an amount and a qualifying notation to its right. Where proceeds are the result of an option exercise or assignment, there is indication of whether the amount is N (net of
+option premium) or G (Gross). Accrued market discount and wash sale loss disallowed appear in the same column, identified by the letters D or W, respectively. Where you are not permitted to
+recognize a loss, an indication of X (change in control or capital structure) or Z (other corporate action) is used. The change in control condition is reported to the IRS for covered lots. Neither the
+disallowance of loss due to a corporate action nor the amount of gain or loss is reported to the IRS in any instance.
+Some tax lots may have notations in the column of Additional Information because they require special treatment on your tax returns. Sales of securities such as Contingent Payment Debt Instruments
+(CPDI) are marked as “Ordinary” because gains and losses on these instruments generally do not qualify as short- or long-term capital transactions. Similarly, lots noted as “3 - [X] Collectible” are
+handled distinctly under the tax code. These conditions are reported to the IRS. You may wish to consult with your tax advisor, the IRS or your state tax authority regarding the proper treatment for
+these scenarios. With further regard to Box 3, there is also a checkmark to indicate the proceeds of sale are from a Qualified Opportunity Zone Fund investment - a QOF. If the proceeds are from a QOF
+the Additional Information column will reflect the following - “3 - [X] Proceeds from QOF.” The tax treatment for QOF investments can be complex and you may wish to consult your tax advisor about
+such sales.
+Closing of written options is presented in a distinct manner in accordance with IRS regulations. For these transactions the Cost or other basis (column 1e) is always presented as $0.00 and the
+Proceeds (column 1d) is the net of the amount received when the option was written and the cost to close the position.
+FATCAfilingrequirement[]
+SHORT TERM TRANSACTIONS FOR COVERED TAX LOTS [Ordinary gains or losses are identified in the Additional information column] (Lines 2 & 5)
+Report on Form 8949, Part I with Box A checked. Basis is provided to the IRS. (Line 12)
+“Gain or loss (-)” is NOT reported to the IRS.
+1a-Descriptionofproperty/CUSIP/Symbol
+1c-Date 1d-Proceeds& 1f-Accruedmktdisc(D)& Gainorloss(-)&
+soldor 6-Reported 1b-Date 1e-Costor 1g-Washsaleloss 7-Lossnotallowed(X)
+disposed Quantity (G)rossor(N)et acquired otherbasis disallowed(W) alsonotreported(Z) Additionalinformation
+ISHARES TR CORE S&P TTL STK / CUSIP: 464287150 / Symbol:
+10/30/23 12.000 1,085.10 Various 1,171.45 ... -86.35 Total of 6 transactions
+ISHARES TR CORE DIV GRWTH / CUSIP: 46434V621 / Symbol:
+05/25/23 1.000 48.96 05/12/23 49.83 ... -0.87 Sale
+08/18/23 1.000 51.50 08/03/23 52.47 ... -0.97 Sale
+Securitytotal: 100.46 102.30 ... -1.84
+SCHWAB STRATEGIC TR INTL EQTY ETF / CUSIP: 808524805 / Symbol:
+05/24/23 2.000 69.78 05/12/23 71.31 ... -1.53 Sale
+11/02/23 14.000 473.96 Various 490.10 ... -16.14 Total of 8 transactions
+Securitytotal: 543.74 561.41 ... -17.67
+VANGUARD SPECIALIZED FUNDS DIV APP ETF / CUSIP: 921908844 / Symbol:
+10/02/23 2.000 308.32 Various 323.12 ... -14.80 Total of 2 transactions
+* This is important tax information and is being furnished to the Internal Revenue Service. If you are required to file a return, a negligence penalty or other sanction may be imposed on you if
+this income is taxable and the IRS determines that it has not been reported. Remember,taxpayers are ultimately responsible for the accuracy of their tax return(s).Page 4 of 16
+Wealthfront Brokerage LLC Account 8W17Y5BC
+Proceeds from Broker and Barter Exchange Transactions
+2023 1099-B* OMB No. 1545-0715 (continued) 02/10/2024
+SHORT TERM TRANSACTIONS FOR COVERED TAX LOTS [Ordinary gains or losses are identified in the Additional information column] (Lines 2 & 5)
+Report on Form 8949, Part I with Box A checked. Basis is provided to the IRS. (Line 12)
+“Gain or loss (-)” is NOT reported to the IRS.
+1a-Descriptionofproperty/CUSIP/Symbol
+1c-Date 1d-Proceeds& 1f-Accruedmktdisc(D)& Gainorloss(-)&
+soldor 6-Reported 1b-Date 1e-Costor 1g-Washsaleloss 7-Lossnotallowed(X)
+disposed Quantity (G)rossor(N)et acquired otherbasis disallowed(W) alsonotreported(Z) Additionalinformation
+VANGUARD TAX-MANAGED FDS VAN FTSE DEV MKT / CUSIP: 921943858 / Symbol:
+08/17/23 2.000 89.96 06/22/23 91.76 ... -1.80 Sale
+08/21/23 2.000 89.04 05/24/23 90.41 ... -1.37 Sale
+Securitytotal: 179.00 182.17 ... -3.17
+VANGUARD INTL EQUITY INDEX FDS FTSE EMR MKT ETF / CUSIP: 922042858 / Symbol:
+11/02/23 11.000 426.50 Various 445.71 ... -19.21 Total of 7 transactions
+VANGUARD MUN BD FDS TAX EXEMPT BD / CUSIP: 922907746 / Symbol:
+05/24/23 1.000 49.52 05/12/23 50.42 ... -0.90 Sale
+11/22/23 1.000 49.36 07/24/23 50.52 ... -1.16 Sale
+11/27/23 1.000 49.49 05/12/23 50.42 ... -0.93 Sale
+Securitytotal: 148.37 151.36 ... -2.99
+Totals: 2,791.49 2,937.52 -146.03
+* This is important tax information and is being furnished to the Internal Revenue Service. If you are required to file a return, a negligence penalty or other sanction may be imposed on you if
+this income is taxable and the IRS determines that it has not been reported. Remember,taxpayers are ultimately responsible for the accuracy of their tax return(s).Page 5 of 16
+Wealthfront Brokerage LLC Account 8W17Y5BC
+Detail for Dividends and Distributions
+2023 02/10/2024
+This section of your tax information statement contains the payment level detail of your taxable dividends, capital gains distributions, Section 199A dividends, Section 897 dividends and capital gains,
+exempt-interest dividends, nondividend distributions and liquidation distributions. Also shown are the fair market values of any taxable stock dividends or noncash liquidation distributions.
+Federal, state and foreign tax withheld and investment expenses are presented as negative amounts but do not net against the reportable income totals. All amounts are grouped by security, with the
+transactions listed in chronological order. Subtotals for each security are provided. For situations in which the tax character of a distribution (or part thereof) is different than at the time it was paid,
+endnotes are provided for further explanation.
+Note that a payment characterized as a “Qualified dividend” is only issuer-qualified. There is also a holder level criteria for a dividend to be treated as Qualified. If the payment is from a common stock
+you are required to have held it for more than 60 days during the 121-day period that begins 60 days before the ex-dividend date of the dividend. If the dividend is from preferred shares and covers a
+period greater than 366 days, you must have held the preferred stock for more than 90 days during the 181-day period that begins 90 days before the ex-dividend date of the dividend.
+Amounts presented in Box 2e as Section 897 Ordinary Dividends or Box 2f as Section 897 Capital Gains apply only to foreign persons and entities whose income maintains its character when passed
+through or distributed to its direct or indirect foreign owners or beneficiaries, The IRS has indicated that boxes 2e and 2f are not applicable to recipients that are U.S. individuals. You should consult your
+tax advisor for further information.
+Securitydescription CUSIPand/orsymbol State Date Amount Transactiontype Notes
+RBC FDS TR BLUEBAY CL 2 74926P688 05/31/23 0.30 Nonqualified dividend- money mkt
+06/30/23 0.46 Nonqualified dividend- money mkt
+07/31/23 0.27 Nonqualified dividend- money mkt
+08/31/23 0.46 Nonqualified dividend- money mkt
+09/30/23 0.55 Nonqualified dividend- money mkt
+10/31/23 0.29 Nonqualified dividend- money mkt
+11/30/23 0.28 Nonqualified dividend- money mkt
+12/31/23 0.58 Nonqualified dividend- money mkt
+3.19 Total Dividends & distributions
+ISHARES TR CORE S&P TTL STK 464287150 06/13/23 0.51 Qualified dividend 03
+06/13/23 0.04 Nonqualified dividend 03
+06/13/23 0.02 Section 199A dividend 03
+10/02/23 4.68 Qualified dividend 03
+10/02/23 0.44 Nonqualified dividend 03
+10/02/23 0.20 Section 199A dividend 03
+12/27/23 1.25 Qualified dividend 03
+12/27/23 0.12 Nonqualified dividend 03
+12/27/23 0.05 Section 199A dividend 03
+7.31 Total Dividends & distributions
+ISHARES TR NATIONAL MUN ETF 464288414 07/10/23 0.24 Tax-exempt dividend
+08/07/23 0.24 Tax-exempt dividend
+09/08/23 0.23 Tax-exempt dividend
+10/06/23 0.24 Tax-exempt dividend
+11/07/23 0.25 Tax-exempt dividendPage 6 of 16
+Wealthfront Brokerage LLC Account 8W17Y5BC
+Detail for Dividends and Distributions
+2023 (continued) 02/10/2024
+Securitydescription CUSIPand/orsymbol State Date Amount Transactiontype Notes
+ISHARES TR NATIONAL MUN ETF (cont'd) 12/07/23 0.50 Tax-exempt dividend
+12/20/23 0.76 Tax-exempt dividend
+2.46 Total Tax-exempt dividends
+ISHARES INC CORE MSCI EMKT 46434G103 12/27/23 7.15 Nonqualified dividend 03
+12/27/23 3.99 Qualified dividend 03
+12/27/23 -2.35 Foreign tax withheld-Various 03
+11.14 Total Dividends & distributions
+-2.35 Total Foreign tax withheld
+ISHARES TR CORE DIV GRWTH 46434V621 12/27/23 2.96 Qualified dividend 03
+SCHWAB STRATEGIC TR INTL EQTY ETF 808524805 12/11/23 0.65 Qualified dividend 03
+12/11/23 0.11 Nonqualified dividend 03
+12/11/23 -0.06 Foreign tax withheld-Various 03
+0.76 Total Dividends & distributions
+-0.06 Total Foreign tax withheld
+VANGUARD SPECIALIZED FUNDS DIV APP 921908844 07/05/23 0.77 Qualified dividend 03
+ETF 10/03/23 1.54 Qualified dividend 03
+2.31 Total Dividends & distributions
+VANGUARD TAX-MANAGED FDS VAN FTSE 921943858 06/23/23 0.66 Qualified dividend 03
+DEV MKT 06/23/23 0.25 Nonqualified dividend 03
+06/23/23 -0.05 Foreign tax withheld-Various 03
+12/21/23 5.19 Qualified dividend 03
+12/21/23 1.93 Nonqualified dividend 03
+12/21/23 -0.41 Foreign tax withheld-Various 03
+8.03 Total Dividends & distributions
+-0.46 Total Foreign tax withheld
+VANGUARD INTL EQUITY INDEX FDS FTSE 922042858 06/23/23 0.59 Nonqualified dividend 03
+EMR MKT ETF 06/23/23 0.16 Qualified dividend 03
+06/23/23 -0.07 Foreign tax withheld-Various 03
+09/21/23 2.84 Nonqualified dividend 03
+09/21/23 0.76 Qualified dividend 03
+09/21/23 -0.32 Foreign tax withheld-Various 03
+12/21/23 2.99 Nonqualified dividend 03
+12/21/23 0.80 Qualified dividend 03Page 7 of 16
+Wealthfront Brokerage LLC Account 8W17Y5BC
+Detail for Dividends and Distributions
+2023 (continued) 02/10/2024
+Securitydescription CUSIPand/orsymbol State Date Amount Transactiontype Notes
+VANGUARD INTL EQUITY INDEX FDS FTSE 12/21/23 -0.33 Foreign tax withheld-Various 03
+EMR MKT ETF (cont'd) 8.14 Total Dividends & distributions
+-0.72 Total Foreign tax withheld
+VANGUARD MUN BD FDS TAX EXEMPT BD 922907746 06/06/23 0.11 Tax-exempt dividend 03
+07/07/23 0.12 Tax-exempt dividend 03
+08/04/23 0.23 Tax-exempt dividend 03
+09/07/23 0.48 Tax-exempt dividend 03
+10/05/23 0.62 Tax-exempt dividend 03
+11/06/23 0.59 Tax-exempt dividend 03
+12/06/23 0.38 Tax-exempt dividend 03
+12/28/23 0.38 Tax-exempt dividend 03
+2.91 Total Tax-exempt dividends
+VANGUARD INDEX FDS TOTAL STK MKT 922908769 12/27/23 5.69 Qualified dividend 03
+12/27/23 0.32 Section 199A dividend 03
+6.01 Total Dividends & distributions
+49.85 Total Dividends & distributions
+5.37 Total Tax-exempt dividends
+-3.59 Total Foreign tax withheldPage 8 of 16
+Wealthfront Brokerage LLC Account 8W17Y5BC
+Fees and Expenses
+2023 02/10/2024
+This section of your tax information statement may contain the detail of fees and investment expenses that are not accounted for in amounts reportable to the IRS on the various Forms 1099. You may
+wish to consult with your tax advisor, the IRS or your state tax authority regarding the proper tax treatment.
+These amounts are provided here to facilitate an accounting of all amounts received during the year and are totaled in the Reconciliations, Fees, Expenses and Expenditures found in the Summary
+Information at the beginning of the statement.
+Description CUSIPand/orsymbol Date Amount Transactiontype Notes
+Management Fee 06/02/23 -0.07 Management fee
+07/03/23 -0.14 Management fee
+08/02/23 -0.31 Management fee
+09/05/23 -0.47 Management fee
+10/02/23 -0.57 Management fee
+11/02/23 -0.61 Management fee
+12/04/23 -0.62 Management fee
+-2.79 Total Management fee
+-2.79 Total Management feePage 9 of 16
+Wealthfront Brokerage LLC Account 8W17Y5BC
+Mutual Fund and UIT Supplemental Information
+2023 02/10/2024
+The following information may be useful in the preparation of your federal and state income tax return(s). This information represents what was available at the time your tax statement was prepared. It
+may not be all inclusive and is subject to change. Please contact your mutual fund or UIT directly if you need to verify or supplement this information. Note that depending on your state of residence not
+all Federal Source income is exempt from state taxation. You may wish to consult with your tax advisor, the IRS or your state tax authority regarding the proper treatment.
+ISHARES TR NATIONAL MUN ETF / 464288414
+TAX-EXEMPT INTEREST DIVIDENDS BY STATE AND US POSSESSIONS
+State % State % State % State % State % State %
+Alabama 0.63 Dist. Columbia 2.03 Kansas 0.14 Mississippi 0.23 North Carolina 1.11 Texas 7.30
+Alaska 0.01 Florida 1.21 Kentucky 0.01 Missouri 0.36 Ohio 1.32 Utah 0.81
+Arizona 0.82 Georgia 2.51 Louisiana 0.49 Nebraska 0.49 Oklahoma 0.34 Vermont 0.00
+Arkansas 0.00 Hawaii 0.56 Maine 0.01 Nevada 0.89 Oregon 0.85 Virginia 1.85
+California 19.74 Idaho 0.01 Maryland 2.33 New Hampshire 0.00 Pennsylvania 3.20 Washington 3.89
+Colorado 1.27 Illinois 4.76 Massachusetts 4.09 New Jersey 4.94 Rhode Island 0.07 West Virginia 0.11
+Connecticut 1.89 Indiana 0.47 Michigan 1.24 New Mexico 0.18 South Carolina 0.63 Wisconsin 0.64
+Delaware 0.58 Iowa 0.14 Minnesota 0.70 New York 24.26 Tennessee 0.88
+ISHARES INC CORE MSCI EMKT / 46434G103
+FOREIGN SOURCE INCOME PERCENTAGES
+Fgn Source Inc Tot 93.41% Fgn Source Inc Qual 35.89% Fgn Source Inc Adj 0.00%
+SCHWAB STRATEGIC TR INTL EQTY ETF / 808524805
+FOREIGN SOURCE INCOME PERCENTAGES
+Fgn Source Inc Tot 99.66% Fgn Source Inc Qual 84.67% Fgn Source Inc Adj 0.00%
+VANGUARD SPECIALIZED FUNDS DIV APP ETF / 921908844
+PERCENTAGE OF INCOME FROM US GOVERNMENT SECURITIES
+Fed Source Total 0.27% (A detailed breakdown is shown below when available)
+Agency % Agency % Agency %
+U.S. Treasury 0.12 Fed Farm Credit 0.00 TN Valley Auth 0.00
+Fed Home Loan 0.15 Student Loan 0.00 Other Dir. Fed 0.00Page 10 of 16
+Wealthfront Brokerage LLC Account 8W17Y5BC
+Mutual Fund and UIT Supplemental Information
+2023 (continued) 02/10/2024
+VANGUARD TAX-MANAGED FDS VAN FTSE DEV MKT / 921943858
+FOREIGN SOURCE INCOME PERCENTAGES
+Fgn Source Inc Tot 90.88% Fgn Source Inc Qual 72.89% Fgn Source Inc Adj 0.00%
+PERCENTAGE OF INCOME FROM US GOVERNMENT SECURITIES
+Fed Source Total 0.32% (A detailed breakdown is shown below when available)
+Agency % Agency % Agency %
+U.S. Treasury 0.14 Fed Farm Credit 0.00 TN Valley Auth 0.00
+Fed Home Loan 0.18 Student Loan 0.00 Other Dir. Fed 0.00
+VANGUARD INTL EQUITY INDEX FDS FTSE EMR MKT ETF / 922042858
+FOREIGN SOURCE INCOME PERCENTAGES
+Fgn Source Inc Tot 85.07% Fgn Source Inc Qual 21.12% Fgn Source Inc Adj 0.00%
+PERCENTAGE OF INCOME FROM US GOVERNMENT SECURITIES
+Fed Source Total 0.73% (A detailed breakdown is shown below when available)
+Agency % Agency % Agency %
+U.S. Treasury 0.32 Fed Farm Credit 0.00 TN Valley Auth 0.00
+Fed Home Loan 0.41 Student Loan 0.00 Other Dir. Fed 0.00
+VANGUARD MUN BD FDS TAX EXEMPT BD / 922907746
+TAX-EXEMPT INTEREST DIVIDENDS BY STATE AND US POSSESSIONS
+State % State % State % State % State % State %
+Alabama 0.58 Florida 3.47 Louisiana 0.72 Nebraska 0.38 Ohio 1.79 Texas 9.60
+Alaska 0.10 Georgia 1.75 Maine 0.10 Nevada 0.74 Oklahoma 0.36 Utah 0.70
+Arizona 1.39 Hawaii 0.44 Maryland 1.81 New Hampshire 0.02 Oregon 1.04 Vermont 0.14
+Arkansas 0.02 Idaho 0.06 Massachusetts 4.48 New Jersey 6.10 Pennsylvania 3.60 Virginia 1.33
+California 15.20 Illinois 6.32 Michigan 1.62 New Mexico 0.20 Rhode Island 0.14 Washington 2.57
+Colorado 1.63 Indiana 0.50 Minnesota 0.32 New York 23.93 South Carolina 0.95 West Virginia 0.04
+Connecticut 1.66 Iowa 0.08 Mississippi 0.11 North Carolina 0.79 South Dakota 0.01 Wisconsin 0.77
+Delaware 0.21 Kansas 0.28 Missouri 0.39 North Dakota 0.03 Tennessee 0.52 Wyoming 0.06
+Dist. Columbia 1.57 Kentucky 0.22Page 11 of 16
+Wealthfront Brokerage LLC Account 8W17Y5BC
+Mutual Fund and UIT Supplemental Information
+2023 (continued) 02/10/2024
+VANGUARD INDEX FDS TOTAL STK MKT / 922908769
+PERCENTAGE OF INCOME FROM US GOVERNMENT SECURITIES
+Fed Source Total 0.06% (A detailed breakdown is shown below when available)
+Agency % Agency % Agency %
+U.S. Treasury 0.02 Fed Farm Credit 0.00 TN Valley Auth 0.00
+Fed Home Loan 0.04 Student Loan 0.00 Other Dir. Fed 0.00Page 12 of 16
+Wealthfront Brokerage LLC Account 8W17Y5BC
+Foreign Income and Taxes Summary
+2023 02/10/2024
+Thisschedulelistsallincomeandforeigntaxbycountry.MutualFundsandUnitInvestmentTrusts(UITs)structuredasRegulatedInvestmentCompanies (RICs)arelistedseparatelywithacountry
+designationof“RIC.”
+Dividends
+Country SecurityDescription CUSIP Nonqualified Qualified Interest TotalIncome Tax
+ISHARES INC CORE MSCI EMKT 46434G103 7.15 3.99 0.00 11.14 -2.35
+SCHWAB STRATEGIC TR INTL EQTY 808524805 0.11 0.65 0.00 0.76 -0.06
+ETF
+VANGUARD TAX-MANAGED FDS VAN 921943858 2.18 5.85 0.00 8.03 -0.46
+FTSE DEV MKT
+VANGUARD INTL EQUITY INDEX FDS 922042858 6.42 1.72 0.00 8.14 -0.72
+FTSE EMR MKT ETF
+Total 15.86 12.21 0.00 28.07 -3.59
+GrandTotal TotalForeignSourceIncome* 28.07
+QualifiedForeignSourceIncome** 12.21
+ForeignTax -3.59
+*TotalForeignSourceIncomeutilizesthe"Total"columnforRICswhichmaynotalwaysbesupplied.
+**QualifiedForeignSourceIncomeutilizesthe"Qualified"columnforRICswhichmaynotalwaysbesupplied.Page 13 of 16
+Wealthfront Brokerage LLC Account 8W17Y5BC
+Schedule of Management Fees
+2023 02/10/2024
+Description Amount
+TotalRegularInterest* 0.00
+TotalUSGovernmentInterest* 0.00
+TotalDividends 49.85
+TotalCapitalGainsDistributions 0.00
+RealizedGrossCapitalGains 0.00
+TotalTax-ExemptResidentStateandUSPossessions* 0.00
+TotalTax-ExemptNon-ResidentState* 5.37
+MiscellaneousIncome 0.00
+Total: 55.22
+ManagementFeesPaid 2.79
+PleasenotethatthisillustrativecalculationofthedeductibleportionofaccountmanagementfeesisprovidedasaservicetoyouandisnotreportedtotheInternalRevenueService. Theabovecalculationtakes
+intoaccountallitemsoftaxableandtax-exemptgrossincomeintheaccountthatarereportedontheenclosed1099. Accountlevelmanagementfeesmaynotbechargedonsomeoftheassetsheldinyour
+account. Accordingly,ifthisappliestoyouraccount,youmaywishtoexcludegrossincomefromthoseassetsinmakingthiscalculation. Youshouldconsultwithyourtaxadvisor. Ifyouhaveanyquestions
+regardingassetswhichmaybeexcludedfromtheaccountlevelfeecalculation,pleasecontactyourClientAccountManager.
+* ExcludesAccruedInterestPaid
+** ExcludesUSGovernmentDividendsfromMutualFunds

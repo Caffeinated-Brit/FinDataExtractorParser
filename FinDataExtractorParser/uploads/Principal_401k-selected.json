@@ -1,0 +1,51 @@
+{
+    "personal_Info": {
+        "name": "ADAM UNGER",
+        "address": "115 S WALNUT ST, MUNCIE, IN 47305",
+        "phone_number": "",
+        "email": "",
+        "bank_account_number": ""
+    },
+    "company_Info": {
+        "name": "ACCUTECH SYSTEMS CORP.",
+        "address": "115 S WALNUT ST, MUNCIE, IN 47305",
+        "phone_number": "",
+        "email": "",
+        "website": "principal.com"
+    },
+    "financial_info": {
+        "plan_id": "471139",
+        "account_snapshot_as_of": "June 30, 2022",
+        "balance": "$3,174.26",
+        "investment_allocations": {
+            "Vested balance Short-Term Fixed Income": "$0.00",
+            "Fixed Income": "$0.00",
+            "Balanced/Asset Allocation": "$3,174.26",
+            "Large U.S. Equity": "$0.00",
+            "Small/Mid U.S. Equity": "$0.00",
+            "International Equity": "$0.00",
+            "Other": "$0.00"
+        },
+        "account_balance": {
+            "This quarter": "$1,219.12",
+            "This year": "$2,403.42",
+            "Beginning balance": "$2,427.17",
+            "Additions": "$1,219.12",
+            "Deducted fees": "-$7.50",
+            "Gain/Loss": "-$464.53",
+            "Ending balance": "$3,174.26",
+            "Change": "$747.09"
+        },
+        "contributions": {
+            "This quarter": "$1,219.12",
+            "This year": "$2,403.42",
+            "Total contributions": "$1,219.12"
+        }
+    },
+    "discrepancies": {
+        "notification_required_within": "90 days"
+    },
+    "beneficiaries": {
+        "designated_beneficiary_for_retirement_account_funds": "No beneficiary on file."
+    }
+}

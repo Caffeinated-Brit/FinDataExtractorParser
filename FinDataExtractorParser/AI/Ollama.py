@@ -3,11 +3,6 @@
 # example of getting a model "ollama run llama3.1:8b"
 # dont forget to type the size of the model in addition to the name
 import json
-import os
-import difflib
-import sys
-import time
-from concurrent.futures import ThreadPoolExecutor
 
 #tested models
 #llama3.1:8b works well
@@ -19,14 +14,9 @@ from concurrent.futures import ThreadPoolExecutor
 #LLM_MODEL="qwen2.5:14b"
 # LLM_MODEL="qwen2.5-coder:7b"
 # LLM_MODEL="qwen2.5-coder:3b"
-
-import time
 import configparser
 
 import ollama
-from pydantic import BaseModel, Extra, Field
-
-from schemas.general_schema_basic import FinancialData
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -35,7 +25,16 @@ LLM_MODEL =  config.get("Ollama Model", "model", fallback="qwen2.5-coder:3b")
 # LLM_MODEL="qwen2.5-coder:3b" # for lukas' backpack brick
 # #LLM_MODEL="qwen2.5-coder:7b" # for spencers spacestation
 
+# should probably move this to a different file
 def schema_json_convertion(schema):
+    """ schema_json_convertion converts a schema to a useable (dict) json schema.
+
+    Args:
+        schema(many): schema to convert, either string, dict or pydantic model.
+
+    Returns:
+        (dict) string of json schema.
+    """
     try:
         if isinstance(schema, str):
             return json.loads(schema)
@@ -51,13 +50,17 @@ def schema_json_convertion(schema):
         print("Error processing schema:", e)
         return None
 
-
-# Only call from run_parallel_requests_with_schema
 def process_text_with_llm_and_schema(user_prompt, schema):
-    schema_json = schema_json_convertion(schema)
-    #print(type(schema))
-    #print(schema)
+    """ process_text_with_llm_and_schema runs a prompt through the ollama model with a json schema.
 
+            Args:
+                user_prompt(str): prompt to run through the model.
+                schema(many): Json schema to convert, either string, dict or pydantic model.
+
+            Returns:
+                (str) response from the model.
+        """
+    schema_json = schema_json_convertion(schema)
 
     print("Starting Ollama extraction with a json schema...")
     try:
@@ -74,8 +77,15 @@ def process_text_with_llm_and_schema(user_prompt, schema):
         raise e
     return response.message.content
 
-# Only call from run_parallel_requests
 def process_text_with_llm(user_prompt):
+    """ process_text_with_llm runs a prompt through the ollama model.
+
+        Args:
+            user_prompt(str): prompt to run through the model.
+
+        Returns:
+            (str) response from the model.
+    """
     print("Starting Ollama extraction...")
     response = ollama.chat(
         model=LLM_MODEL,
@@ -87,31 +97,31 @@ def process_text_with_llm(user_prompt):
     #This returns just the message from the LLM nothing else
     return response.message.content
 
-def run_parallel_requests(num_requests, prompt):
-    results = []
-    with ThreadPoolExecutor(max_workers=num_requests) as executor:
-        futures = []
-        for i in range(num_requests):
-            futures.append(executor.submit(process_text_with_llm, prompt))
-
-        for future in futures:
-            print(future.result())
-            print("-" * 50)
-            results.append(future.result())
-    return results
-
-def run_parallel_requests_with_schema(num_requests, prompt, schema):
-    results = []
-    with ThreadPoolExecutor(max_workers=num_requests) as executor:
-        futures = []
-        for i in range(num_requests):
-            futures.append(executor.submit(process_text_with_llm_and_schema, prompt, schema))
-
-        for future in futures:
-            print(future.result())
-            print("-" * 50)
-            results.append(future.result())
-    return results
+# def run_parallel_requests(num_requests, prompt):
+#     results = []
+#     with ThreadPoolExecutor(max_workers=num_requests) as executor:
+#         futures = []
+#         for i in range(num_requests):
+#             futures.append(executor.submit(process_text_with_llm, prompt))
+#
+#         for future in futures:
+#             print(future.result())
+#             print("-" * 50)
+#             results.append(future.result())
+#     return results
+#
+# def run_parallel_requests_with_schema(num_requests, prompt, schema):
+#     results = []
+#     with ThreadPoolExecutor(max_workers=num_requests) as executor:
+#         futures = []
+#         for i in range(num_requests):
+#             futures.append(executor.submit(process_text_with_llm_and_schema, prompt, schema))
+#
+#         for future in futures:
+#             print(future.result())
+#             print("-" * 50)
+#             results.append(future.result())
+#     return results
 
 if __name__ == "__main__":
     prompt = (

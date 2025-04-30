@@ -9,8 +9,10 @@
       <excludeFolder url="file://$MODULE_DIR$/FinDataExtractorParser/examplePDFs" />
       <excludeFolder url="file://$MODULE_DIR$/Research and Development" />
       <excludeFolder url="file://$MODULE_DIR$/uploads" />
+      <excludeFolder url="file://$MODULE_DIR$/FinDataExtractorParser/sparePDFparsers" />
+      <excludeFolder url="file://$MODULE_DIR$/FinDataExtractorParser/tests" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (FinDataExtractorParser)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
