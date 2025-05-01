@@ -2,7 +2,7 @@
 # in this file if something says "unused" then it was most likely tested then abandoned or
 #   they might be used in another file such as in the sparePDFparsers folder, these are not in the main pipeline
 
-# auto generated requirements using pycharm
+# Main pipeline requirements
 langchain~=0.3.23
 langchain-core~=0.3.52
 dotenv~=0.9.9
@@ -20,3 +20,16 @@ pdfplumber~=0.11.5
 pypdfium2~=4.30.1
 pytesseract~=0.3.13
 pillow~=11.1.0
+
+# unused parsing requirements
+# tabula~=1.0.5
+# tabula-py~=2.9.3
+# pypdf~=5.3.1
+# pdf2image~=1.17.0
+# llmsherpa~=0.1.4
+    # Unused ocr method
+# ocrmypdf~=16.10.0
+
+# nest-asyncio~=1.6.0
+# pandas~=2.0.3
+# transformers~=4.48.0
