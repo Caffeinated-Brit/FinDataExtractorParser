@@ -1,7 +1,5 @@
-import difflib
 import json
 import chardet
-import configparser
 import time
 import os
 

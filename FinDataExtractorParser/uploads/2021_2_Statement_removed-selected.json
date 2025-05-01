@@ -74,13 +74,13 @@
             "category": "CREDITS",
             "transaction_date": "02/05/2021",
             "description": "ACH IN",
-            "amount": "$20.00"
+            "amount": "20.00"
         },
         {
             "category": "CREDITS",
             "transaction_date": "02/08/2021",
             "description": "ACH IN",
-            "amount": "$400.00"
+            "amount": "400.00"
         },
         {
             "category": "DEBITS",
